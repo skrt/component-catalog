@@ -125,7 +125,7 @@
               <!-- Preview Tab -->
               <div x-show="getTab(comp.id) === 'preview'" class="p-0">
                 <iframe
-                  :src="comp.preview"
+                  :src="comp.preview + '?v=' + cacheKey"
                   class="w-full border-0"
                   :title="comp.name + ' preview'"
                   loading="lazy"
@@ -222,6 +222,7 @@ function catalog() {
     categories: [],
     components: [],
     tabs: {},
+    cacheKey: Date.now(),
 
     async init() {
       try {
@@ -260,12 +261,18 @@ function catalog() {
     },
 
     resizeIframe(iframe) {
-      try {
-        const h = iframe.contentDocument.documentElement.scrollHeight;
-        iframe.style.height = h + 'px';
-      } catch (e) {
-        iframe.style.height = '400px';
-      }
+      const doResize = () => {
+        try {
+          const h = iframe.contentDocument.documentElement.scrollHeight;
+          iframe.style.height = h + 'px';
+        } catch (e) {
+          iframe.style.height = '400px';
+        }
+      };
+      doResize();
+      setTimeout(doResize, 500);
+      setTimeout(doResize, 1500);
+      setTimeout(doResize, 3000);
     }
   };
 }

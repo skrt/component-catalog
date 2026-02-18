@@ -626,21 +626,23 @@
         {
           "category": "Underline",
           "items": [
-            { "variant": "active", "tokens": { "text": "blue-600 (#155DFC)", "border-bottom": "border-b-2 border-blue-600", "fontWeight": "font-medium (500)" } },
-            { "variant": "inactive", "tokens": { "text": "gray-500 (#6A7282)", "border-bottom": "border-b-2 border-transparent", "hover": "text-gray-700" } }
+            { "variant": "active", "tokens": { "text": "blue-500 (#2B7FFF)", "border-bottom": "border-b-2 border-blue-500", "fontWeight": "font-medium (500)" } },
+            { "variant": "hover", "tokens": { "text": "blue-600 (#155DFC)", "border-bottom": "border-b-2 border-blue-600", "fontWeight": "font-medium (500)" } },
+            { "variant": "inactive", "tokens": { "text": "gray-600 (#4A5565)", "border-bottom": "border-b-2 border-transparent", "fontWeight": "font-normal (400)" } }
           ]
         },
         {
           "category": "Pill",
           "items": [
-            { "variant": "active", "tokens": { "background": "blue-50 (#EFF6FF)", "text": "blue-700 (#1447E6)", "borderRadius": "rounded-full (9999px)", "fontWeight": "font-medium (500)" } },
-            { "variant": "inactive", "tokens": { "background": "transparent", "text": "gray-500 (#6A7282)", "hover": "bg-gray-100 text-gray-700" } }
+            { "variant": "active", "tokens": { "background": "blue-100 (#DBEAFE)", "text": "blue-700 (#1447E6)", "borderRadius": "rounded-md (6px)", "fontWeight": "font-medium (500)", "counter-bg": "blue-100", "counter-radius": "rounded-sm (4px)" } },
+            { "variant": "hover", "tokens": { "background": "gray-100 (#F3F4F6)", "text": "gray-600 (#4A5565)", "fontWeight": "font-normal (400)", "counter-bg": "gray-100", "counter-radius": "rounded-full (9999px)" } },
+            { "variant": "inactive", "tokens": { "background": "white (#FFFFFF)", "text": "gray-600 (#4A5565)", "fontWeight": "font-normal (400)", "counter-bg": "gray-100", "counter-radius": "rounded-full (9999px)" } }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "fontSize": "text-sm (14px)", "padding": "px-3 py-2 (12px 8px)", "gap": "gap-1 (4px)" } }
+            { "variant": "all", "tokens": { "fontSize": "text-sm (14px)", "underline-padding": "px-3 py-2 (12px 8px)", "pill-padding": "px-2 py-1 (8px 4px)", "gap": "gap-1 (4px)" } }
           ]
         }
       ]
