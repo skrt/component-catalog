@@ -389,16 +389,16 @@
         {
           "category": "Status",
           "items": [
-            { "variant": "success", "tokens": { "background": "emerald-600 (#059669)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "warning", "tokens": { "background": "amber-500 (#F59E0B)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "error", "tokens": { "background": "red-500 (#FB2C36)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "info", "tokens": { "background": "gray-500 (#6A7282)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } }
+            { "variant": "success", "tokens": { "background": "#009966", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "warning", "tokens": { "background": "#FD9A00", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "error", "tokens": { "background": "#FB2C36", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "info", "tokens": { "background": "#6A7282", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-lg (8px)", "padding": "px-4 py-3 (16px 12px)", "shadow": "shadow-lg", "gap": "gap-3 (12px)", "minWidth": "min-w-[320px]" } }
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)", "contentGap": "gap-1 (4px)", "iconSize": "14px", "closeSize": "14px", "titleFont": "text-sm font-medium (14px 500)", "descFont": "text-sm font-normal (14px 400)", "width": "w-[360px]" } }
           ]
         }
       ]
