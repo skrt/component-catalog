@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+
+    /* Switch track base */
+    .switch-track {
+      position: relative;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Switch thumb base */
+    .switch-thumb {
+      position: absolute;
+      background: white;
+      border-radius: 9999px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.15s ease-in-out;
+    }
+
+    /* SM: track 32x18, thumb 14px */
+    .switch-sm { width: 32px; height: 18px; }
+    .switch-sm .switch-thumb { width: 14px; height: 14px; top: 2px; left: 2px; }
+    .switch-sm.switch-on .switch-thumb { transform: translateX(14px); }
+
+    /* MD: track 40x22, thumb 18px */
+    .switch-md { width: 40px; height: 22px; }
+    .switch-md .switch-thumb { width: 18px; height: 18px; top: 2px; left: 2px; }
+    .switch-md.switch-on .switch-thumb { transform: translateX(18px); }
+
+    /* LG: track 48x26, thumb 22px */
+    .switch-lg { width: 48px; height: 26px; }
+    .switch-lg .switch-thumb { width: 22px; height: 22px; top: 2px; left: 2px; }
+    .switch-lg.switch-on .switch-thumb { transform: translateX(22px); }
+
+    /* On state: blue-500 */
+    .switch-on { background-color: #2B7FFF; }
+
+    /* Off state: gray-300 */
+    .switch-off { background-color: #D1D5DC; }
+  </style>
+</head>
+<body class="bg-white p-6 space-y-10">
+
+  <!-- SIZES (ON) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Sizes (On)</h3>
+    <div class="flex items-center gap-8">
+
+      <!-- SM ON -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-sm switch-on">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">SM</span>
+      </div>
+
+      <!-- MD ON -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-md switch-on">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">MD</span>
+      </div>
+
+      <!-- LG ON -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-lg switch-on">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">LG</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIZES (OFF) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Sizes (Off)</h3>
+    <div class="flex items-center gap-8">
+
+      <!-- SM OFF -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-sm switch-off">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">SM</span>
+      </div>
+
+      <!-- MD OFF -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-md switch-off">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">MD</span>
+      </div>
+
+      <!-- LG OFF -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="switch-track switch-lg switch-off">
+          <div class="switch-thumb"></div>
+        </div>
+        <span class="text-xs text-gray-500">LG</span>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

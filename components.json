@@ -11,7 +11,7 @@
     {
       "id": "button",
       "name": "Button",
-      "description": "ボタンコンポーネント。フォーム送信、アクション実行に使用。Size (xs/sm/md/lg) × Color (primary/secondary/alert/tertiary) × State (default/hover/active/disabled)。Left Icon / Right Icon の表示切替可能。",
+      "description": "ボタンコンポーネント。フォーム送信、アクション実行に使用。",
       "category": "actions",
       "preview": "previews/button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1625-1268",
@@ -53,7 +53,7 @@
     {
       "id": "icon-button",
       "name": "IconButton",
-      "description": "アイコンボタンコンポーネント。テキストなしのアイコンのみボタン。Size (xs/sm/md/lg) × Color (secondary/tertiary) × State (default/hover/active/disabled)。Attention バッジ表示可能。",
+      "description": "アイコンボタンコンポーネント。テキストなしのアイコンのみボタン。",
       "category": "actions",
       "preview": "previews/icon-button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1632-784",
@@ -90,9 +90,203 @@
       ]
     },
     {
+      "id": "input",
+      "name": "Input",
+      "description": "テキスト入力フィールド。ラベル、ヘルパーテキスト、エラー表示対応。",
+      "category": "forms",
+      "preview": "previews/input.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1625-11162",
+      "props": [
+        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "入力フィールドのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
+        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled", "filled"], "description": "インタラクション状態" },
+        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
+        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
+        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
+        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" },
+        { "name": "Left Icon", "type": "boolean", "default": "false", "description": "左アイコンの表示" },
+        { "name": "Right Icon", "type": "boolean", "default": "false", "description": "右アイコンの表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Size",
+          "items": [
+            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)" } },
+            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
+            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
+            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-4 (16px)", "fontSize": "text-base (16px)" } }
+          ]
+        },
+        {
+          "category": "State",
+          "items": [
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "placeholder": "gray-400 (#99A1AF)" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "border": "gray-200 (#E5E7EB)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "labelFont": "text-sm font-medium (14px 500)", "helperFont": "text-xs (12px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "description": "セレクトボックス。ドロップダウンによる単一選択。",
+      "category": "forms",
+      "preview": "previews/select.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1627-2381",
+      "props": [
+        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "セレクトのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
+        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled"], "description": "インタラクション状態" },
+        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
+        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
+        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Size",
+          "items": [
+            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)" } },
+            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
+            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
+            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-4 (16px)", "fontSize": "text-base (16px)" } }
+          ]
+        },
+        {
+          "category": "State",
+          "items": [
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "chevron": "gray-400 (#99A1AF)" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text-area",
+      "name": "TextArea",
+      "description": "複数行テキスト入力。メモ、説明文、コメント入力に使用。",
+      "category": "forms",
+      "preview": "previews/text-area.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1631-398",
+      "props": [
+        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "テキストエリアのサイズ" },
+        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled", "filled"], "description": "インタラクション状態" },
+        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
+        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
+        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
+        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Size",
+          "items": [
+            { "variant": "xs", "tokens": { "padding": "px-2 py-1 (8px 4px)", "fontSize": "text-xs (12px)", "minHeight": "min-h-[60px]" } },
+            { "variant": "sm", "tokens": { "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "minHeight": "min-h-[72px]" } },
+            { "variant": "md", "tokens": { "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-sm (14px)", "minHeight": "min-h-[80px]" } },
+            { "variant": "lg", "tokens": { "padding": "px-4 py-3 (16px 12px)", "fontSize": "text-base (16px)", "minHeight": "min-h-[96px]" } }
+          ]
+        },
+        {
+          "category": "State",
+          "items": [
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "resize": "resize-y" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combobox",
+      "name": "ComboBox",
+      "description": "コンボボックス。テキスト入力 + ドロップダウン選択の複合コンポーネント。",
+      "category": "forms",
+      "preview": "previews/combobox.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1641-1763",
+      "props": [
+        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "filled", "error", "disabled"], "description": "インタラクション状態" },
+        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
+        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
+        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
+        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+      ],
+      "tokens": [
+        {
+          "category": "State",
+          "items": [
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "placeholder": "gray-400 (#99A1AF)" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20", "dropdown-bg": "white (#FFFFFF)", "dropdown-shadow": "shadow-lg" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)", "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "description": "トグルスイッチ。ON/OFF の切替に使用。",
+      "category": "forms",
+      "preview": "previews/switch.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7626",
+      "props": [
+        { "name": "Size", "type": "enum", "default": "md", "values": ["sm", "md", "lg"], "description": "sm: 16×28px / md: 20×36px / lg: 24×44px" },
+        { "name": "On", "type": "boolean", "default": "false", "description": "ON/OFF 状態" }
+      ],
+      "tokens": [
+        {
+          "category": "Size",
+          "items": [
+            { "variant": "sm", "tokens": { "track": "w-7 h-4 (28×16px)", "thumb": "w-3 h-3 (12px)", "translate": "translate-x-3" } },
+            { "variant": "md", "tokens": { "track": "w-9 h-5 (36×20px)", "thumb": "w-4 h-4 (16px)", "translate": "translate-x-4" } },
+            { "variant": "lg", "tokens": { "track": "w-11 h-6 (44×24px)", "thumb": "w-5 h-5 (20px)", "translate": "translate-x-5" } }
+          ]
+        },
+        {
+          "category": "State",
+          "items": [
+            { "variant": "off", "tokens": { "track-bg": "gray-200 (#E5E7EB)", "thumb-bg": "white (#FFFFFF)" } },
+            { "variant": "on", "tokens": { "track-bg": "blue-500 (#2B7FFF)", "thumb-bg": "white (#FFFFFF)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-full (9999px)", "transition": "transition-all duration-200" } }
+          ]
+        }
+      ]
+    },
+    {
       "id": "radio-button",
       "name": "RadioButton",
-      "description": "ラジオボタンコンポーネント。排他選択に使用。Size (sm/md/lg) × State (default/selected/disabled/selected-disabled)。税区分選択、配送方法選択などに使用。",
+      "description": "ラジオボタン。排他選択に使用。",
       "category": "forms",
       "preview": "previews/radio-button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1632-921",
@@ -123,7 +317,7 @@
     {
       "id": "checkbox",
       "name": "Checkbox",
-      "description": "チェックボックスコンポーネント。複数選択・全選択に使用。Size (sm/md/lg) × State (default/checked/disabled/checked-disabled)。明細行選択、一括操作などに使用。",
+      "description": "チェックボックス。複数選択・全選択に使用。",
       "category": "forms",
       "preview": "previews/checkbox.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1634-980",
@@ -152,9 +346,256 @@
       ]
     },
     {
+      "id": "alert",
+      "name": "Alert",
+      "description": "アラートメッセージ。操作結果やシステム通知の表示に使用。",
+      "category": "feedback",
+      "preview": "previews/alert.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1634-5472",
+      "props": [
+        { "name": "Status", "type": "enum", "default": "info", "values": ["success", "warning", "error", "info"], "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報" },
+        { "name": "Description", "type": "boolean", "default": "true", "description": "説明テキストの表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Status",
+          "items": [
+            { "variant": "success", "tokens": { "border-left": "emerald-500 (#10B981)", "background": "emerald-50 (#ECFDF5)", "icon": "emerald-500 (#10B981)", "title": "emerald-800 (#065F46)" } },
+            { "variant": "warning", "tokens": { "border-left": "amber-500 (#F59E0B)", "background": "amber-50 (#FFFBEB)", "icon": "amber-500 (#F59E0B)", "title": "amber-800 (#92400E)" } },
+            { "variant": "error", "tokens": { "border-left": "red-500 (#FB2C36)", "background": "red-50 (#FEF2F2)", "icon": "red-500 (#FB2C36)", "title": "red-800 (#991B1B)" } },
+            { "variant": "info", "tokens": { "border-left": "blue-500 (#2B7FFF)", "background": "blue-50 (#EFF6FF)", "icon": "blue-500 (#2B7FFF)", "title": "blue-800 (#193CB8)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "border-left-width": "border-l-2 (2px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "description": "トースト通知。一時的なフィードバック表示に使用。",
+      "category": "feedback",
+      "preview": "previews/toast.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1637-6265",
+      "props": [
+        { "name": "Status", "type": "enum", "default": "success", "values": ["success", "warning", "error", "info"], "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報" },
+        { "name": "Close", "type": "boolean", "default": "true", "description": "閉じるボタンの表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Status",
+          "items": [
+            { "variant": "success", "tokens": { "background": "emerald-600 (#059669)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "warning", "tokens": { "background": "amber-500 (#F59E0B)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "error", "tokens": { "background": "red-500 (#FB2C36)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
+            { "variant": "info", "tokens": { "background": "gray-500 (#6A7282)", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "borderRadius": "rounded-lg (8px)", "padding": "px-4 py-3 (16px 12px)", "shadow": "shadow-lg", "gap": "gap-3 (12px)", "minWidth": "min-w-[320px]" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "description": "ツールチップ。ホバー時の補足情報表示に使用。",
+      "category": "feedback",
+      "preview": "previews/tooltip.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7651",
+      "props": [
+        { "name": "Position", "type": "enum", "default": "top", "values": ["top", "bottom", "left", "right"], "description": "表示位置" },
+        { "name": "Label", "type": "string", "default": "Tooltip text", "description": "表示テキスト" }
+      ],
+      "tokens": [
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "background": "gray-900 (#101828)", "text": "white (#FFFFFF)", "fontSize": "text-xs (12px)", "padding": "px-2.5 py-1.5 (10px 6px)", "borderRadius": "rounded-md (6px)", "arrow": "4px" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "popover",
+      "name": "Popover",
+      "description": "ポップオーバー。クリック時のコンテンツ表示に使用。",
+      "category": "feedback",
+      "preview": "previews/popover.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7758",
+      "props": [
+        { "name": "State", "type": "enum", "default": "default", "values": ["default", "hover"], "description": "表示状態" }
+      ],
+      "tokens": [
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "border": "gray-200 (#E5E7EB)", "borderRadius": "rounded-lg (8px)", "shadow": "shadow-lg", "padding": "p-4 (16px)", "arrow": "8px" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "description": "モーダルダイアログ。確認、フォーム入力などの割り込み操作に使用。",
+      "category": "feedback",
+      "preview": "previews/modal.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7759",
+      "props": [
+        { "name": "Title", "type": "string", "default": "Modal Title", "description": "モーダルのタイトル" },
+        { "name": "Description", "type": "string", "default": "", "description": "説明テキスト" },
+        { "name": "Close Button", "type": "boolean", "default": "true", "description": "閉じるボタンの表示" },
+        { "name": "Footer", "type": "boolean", "default": "true", "description": "フッター（アクションボタン）の表示" }
+      ],
+      "tokens": [
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "overlay": "black/50", "borderRadius": "rounded-xl (12px)", "shadow": "shadow-xl", "width": "max-w-md (448px)", "headerPadding": "px-6 py-4 (24px 16px)", "bodyPadding": "px-6 py-4 (24px 16px)", "footerPadding": "px-6 py-4 (24px 16px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "description": "バッジ。ステータスやカテゴリの表示に使用。",
+      "category": "data-display",
+      "preview": "previews/badge.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1645-8251",
+      "props": [
+        { "name": "Color", "type": "enum", "default": "gray", "values": ["gray", "red", "orange", "yellow", "teal", "blue"], "description": "バッジのカラーバリアント" },
+        { "name": "Label", "type": "string", "default": "Badge", "description": "表示テキスト" }
+      ],
+      "tokens": [
+        {
+          "category": "Color",
+          "items": [
+            { "variant": "gray", "tokens": { "background": "gray-100 (#F3F4F6)", "text": "gray-700 (#374151)" } },
+            { "variant": "red", "tokens": { "background": "red-100 (#FEE2E2)", "text": "red-700 (#B91C1C)" } },
+            { "variant": "orange", "tokens": { "background": "orange-100 (#FFEDD5)", "text": "orange-700 (#C2410C)" } },
+            { "variant": "yellow", "tokens": { "background": "yellow-100 (#FEF9C3)", "text": "yellow-700 (#A16207)" } },
+            { "variant": "teal", "tokens": { "background": "teal-100 (#CCFBF1)", "text": "teal-700 (#0F766E)" } },
+            { "variant": "blue", "tokens": { "background": "blue-100 (#DBEAFE)", "text": "blue-700 (#1447E6)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-sm (4px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "detail-row",
+      "name": "DetailRow",
+      "description": "詳細行。ラベルと値のペア表示に使用。",
+      "category": "data-display",
+      "preview": "previews/detail-row.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1646-8409",
+      "props": [
+        { "name": "Type", "type": "enum", "default": "text", "values": ["text", "badge", "link", "links"], "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / links: 複数リンク表示" },
+        { "name": "Title", "type": "string", "default": "Label", "description": "ラベルテキスト" },
+        { "name": "Content", "type": "string", "default": "Value", "description": "値テキスト" }
+      ],
+      "tokens": [
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "padding": "py-3 (12px)", "gap": "gap-2 (8px)", "labelFont": "text-sm text-gray-500 (14px)", "valueFont": "text-sm text-gray-900 (14px)", "labelWidth": "w-40 (160px)", "border-bottom": "border-b border-gray-100" } }
+          ]
+        },
+        {
+          "category": "Type",
+          "items": [
+            { "variant": "text", "tokens": { "value": "text-gray-900 (#101828)" } },
+            { "variant": "badge", "tokens": { "value": "Badge component" } },
+            { "variant": "link", "tokens": { "value": "text-blue-600 (#155DFC) hover:underline" } },
+            { "variant": "links", "tokens": { "value": "text-blue-600 (#155DFC) hover:underline", "gap": "gap-2 (8px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "description": "テーブル。データ一覧の表示に使用。ヘッダー、データ行、ページネーション付き。",
+      "category": "data-display",
+      "preview": "previews/table.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1647-11090",
+      "props": [
+        { "name": "Header", "type": "boolean", "default": "true", "description": "テーブルヘッダーの表示" },
+        { "name": "Pagination", "type": "boolean", "default": "true", "description": "ページネーションの表示" },
+        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "badge", "button", "link", "icon", "icon-button"], "description": "セルの表示タイプ" }
+      ],
+      "tokens": [
+        {
+          "category": "Header",
+          "items": [
+            { "variant": "header", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-600 (#4A5565)", "fontSize": "text-xs font-medium (12px 500)", "padding": "px-4 py-3 (16px 12px)", "border-bottom": "border-b border-gray-200" } }
+          ]
+        },
+        {
+          "category": "Data Row",
+          "items": [
+            { "variant": "data", "tokens": { "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "fontSize": "text-sm (14px)", "padding": "px-4 py-3 (16px 12px)", "border-bottom": "border-b border-gray-100", "hover": "hover:bg-gray-50" } }
+          ]
+        },
+        {
+          "category": "Pagination",
+          "items": [
+            { "variant": "pagination", "tokens": { "background": "white (#FFFFFF)", "padding": "px-4 py-3 (16px 12px)", "border-top": "border-t border-gray-200", "text": "text-sm text-gray-600 (14px)", "active-page": "bg-blue-50 text-blue-600 font-medium" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "description": "タブ切替。コンテンツの切替表示に使用。Underline / Pill の2スタイル。",
+      "category": "layout",
+      "preview": "previews/tabs.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7342",
+      "props": [
+        { "name": "Style", "type": "enum", "default": "underline", "values": ["underline", "pill"], "description": "underline: 下線スタイル / pill: ピルスタイル" },
+        { "name": "Active", "type": "boolean", "default": "true", "description": "アクティブ状態" }
+      ],
+      "tokens": [
+        {
+          "category": "Underline",
+          "items": [
+            { "variant": "active", "tokens": { "text": "blue-600 (#155DFC)", "border-bottom": "border-b-2 border-blue-600", "fontWeight": "font-medium (500)" } },
+            { "variant": "inactive", "tokens": { "text": "gray-500 (#6A7282)", "border-bottom": "border-b-2 border-transparent", "hover": "text-gray-700" } }
+          ]
+        },
+        {
+          "category": "Pill",
+          "items": [
+            { "variant": "active", "tokens": { "background": "blue-50 (#EFF6FF)", "text": "blue-700 (#1447E6)", "borderRadius": "rounded-full (9999px)", "fontWeight": "font-medium (500)" } },
+            { "variant": "inactive", "tokens": { "background": "transparent", "text": "gray-500 (#6A7282)", "hover": "bg-gray-100 text-gray-700" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "fontSize": "text-sm (14px)", "padding": "px-3 py-2 (12px 8px)", "gap": "gap-1 (4px)" } }
+          ]
+        }
+      ]
+    },
+    {
       "id": "typography",
       "name": "Typography",
-      "description": "タイポグラフィシステム。Inter フォント、13段階のサイズスケール（text-xs〜text-9xl）、9段階のウェイト（Thin〜Black）。TailwindCSS のユーティリティクラスに完全準拠。",
+      "description": "タイポグラフィシステム。Inter フォント、13段階のサイズスケール。",
       "category": "design-tokens",
       "preview": "previews/typography.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=8-2",
@@ -205,7 +646,7 @@
     {
       "id": "colors",
       "name": "Colors",
-      "description": "カラーパレット。TailwindCSS v4 準拠の22色 × 11段階（50〜950）。Base: Black / White / Transparent。Gray系5色、Red〜Rose の17色。クリックでHEXコピー可能。",
+      "description": "カラーパレット。TailwindCSS v4 準拠の22色 × 11段階。",
       "category": "design-tokens",
       "preview": "previews/colors.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2-9",

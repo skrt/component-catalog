@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>* { font-family: 'Inter', sans-serif; }</style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'figma-green-bg': '#F0FDF4',
+            'figma-green-border': '#009966',
+            'figma-green-icon': '#00A63E',
+            'figma-yellow-bg': '#FEFCE8',
+            'figma-yellow-border': '#E27100',
+            'figma-yellow-icon': '#D08700',
+            'figma-red-bg': '#FEF2F2',
+            'figma-red-border': '#E7000B',
+            'figma-red-icon': '#E7000B',
+            'figma-gray-bg': '#F9FAFB',
+            'figma-gray-border': '#4A5565',
+            'figma-gray-icon': '#4A5565',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white p-6 space-y-10">
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">STATUS VARIANTS</h3>
+    <div class="space-y-4 max-w-lg">
+
+      <!-- Success Alert -->
+      <div class="flex items-start gap-3 rounded-md py-3 px-4 border-l-2 bg-figma-green-bg border-figma-green-border">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
+          <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" fill="#00A63E"/>
+          <path d="M7 10l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-gray-900">Success</p>
+          <p class="text-sm text-gray-600">Your changes have been saved successfully.</p>
+        </div>
+      </div>
+
+      <!-- Warning Alert -->
+      <div class="flex items-start gap-3 rounded-md py-3 px-4 border-l-2 bg-figma-yellow-bg border-figma-yellow-border">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
+          <path d="M8.57 3.22L1.42 15.22a1.65 1.65 0 001.43 2.48h14.3a1.65 1.65 0 001.43-2.48L11.43 3.22a1.65 1.65 0 00-2.86 0z" fill="#D08700"/>
+          <path d="M10 7.5v3.33M10 13.33h.008" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-gray-900">Warning</p>
+          <p class="text-sm text-gray-600">Your account is nearing its usage limit.</p>
+        </div>
+      </div>
+
+      <!-- Error Alert -->
+      <div class="flex items-start gap-3 rounded-md py-3 px-4 border-l-2 bg-figma-red-bg border-figma-red-border">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
+          <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" fill="#E7000B"/>
+          <path d="M12.5 7.5l-5 5M7.5 7.5l5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-gray-900">Error</p>
+          <p class="text-sm text-gray-600">Something went wrong. Please try again later.</p>
+        </div>
+      </div>
+
+      <!-- Info Alert -->
+      <div class="flex items-start gap-3 rounded-md py-3 px-4 border-l-2 bg-figma-gray-bg border-figma-gray-border">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
+          <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" fill="#4A5565"/>
+          <path d="M10 9v4M10 7h.008" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-gray-900">Info</p>
+          <p class="text-sm text-gray-600">A new version of the software is available.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

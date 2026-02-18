@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-white p-6 space-y-10">
+
+  <!-- STATES -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">States</h3>
+    <div class="flex items-start gap-6 flex-wrap">
+
+      <!-- Default -->
+      <div class="w-56 space-y-1">
+        <label class="block text-sm font-medium text-gray-900">Default</label>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Placeholder"
+            class="w-full h-10 px-4 py-2.5 pr-10 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 bg-white outline-none"
+          />
+          <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <p class="text-xs text-gray-600">Helper text</p>
+      </div>
+
+      <!-- Focus -->
+      <div class="w-56 space-y-1">
+        <label class="block text-sm font-medium text-gray-900">Focus</label>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Placeholder"
+            class="w-full h-10 px-4 py-2.5 pr-10 text-sm border border-blue-500 rounded-md ring-2 ring-blue-500 placeholder-gray-400 text-gray-900 bg-white outline-none"
+          />
+          <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <p class="text-xs text-gray-600">Helper text</p>
+      </div>
+
+      <!-- Filled -->
+      <div class="w-56 space-y-1">
+        <label class="block text-sm font-medium text-gray-900">Filled</label>
+        <div class="relative">
+          <input
+            type="text"
+            value="Selected option"
+            class="w-full h-10 px-4 py-2.5 pr-10 text-sm border border-gray-200 rounded-md text-gray-900 bg-white outline-none"
+          />
+          <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <p class="text-xs text-gray-600">Helper text</p>
+      </div>
+
+      <!-- Error -->
+      <div class="w-56 space-y-1">
+        <label class="block text-sm font-medium text-gray-900">Error</label>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Placeholder"
+            class="w-full h-10 px-4 py-2.5 pr-10 text-sm border border-red-500 rounded-md placeholder-gray-400 text-gray-900 bg-white outline-none"
+          />
+          <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <p class="text-xs text-red-500">Error message</p>
+      </div>
+
+      <!-- Disabled -->
+      <div class="w-56 space-y-1">
+        <label class="block text-sm font-medium text-gray-400">Disabled</label>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Placeholder"
+            disabled
+            class="w-full h-10 px-4 py-2.5 pr-10 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-400 bg-gray-50 outline-none cursor-not-allowed"
+          />
+          <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <p class="text-xs text-gray-600">Helper text</p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
