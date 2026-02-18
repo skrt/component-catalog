@@ -84,7 +84,7 @@
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-full (9999px)", "attentionBadge": "red-500 (#FB2C36)" } }
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "attentionBadge": "red-500 (#FB2C36)" } }
           ]
         }
       ]
@@ -531,7 +531,7 @@
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-sm (2px)", "borderWidth": "border (1px)" } }
+            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-full (9999px)", "borderWidth": "border (1px)" } }
           ]
         }
       ]
