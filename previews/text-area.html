@@ -16,11 +16,12 @@
     <div class="w-80 space-y-2">
       <label class="block text-sm font-medium text-gray-900">備考 <span class="text-red-500">*</span></label>
       <textarea
+        rows="1"
         placeholder="例：納品時の注意事項を入力してください"
         x-model="value"
         @focus="focused = true"
         @blur="focused = false"
-        class="w-full min-h-20 px-3 py-1.5 text-sm rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y transition-colors"
+        class="block w-full h-20 min-h-20 px-3 py-1.5 text-sm rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y transition-colors"
         :class="focused ? 'border border-blue-500 ring-1 ring-blue-500' : 'border border-gray-200'"
       ></textarea>
       <div class="flex justify-between">
@@ -39,8 +40,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-xs font-medium text-gray-900">Label <span class="text-red-500">*</span></label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[60px] px-2 py-1 text-xs border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[60px] min-h-[60px] px-2 py-1 text-xs border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -49,8 +51,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Label <span class="text-red-500">*</span></label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -59,8 +62,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Label <span class="text-red-500">*</span></label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-20 px-4 py-2.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-20 min-h-20 px-4 py-2.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -69,8 +73,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-base font-medium text-gray-900">Label <span class="text-red-500">*</span></label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[100px] px-6 py-3 text-base border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[100px] min-h-[100px] px-6 py-3 text-base border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-sm text-gray-500">Helper text</p>
       </div>
@@ -87,8 +92,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Default</label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -97,8 +103,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Focus</label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-blue-500 ring-1 ring-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-blue-500 ring-1 ring-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -107,8 +114,9 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Error</label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-red-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-red-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-y"
         ></textarea>
         <p class="text-xs text-red-500">Error message</p>
       </div>
@@ -117,9 +125,10 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-400">Disabled</label>
         <textarea
+          rows="1"
           placeholder="Placeholder"
           disabled
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md bg-gray-50 placeholder-gray-400 text-gray-400 cursor-not-allowed outline-none resize-none"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md bg-gray-50 placeholder-gray-400 text-gray-400 cursor-not-allowed outline-none resize-none"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -128,7 +137,8 @@
       <div class="w-56 space-y-2">
         <label class="block text-sm font-medium text-gray-900">Filled</label>
         <textarea
-          class="w-full min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md text-gray-900 outline-none resize-y"
+          rows="1"
+          class="block w-full h-[70px] min-h-[70px] px-3 py-1.5 text-sm border border-gray-200 rounded-md text-gray-900 outline-none resize-y"
         >Textarea content that spans multiple lines of text.</textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
