@@ -10,8 +10,14 @@
     [x-cloak] { display: none !important; }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
+<script>if (window !== window.top) document.documentElement.classList.add("in-iframe");</script>
 </head>
 <body class="bg-white p-8">
+  <a href="../" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4" id="back-link">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    一覧に戻る
+  </a>
 
   <div x-data="colorPalette()" x-cloak class="space-y-10">
 
