@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    [x-cloak] { display: none !important; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white p-8">
+
+  <div class="space-y-10">
+
+    <!-- Sizes -->
+    <div>
+      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">Sizes</p>
+      <div class="flex flex-wrap items-end gap-6">
+        <!-- sm: checkbox 12px rounded-sm, text 14px, gap 8px -->
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+          <span class="w-3 h-3 rounded-sm border border-[#e5e7eb] bg-white"></span>
+          <span class="text-sm text-[#101828]">Checkbox Label</span>
+        </label>
+        <!-- md: checkbox 16px rounded, text 16px, gap 8px -->
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+          <span class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span>
+          <span class="text-base text-[#101828]">Checkbox Label</span>
+        </label>
+        <!-- lg: checkbox 20px rounded, text 18px, gap 8px -->
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+          <span class="w-5 h-5 rounded border border-[#e5e7eb] bg-white"></span>
+          <span class="text-lg text-[#101828]">Checkbox Label</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- States -->
+    <div>
+      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">States</p>
+      <div class="flex flex-wrap items-center gap-6">
+        <!-- Default -->
+        <div class="text-center space-y-1.5">
+          <label class="inline-flex items-center gap-2">
+            <span class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span>
+            <span class="text-base text-[#101828]">Checkbox Label</span>
+          </label>
+          <p class="text-[10px] text-gray-400">Default</p>
+        </div>
+        <!-- Checked -->
+        <div class="text-center space-y-1.5">
+          <label class="inline-flex items-center gap-2">
+            <span class="w-4 h-4 rounded bg-[#2b7fff] inline-flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span class="text-base text-[#101828]">Checkbox Label</span>
+          </label>
+          <p class="text-[10px] text-gray-400">Checked</p>
+        </div>
+        <!-- Disabled -->
+        <div class="text-center space-y-1.5">
+          <label class="inline-flex items-center gap-2 cursor-not-allowed">
+            <span class="w-4 h-4 rounded border border-[#e5e7eb] bg-[#f9fafb]"></span>
+            <span class="text-base text-[#99a1af]">Checkbox Label</span>
+          </label>
+          <p class="text-[10px] text-gray-400">Disabled</p>
+        </div>
+        <!-- Checked + Disabled -->
+        <div class="text-center space-y-1.5">
+          <label class="inline-flex items-center gap-2 cursor-not-allowed">
+            <span class="w-4 h-4 rounded bg-[#99a1af] inline-flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span class="text-base text-[#101828]">Checkbox Label</span>
+          </label>
+          <p class="text-[10px] text-gray-400">Checked Disabled</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Demo -->
+    <div x-data="{ items: [{label:'Option A', checked: true}, {label:'Option B', checked: false}, {label:'Option C', checked: true}, {label:'Disabled', checked: false, disabled: true}] }" x-cloak>
+      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</p>
+      <div class="space-y-3">
+        <template x-for="(item, i) in items" :key="i">
+          <label class="flex items-center gap-2" :class="item.disabled ? 'cursor-not-allowed' : 'cursor-pointer'" @click="if (!item.disabled) item.checked = !item.checked">
+            <span
+              class="w-4 h-4 rounded inline-flex items-center justify-center transition-all"
+              :class="item.checked
+                ? (item.disabled ? 'bg-[#99a1af]' : 'bg-[#2b7fff]')
+                : (item.disabled ? 'border border-[#e5e7eb] bg-[#f9fafb]' : 'border border-[#e5e7eb] bg-white')"
+            >
+              <svg x-show="item.checked" class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span class="text-base" :class="item.disabled ? 'text-[#99a1af]' : 'text-[#101828]'" x-text="item.label"></span>
+          </label>
+        </template>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
