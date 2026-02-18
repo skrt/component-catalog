@@ -564,27 +564,44 @@
       "preview": "previews/table.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1647-11090",
       "props": [
-        { "name": "Header", "type": "boolean", "default": "true", "description": "テーブルヘッダーの表示" },
-        { "name": "Pagination", "type": "boolean", "default": "true", "description": "ページネーションの表示" },
-        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "badge", "button", "link", "icon", "icon-button"], "description": "セルの表示タイプ" }
+        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "link", "badge", "button", "icon", "icon button"], "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）" }
       ],
       "tokens": [
         {
-          "category": "Header",
+          "category": "Table (Container)",
           "items": [
-            { "variant": "header", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-600 (#4A5565)", "fontSize": "text-xs font-medium (12px 500)", "padding": "px-4 py-3 (16px 12px)", "border-bottom": "border-b border-gray-200" } }
+            { "variant": "all", "tokens": { "layout": "VERTICAL", "background": "white (#FFFFFF)", "border": "#E5E7EB (1px)", "borderRadius": "rounded-md (6px)" } }
           ]
         },
         {
-          "category": "Data Row",
+          "category": "Table / Header",
           "items": [
-            { "variant": "data", "tokens": { "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "fontSize": "text-sm (14px)", "padding": "px-4 py-3 (16px 12px)", "border-bottom": "border-b border-gray-100", "hover": "hover:bg-gray-50" } }
+            { "variant": "all", "tokens": { "height": "32px", "background": "#F9FAFB (gray-50)", "padding": "8px 12px", "fontSize": "12px", "fontWeight": "Medium (500)", "textColor": "#4A5565", "verticalAlign": "CENTER" } }
           ]
         },
         {
-          "category": "Pagination",
+          "category": "Table / Data",
           "items": [
-            { "variant": "pagination", "tokens": { "background": "white (#FFFFFF)", "padding": "px-4 py-3 (16px 12px)", "border-top": "border-t border-gray-200", "text": "text-sm text-gray-600 (14px)", "active-page": "bg-blue-50 text-blue-600 font-medium" } }
+            { "variant": "text", "tokens": { "padding": "12px", "fontSize": "14px", "fontWeight": "Regular (400)", "textColor": "#101828" } },
+            { "variant": "link", "tokens": { "padding": "12px", "fontSize": "14px", "fontWeight": "Regular (400)", "textColor": "#2B7FFF" } },
+            { "variant": "badge", "tokens": { "padding": "12px", "child": "Badge component (Color=gray)" } },
+            { "variant": "button", "tokens": { "padding": "10px 12px", "child": "Button component (Size=xs, Color=secondary)" } },
+            { "variant": "icon", "tokens": { "padding": "10px 4px", "child": "Icon area (24x24)" } },
+            { "variant": "icon button", "tokens": { "padding": "10px 12px", "child": "IconButton component (Size=xs, Color=secondary)" } }
+          ]
+        },
+        {
+          "category": "Table Row",
+          "items": [
+            { "variant": "header", "tokens": { "height": "33px", "layout": "HORIZONTAL", "borderBottom": "#E5E7EB (1px)" } },
+            { "variant": "data", "tokens": { "height": "45px (single-line) / 65px (multi-line)", "layout": "HORIZONTAL", "borderBottom": "#E5E7EB (1px)" } }
+          ]
+        },
+        {
+          "category": "Checkbox Cell",
+          "items": [
+            { "variant": "header", "tokens": { "padding": "8px 12px", "checkboxSize": "16x16" } },
+            { "variant": "data", "tokens": { "padding": "10px 12px", "checkboxSize": "16x16" } }
           ]
         }
       ]
