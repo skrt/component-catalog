@@ -16,7 +16,7 @@
     <div class="flex items-start gap-6 flex-wrap">
 
       <!-- Default  stroke=#e5e7eb  icon=hidden -->
-      <div class="w-56 space-y-2">
+      <div class="w-56 space-y-2 self-start">
         <label class="block text-sm font-medium text-gray-900">Default</label>
         <div class="flex items-center h-8 px-3 py-1.5 gap-1.5 border border-gray-200 rounded-md bg-white">
           <span class="flex-1 text-sm text-gray-400 truncate">Placeholder</span>
@@ -25,10 +25,10 @@
       </div>
 
       <!-- Focus  stroke=#2b7fff  icon=circle-x visible  +Dropdown -->
-      <div class="w-56 space-y-2">
+      <div class="w-56 space-y-2 self-start pb-52">
         <label class="block text-sm font-medium text-gray-900">Focus</label>
         <div class="relative">
-          <div class="flex items-center h-8 px-3 py-1.5 gap-1.5 border-2 border-blue-500 rounded-md bg-white">
+          <div class="flex items-center h-8 px-3 py-1.5 gap-1.5 border border-blue-500 ring-1 ring-blue-500 rounded-md bg-white">
             <span class="flex-1 text-sm text-gray-900 truncate">株式</span>
             <!-- circle-x icon  12x12 fill=#6a7282 = gray-500 -->
             <svg class="shrink-0 w-3 h-3 text-gray-500 cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -104,7 +104,7 @@
       <div class="relative">
         <div
           class="flex items-center h-8 px-3 py-1.5 gap-1.5 rounded-md bg-white transition-colors"
-          :class="focused ? 'border-2 border-blue-500' : 'border border-gray-200'"
+          :class="focused ? 'border border-blue-500 ring-1 ring-blue-500' : 'border border-gray-200'"
         >
           <input
             type="text"

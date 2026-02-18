@@ -78,7 +78,7 @@
         <label class="block text-sm font-medium text-gray-900">Focus</label>
         <textarea
           placeholder="Placeholder"
-          class="w-full h-20 px-3 py-1.5 text-sm border-2 border-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-none"
+          class="w-full h-20 px-3 py-1.5 text-sm border border-blue-500 ring-1 ring-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none resize-none"
         ></textarea>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -127,7 +127,7 @@
         @focus="focused = true"
         @blur="focused = false"
         class="w-full h-24 px-3 py-1.5 text-sm rounded-md placeholder-gray-400 text-gray-900 outline-none resize-none transition-colors"
-        :class="focused ? 'border-2 border-blue-500' : 'border border-gray-200'"
+        :class="focused ? 'border border-blue-500 ring-1 ring-blue-500' : 'border border-gray-200'"
       ></textarea>
       <div class="flex justify-between">
         <p class="text-xs text-gray-500">クリックして入力してみてください</p>
