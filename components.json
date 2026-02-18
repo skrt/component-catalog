@@ -360,16 +360,16 @@
         {
           "category": "Status",
           "items": [
-            { "variant": "success", "tokens": { "border-left": "emerald-500 (#10B981)", "background": "emerald-50 (#ECFDF5)", "icon": "emerald-500 (#10B981)", "title": "emerald-800 (#065F46)" } },
-            { "variant": "warning", "tokens": { "border-left": "amber-500 (#F59E0B)", "background": "amber-50 (#FFFBEB)", "icon": "amber-500 (#F59E0B)", "title": "amber-800 (#92400E)" } },
-            { "variant": "error", "tokens": { "border-left": "red-500 (#FB2C36)", "background": "red-50 (#FEF2F2)", "icon": "red-500 (#FB2C36)", "title": "red-800 (#991B1B)" } },
-            { "variant": "info", "tokens": { "border-left": "blue-500 (#2B7FFF)", "background": "blue-50 (#EFF6FF)", "icon": "blue-500 (#2B7FFF)", "title": "blue-800 (#193CB8)" } }
+            { "variant": "success", "tokens": { "border": "#009966 (1px)", "background": "#F0FDF4", "icon": "#00A63E", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
+            { "variant": "warning", "tokens": { "border": "#E17100 (1px)", "background": "#FEFCE8", "icon": "#FD9A00", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
+            { "variant": "error", "tokens": { "border": "#E7000B (1px)", "background": "#FEF2F2", "icon": "#E7000B", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
+            { "variant": "info", "tokens": { "border": "#4A5565 (1px)", "background": "#F9FAFB", "icon": "#4A5565", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "border-left-width": "border-l-2 (2px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)" } }
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)", "iconSize": "14px", "titleFont": "text-sm font-medium (14px 500)", "descFont": "text-sm font-normal (14px 400)" } }
           ]
         }
       ]
@@ -435,9 +435,16 @@
       ],
       "tokens": [
         {
+          "category": "State",
+          "items": [
+            { "variant": "default", "tokens": { "text": "#101828 (gray-900)" } },
+            { "variant": "hover", "tokens": { "text": "#155DFC (blue-600)" } }
+          ]
+        },
+        {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "border": "gray-200 (#E5E7EB)", "borderRadius": "rounded-lg (8px)", "shadow": "shadow-lg", "padding": "p-4 (16px)", "arrow": "8px" } }
+            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "border": "#E2E8F0 (slate-200, 1px)", "borderRadius": "rounded (4px)", "fontSize": "text-sm (14px)", "fontWeight": "font-normal (400)", "arrow": "上向き三角（16x8px, border=#CBD5E0）" } }
           ]
         }
       ]
@@ -479,18 +486,18 @@
         {
           "category": "Color",
           "items": [
-            { "variant": "gray", "tokens": { "background": "gray-100 (#F3F4F6)", "text": "gray-700 (#374151)" } },
-            { "variant": "red", "tokens": { "background": "red-100 (#FEE2E2)", "text": "red-700 (#B91C1C)" } },
-            { "variant": "orange", "tokens": { "background": "orange-100 (#FFEDD5)", "text": "orange-700 (#C2410C)" } },
-            { "variant": "yellow", "tokens": { "background": "yellow-100 (#FEF9C3)", "text": "yellow-700 (#A16207)" } },
-            { "variant": "teal", "tokens": { "background": "teal-100 (#CCFBF1)", "text": "teal-700 (#0F766E)" } },
-            { "variant": "blue", "tokens": { "background": "blue-100 (#DBEAFE)", "text": "blue-700 (#1447E6)" } }
+            { "variant": "gray", "tokens": { "background": "white (#FFFFFF)", "border": "#4A5565 (gray-600)", "text": "#4A5565 (gray-600)" } },
+            { "variant": "red", "tokens": { "background": "white (#FFFFFF)", "border": "#E7000B (red-600)", "text": "#E7000B (red-600)" } },
+            { "variant": "orange", "tokens": { "background": "white (#FFFFFF)", "border": "#F54A00 (orange-600)", "text": "#F54A00 (orange-600)" } },
+            { "variant": "yellow", "tokens": { "background": "white (#FFFFFF)", "border": "#E17100 (amber-600)", "text": "#E17100 (amber-600)" } },
+            { "variant": "teal", "tokens": { "background": "white (#FFFFFF)", "border": "#009689 (teal-600)", "text": "#009689 (teal-600)" } },
+            { "variant": "blue", "tokens": { "background": "white (#FFFFFF)", "border": "#155DFC (blue-600)", "text": "#155DFC (blue-600)" } }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-sm (4px)" } }
+            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-sm (2px)", "borderWidth": "border (1px)" } }
           ]
         }
       ]
