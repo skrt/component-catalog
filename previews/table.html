@@ -17,8 +17,8 @@
 
       <!-- Header Row: h=33, stroke-bottom=gray-200 -->
       <div class="flex items-center border-b border-gray-200">
-        <!-- Checkbox Cell: padding 12px 8px -->
-        <div class="flex items-center justify-center shrink-0" style="padding: 8px 12px;">
+        <!-- Table / Header Type=Checkbox: w=40, bg=gray-50, padding 8px 12px -->
+        <div class="flex items-center justify-center shrink-0 bg-gray-50" style="width: 40px; padding: 8px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <!-- Table / Header cells: bg=gray-50, padding 8px 12px, text 12px/Medium gray-600 -->
@@ -36,8 +36,8 @@
 
       <!-- Data Row 1: h=45, stroke-bottom=gray-200 -->
       <div class="flex items-center border-b border-gray-200">
-        <!-- Checkbox Cell -->
-        <div class="flex items-center justify-center shrink-0" style="padding: 10px 12px;">
+        <!-- Table / Data Type=checkbox: w=40, padding 14px 12px -->
+        <div class="flex items-center justify-center shrink-0" style="width: 40px; padding: 14px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="flex-1 flex items-center">
@@ -66,7 +66,7 @@
 
       <!-- Data Row 2 -->
       <div class="flex items-center border-b border-gray-200">
-        <div class="flex items-center justify-center shrink-0" style="padding: 10px 12px;">
+        <div class="flex items-center justify-center shrink-0" style="width: 40px; padding: 14px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="flex-1 flex items-center">
@@ -87,7 +87,7 @@
 
       <!-- Data Row 3: 2-line text (taller row) -->
       <div class="flex items-center border-b border-gray-200">
-        <div class="flex items-center justify-center shrink-0" style="padding: 10px 12px;">
+        <div class="flex items-center justify-center shrink-0" style="width: 40px; padding: 14px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="flex-1 flex items-center">
@@ -108,7 +108,7 @@
 
       <!-- Data Row 4 -->
       <div class="flex items-center border-b border-gray-200">
-        <div class="flex items-center justify-center shrink-0" style="padding: 10px 12px;">
+        <div class="flex items-center justify-center shrink-0" style="width: 40px; padding: 14px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="flex-1 flex items-center">
@@ -129,7 +129,7 @@
 
       <!-- Data Row 5 -->
       <div class="flex items-center">
-        <div class="flex items-center justify-center shrink-0" style="padding: 10px 12px;">
+        <div class="flex items-center justify-center shrink-0" style="width: 40px; padding: 14px 12px;">
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="flex-1 flex items-center">
@@ -192,6 +192,13 @@
           </button>
         </div>
       </div>
+      <!-- Type=checkbox -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">checkbox</span>
+        <div class="flex items-center justify-center border border-dashed border-gray-200 rounded" style="width: 40px; padding: 14px 12px;">
+          <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -199,8 +206,19 @@
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">TABLE / HEADER</h3>
     <div class="flex items-center gap-4">
-      <div class="bg-gray-50 px-3 py-2 rounded">
-        <span class="text-xs font-medium text-gray-600">Header Label</span>
+      <!-- Type=Text -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">text</span>
+        <div class="bg-gray-50 px-3 py-2 rounded border border-dashed border-gray-200">
+          <span class="text-xs font-medium text-gray-600">Header Label</span>
+        </div>
+      </div>
+      <!-- Type=Checkbox -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">checkbox</span>
+        <div class="bg-gray-50 flex items-center justify-center rounded border border-dashed border-gray-200" style="width: 40px; height: 32px; padding: 8px 12px;">
+          <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
+        </div>
       </div>
     </div>
   </section>

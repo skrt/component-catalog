@@ -564,7 +564,7 @@
       "preview": "previews/table.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1647-11090",
       "props": [
-        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "link", "badge", "button", "icon", "icon button"], "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）" }
+        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "link", "badge", "button", "icon", "icon button", "checkbox"], "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）" }
       ],
       "tokens": [
         {
@@ -576,7 +576,8 @@
         {
           "category": "Table / Header",
           "items": [
-            { "variant": "all", "tokens": { "height": "32px", "background": "gray-50", "padding": "8px 12px", "fontSize": "12px", "fontWeight": "Medium (500)", "textColor": "gray-600", "verticalAlign": "CENTER" } }
+            { "variant": "text", "tokens": { "height": "32px", "background": "gray-50", "padding": "8px 12px", "fontSize": "12px", "fontWeight": "Medium (500)", "textColor": "gray-600", "verticalAlign": "CENTER" } },
+            { "variant": "checkbox", "tokens": { "width": "40px", "height": "32px", "background": "gray-50", "padding": "8px 12px", "child": "Checkbox component (Size=md)" } }
           ]
         },
         {
@@ -587,7 +588,8 @@
             { "variant": "badge", "tokens": { "padding": "12px", "child": "Badge component (Color=gray)" } },
             { "variant": "button", "tokens": { "padding": "10px 12px", "child": "Button component (Size=xs, Color=secondary)", "hover": "bg-blue-200 text-blue-800", "active": "bg-blue-300 text-blue-900" } },
             { "variant": "icon", "tokens": { "padding": "10px 4px", "child": "Icon area (24x24)" } },
-            { "variant": "icon button", "tokens": { "padding": "10px 12px", "child": "IconButton component (Size=xs, Color=secondary)", "hover": "bg-blue-200 text-blue-800", "active": "bg-blue-300 text-blue-900" } }
+            { "variant": "icon button", "tokens": { "padding": "10px 12px", "child": "IconButton component (Size=xs, Color=secondary)", "hover": "bg-blue-200 text-blue-800", "active": "bg-blue-300 text-blue-900" } },
+            { "variant": "checkbox", "tokens": { "width": "40px", "padding": "14px 12px", "child": "Checkbox component (Size=md)" } }
           ]
         },
         {
@@ -598,10 +600,10 @@
           ]
         },
         {
-          "category": "Checkbox Cell",
+          "category": "Checkbox Cell (= Header/Data Type=checkbox)",
           "items": [
-            { "variant": "header", "tokens": { "padding": "8px 12px", "checkboxSize": "16x16" } },
-            { "variant": "data", "tokens": { "padding": "10px 12px", "checkboxSize": "16x16" } }
+            { "variant": "header", "tokens": { "width": "40px", "padding": "8px 12px", "background": "gray-50", "checkboxSize": "16x16" } },
+            { "variant": "data", "tokens": { "width": "40px", "padding": "14px 12px", "checkboxSize": "16x16" } }
           ]
         }
       ]
