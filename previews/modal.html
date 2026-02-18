@@ -11,28 +11,25 @@
 
   <!-- MODAL DIALOG (card only) -->
   <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Modal Dialog</h3>
-    <div class="max-w-md rounded-xl bg-white shadow-xl">
-      <!-- Header -->
-      <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
-        <h2 class="text-base font-semibold text-gray-900">確認</h2>
-        <button class="text-gray-400 hover:text-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </button>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">MODAL DIALOG</h3>
+    <!-- Dialog: w=400, bg=#FFFFFF, border=#E5E7EB(1px), radius=12, shadow=0 8px 32px rgba(0,0,0,0.16) -->
+    <div class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px rgba(0,0,0,0.16);">
+      <!-- Content: padding=24px all, gap=8px, VERTICAL -->
+      <div class="flex flex-col gap-2 p-6">
+        <!-- Title: 18px, weight=500, color=#101828 -->
+        <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
+        <!-- Description: 14px, weight=400, color=#4A5565 -->
+        <p class="text-sm font-normal text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
       </div>
-      <!-- Body -->
-      <div class="px-6 py-4">
-        <p class="text-sm text-gray-600">この操作を実行してもよろしいですか？この操作は取り消せません。</p>
-      </div>
-      <!-- Footer -->
-      <div class="flex justify-end gap-3 border-t border-gray-100 px-6 py-4">
-        <button class="rounded-md border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900">
+      <!-- Footer: bg=#F9FAFB, padding=24/16, gap=12, justify=end, align=center -->
+      <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
+        <!-- Cancel Button: Tertiary sm (bg=#FFFFFF, border=#E5E7EB 1px, radius=6, h=32, px=12 py=6, text=#101828 14px/500) -->
+        <button class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white text-sm font-medium text-[#101828]" style="padding: 6px 12px;">
           キャンセル
         </button>
-        <button class="rounded-md bg-blue-500 px-4 py-2 text-sm text-white">
-          実行する
+        <!-- Confirm Button: Primary sm (bg=#2B7FFF, radius=6, h=32, px=12 py=6, text=#FFFFFF 14px/500) -->
+        <button class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] text-sm font-medium text-white" style="padding: 6px 12px;">
+          承認
         </button>
       </div>
     </div>
@@ -40,33 +37,24 @@
 
   <!-- WITH OVERLAY -->
   <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">With Overlay</h3>
-    <div class="relative h-64 overflow-hidden rounded-lg">
-      <!-- Overlay -->
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">WITH OVERLAY</h3>
+    <!-- Overlay: bg=#000000 opacity=50%, 1280x720 → scaled to fit -->
+    <div class="relative overflow-hidden rounded-lg" style="width: 640px; height: 360px;">
+      <!-- Overlay bg -->
       <div class="absolute inset-0 bg-black/50"></div>
-      <!-- Centered Modal Card -->
+      <!-- Centered Dialog -->
       <div class="absolute inset-0 flex items-center justify-center">
-        <div class="max-w-md w-full mx-4 rounded-xl bg-white shadow-xl">
-          <!-- Header -->
-          <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
-            <h2 class="text-base font-semibold text-gray-900">確認</h2>
-            <button class="text-gray-400 hover:text-gray-600">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
+        <div class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px rgba(0,0,0,0.16); transform: scale(0.5); transform-origin: center;">
+          <div class="flex flex-col gap-2 p-6">
+            <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
+            <p class="text-sm font-normal text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
           </div>
-          <!-- Body -->
-          <div class="px-6 py-4">
-            <p class="text-sm text-gray-600">この操作を実行してもよろしいですか？この操作は取り消せません。</p>
-          </div>
-          <!-- Footer -->
-          <div class="flex justify-end gap-3 border-t border-gray-100 px-6 py-4">
-            <button class="rounded-md border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900">
+          <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
+            <button class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white text-sm font-medium text-[#101828]" style="padding: 6px 12px;">
               キャンセル
             </button>
-            <button class="rounded-md bg-blue-500 px-4 py-2 text-sm text-white">
-              実行する
+            <button class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] text-sm font-medium text-white" style="padding: 6px 12px;">
+              承認
             </button>
           </div>
         </div>

@@ -457,16 +457,40 @@
       "preview": "previews/modal.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7759",
       "props": [
-        { "name": "Title", "type": "string", "default": "Modal Title", "description": "モーダルのタイトル" },
+        { "name": "Title", "type": "string", "default": "Dialog Title", "description": "モーダルのタイトル" },
         { "name": "Description", "type": "string", "default": "", "description": "説明テキスト" },
-        { "name": "Close Button", "type": "boolean", "default": "true", "description": "閉じるボタンの表示" },
         { "name": "Footer", "type": "boolean", "default": "true", "description": "フッター（アクションボタン）の表示" }
       ],
       "tokens": [
         {
-          "category": "Common",
+          "category": "Dialog",
           "items": [
-            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "overlay": "black/50", "borderRadius": "rounded-xl (12px)", "shadow": "shadow-xl", "width": "max-w-md (448px)", "headerPadding": "px-6 py-4 (24px 16px)", "bodyPadding": "px-6 py-4 (24px 16px)", "footerPadding": "px-6 py-4 (24px 16px)" } }
+            { "variant": "all", "tokens": { "width": "w-[400px]", "background": "white (#FFFFFF)", "border": "#E5E7EB (1px)", "borderRadius": "rounded-xl (12px)", "shadow": "0 8px 32px rgba(0,0,0,0.16)" } }
+          ]
+        },
+        {
+          "category": "Content",
+          "items": [
+            { "variant": "all", "tokens": { "padding": "p-6 (24px)", "gap": "gap-2 (8px)", "titleFont": "text-lg font-medium (18px 500)", "titleColor": "#101828", "descFont": "text-sm font-normal (14px 400)", "descColor": "#4A5565" } }
+          ]
+        },
+        {
+          "category": "Footer",
+          "items": [
+            { "variant": "all", "tokens": { "background": "#F9FAFB", "padding": "px-6 py-4 (24px 16px)", "gap": "gap-3 (12px)", "justify": "end" } }
+          ]
+        },
+        {
+          "category": "Buttons",
+          "items": [
+            { "variant": "cancel", "tokens": { "type": "Tertiary Button (sm)", "background": "white (#FFFFFF)", "border": "#E5E7EB (1px)", "text": "#101828", "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "borderRadius": "rounded-md (6px)" } },
+            { "variant": "confirm", "tokens": { "type": "Primary Button (sm)", "background": "#2B7FFF", "text": "white (#FFFFFF)", "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "borderRadius": "rounded-md (6px)" } }
+          ]
+        },
+        {
+          "category": "Overlay",
+          "items": [
+            { "variant": "all", "tokens": { "background": "black/50 (#000000 opacity 50%)" } }
           ]
         }
       ]
