@@ -20,7 +20,7 @@
       if (!this.query) return this.allOptions;
       return this.allOptions.filter(o => o.toLowerCase().includes(this.query.toLowerCase()));
     },
-    get showDropdown() { return this.focused && this.query.length > 0; }
+    get showDropdown() { return this.focused; }
   }">
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</h3>
     <div class="w-80 space-y-2">
