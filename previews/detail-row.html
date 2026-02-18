@@ -6,69 +6,73 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>* { font-family: 'Inter', sans-serif; }</style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            teal: {
-              300: '#5EEAD4',
-              600: '#009689',
-            },
-            blue: {
-              300: '#93C5FD',
-              600: '#155DFC',
-            },
-          }
-        }
-      }
-    }
-  </script>
 </head>
 <body class="bg-white p-6 space-y-10">
 
   <!-- TEXT TYPE -->
+  <!-- Row: HORIZONTAL, gap=8, padding=0, title=120px FIXED 16px/Regular #4A5565, content=HUG 16px/Regular #101828 -->
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">TEXT TYPE</h3>
-    <div class="max-w-lg">
+    <div class="space-y-4">
       <!-- Row 1 -->
-      <div class="flex items-center py-3 border-b border-gray-100">
-        <span class="text-sm text-gray-500 w-40 shrink-0">会社名</span>
-        <span class="text-sm text-gray-900">株式会社サンプル</span>
+      <div class="flex items-start gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">会社名</span>
+        <span class="text-base font-normal text-[#101828]">株式会社サンプル</span>
       </div>
       <!-- Row 2 -->
-      <div class="flex items-center py-3 border-b border-gray-100">
-        <span class="text-sm text-gray-500 w-40 shrink-0">担当者</span>
-        <span class="text-sm text-gray-900">田中太郎</span>
+      <div class="flex items-start gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">担当者</span>
+        <span class="text-base font-normal text-[#101828]">田中太郎</span>
       </div>
       <!-- Row 3 -->
-      <div class="flex items-center py-3 border-b border-gray-100">
-        <span class="text-sm text-gray-500 w-40 shrink-0">メール</span>
-        <span class="text-sm text-gray-900">tanaka@example.com</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- BADGE TYPE -->
-  <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BADGE TYPE</h3>
-    <div class="max-w-lg">
-      <div class="flex items-center py-3 border-b border-gray-100">
-        <span class="text-sm text-gray-500 w-40 shrink-0">ステータス</span>
-        <span class="inline-flex items-center h-5 px-2 py-0.5 rounded-sm text-xs font-medium bg-white border border-teal-300 text-teal-600">
-          承認済み
-        </span>
+      <div class="flex items-start gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">メール</span>
+        <span class="text-base font-normal text-[#101828]">tanaka@example.com</span>
       </div>
     </div>
   </section>
 
   <!-- LINK TYPE -->
+  <!-- content: 16px/Regular #2B7FFF -->
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">LINK TYPE</h3>
-    <div class="max-w-lg">
-      <div class="flex items-center py-3 border-b border-gray-100">
-        <span class="text-sm text-gray-500 w-40 shrink-0">発注書</span>
-        <a href="#" class="text-sm text-blue-600 hover:underline">PO-2024-001</a>
+    <div class="space-y-4">
+      <div class="flex items-start gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">発注書</span>
+        <a href="#" class="text-base font-normal text-[#2B7FFF] hover:underline">PO-2024-001</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS TYPE -->
+  <!-- Multiple links separated by "/" (#99A1AF) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">LINKS TYPE</h3>
+    <div class="space-y-4">
+      <div class="flex items-start gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">関連書類</span>
+        <div class="flex items-center gap-2">
+          <a href="#" class="text-base font-normal text-[#2B7FFF] hover:underline">見積書</a>
+          <span class="text-base font-normal text-[#99A1AF]">/</span>
+          <a href="#" class="text-base font-normal text-[#2B7FFF] hover:underline">請求書</a>
+          <span class="text-base font-normal text-[#99A1AF]">/</span>
+          <a href="#" class="text-base font-normal text-[#2B7FFF] hover:underline">納品書</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGE TYPE -->
+  <!-- Badge = Badge component instance (Color=red): bg=#FFFFFF, border=#E7000B 1px, radius=2, padding=2px 8px, text=12px/Medium #E7000B -->
+  <!-- Row: counterAxisAlignItems=CENTER -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BADGE TYPE</h3>
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="text-base font-normal text-[#4A5565] w-[120px] shrink-0">ステータス</span>
+        <span class="inline-flex items-center h-5 px-2 rounded-sm text-xs font-medium bg-white border text-[#E7000B] border-[#E7000B]">
+          承認待ち
+        </span>
       </div>
     </div>
   </section>

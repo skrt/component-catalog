@@ -542,16 +542,16 @@
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "padding": "py-3 (12px)", "gap": "gap-2 (8px)", "labelFont": "text-sm text-gray-500 (14px)", "valueFont": "text-sm text-gray-900 (14px)", "labelWidth": "w-40 (160px)", "border-bottom": "border-b border-gray-100" } }
+            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL", "gap": "gap-2 (8px)", "labelFont": "text-base font-normal (16px 400)", "labelColor": "#4A5565", "labelWidth": "w-[120px] FIXED", "valueFont": "text-base font-normal (16px 400)" } }
           ]
         },
         {
           "category": "Type",
           "items": [
-            { "variant": "text", "tokens": { "value": "text-gray-900 (#101828)" } },
-            { "variant": "badge", "tokens": { "value": "Badge component" } },
-            { "variant": "link", "tokens": { "value": "text-blue-600 (#155DFC) hover:underline" } },
-            { "variant": "links", "tokens": { "value": "text-blue-600 (#155DFC) hover:underline", "gap": "gap-2 (8px)" } }
+            { "variant": "text", "tokens": { "valueColor": "#101828", "align": "items-start" } },
+            { "variant": "link", "tokens": { "valueColor": "#2B7FFF", "align": "items-start" } },
+            { "variant": "links", "tokens": { "valueColor": "#2B7FFF", "separator": "/ (#99A1AF)", "align": "items-start" } },
+            { "variant": "badge", "tokens": { "value": "Badge component instance (Color=red)", "align": "items-center" } }
           ]
         }
       ]
