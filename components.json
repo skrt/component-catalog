@@ -570,40 +570,33 @@
         {
           "category": "Table (Container)",
           "items": [
-            { "variant": "all", "tokens": { "layout": "VERTICAL", "background": "white", "border": "gray-200 (1px)", "borderRadius": "rounded-md (6px)" } }
+            { "variant": "all", "tokens": { "layout": "VERTICAL", "background": "white", "border": "border border-gray-200", "borderRadius": "rounded-md" } }
           ]
         },
         {
           "category": "Table / Header",
           "items": [
-            { "variant": "text", "tokens": { "height": "32px", "background": "gray-50", "padding": "8px 12px", "fontSize": "12px", "fontWeight": "Medium (500)", "textColor": "gray-600", "verticalAlign": "CENTER" } },
-            { "variant": "checkbox", "tokens": { "width": "40px", "height": "32px", "background": "gray-50", "padding": "8px 12px", "child": "Checkbox component (Size=md)" } }
+            { "variant": "text", "tokens": { "height": "h-8", "background": "bg-gray-50", "padding": "py-2 px-3", "fontSize": "text-xs", "fontWeight": "font-medium", "textColor": "text-gray-600", "verticalAlign": "items-center" } },
+            { "variant": "checkbox", "tokens": { "width": "w-10", "height": "h-8", "background": "bg-gray-50", "padding": "py-2 px-3", "child": "Checkbox component (Size=md)" } }
           ]
         },
         {
           "category": "Table / Data",
           "items": [
-            { "variant": "text", "tokens": { "padding": "12px", "fontSize": "14px", "fontWeight": "Regular (400)", "textColor": "gray-900" } },
-            { "variant": "link", "tokens": { "padding": "12px", "fontSize": "14px", "fontWeight": "Regular (400)", "textColor": "blue-500" } },
-            { "variant": "badge", "tokens": { "padding": "12px", "child": "Badge component (Color=gray)" } },
-            { "variant": "button", "tokens": { "padding": "10px 12px", "child": "Button component (Size=xs, Color=secondary)", "hover": "bg-blue-200 text-blue-800", "active": "bg-blue-300 text-blue-900" } },
-            { "variant": "icon", "tokens": { "padding": "10px 4px", "child": "Icon area (24x24)" } },
-            { "variant": "icon button", "tokens": { "padding": "10px 12px", "child": "IconButton component (Size=xs, Color=secondary)", "hover": "bg-blue-200 text-blue-800", "active": "bg-blue-300 text-blue-900" } },
-            { "variant": "checkbox", "tokens": { "width": "40px", "padding": "14px 12px", "child": "Checkbox component (Size=md)" } }
+            { "variant": "text", "tokens": { "padding": "px-3 py-3", "fontSize": "text-sm", "fontWeight": "font-normal", "textColor": "text-gray-900" } },
+            { "variant": "link", "tokens": { "padding": "px-3 py-3", "fontSize": "text-sm", "fontWeight": "font-normal", "textColor": "text-blue-500" } },
+            { "variant": "badge", "tokens": { "padding": "px-3 py-3", "child": "Badge component (Color=gray)" } },
+            { "variant": "button", "tokens": { "padding": "py-2.5 px-3", "child": "Button component (Size=xs, Color=secondary)", "hover": "hover:bg-blue-200 hover:text-blue-800", "active": "active:bg-blue-300 active:text-blue-900" } },
+            { "variant": "icon", "tokens": { "width": "w-8", "padding": "py-2.5 px-1", "child": "Icon area (w-4 h-4)" } },
+            { "variant": "icon button", "tokens": { "width": "w-12", "padding": "py-2.5 px-3", "child": "IconButton component (Size=xs, Color=secondary)", "hover": "hover:bg-blue-200 hover:text-blue-800", "active": "active:bg-blue-300 active:text-blue-900" } },
+            { "variant": "checkbox", "tokens": { "width": "w-10", "padding": "py-3.5 px-3", "child": "Checkbox component (Size=md)" } }
           ]
         },
         {
           "category": "Table Row",
           "items": [
-            { "variant": "header", "tokens": { "height": "33px", "layout": "HORIZONTAL", "borderBottom": "gray-200 (1px)" } },
-            { "variant": "data", "tokens": { "height": "45px (single-line) / 65px (multi-line)", "layout": "HORIZONTAL", "borderBottom": "gray-200 (1px)" } }
-          ]
-        },
-        {
-          "category": "Checkbox Cell (= Header/Data Type=checkbox)",
-          "items": [
-            { "variant": "header", "tokens": { "width": "40px", "padding": "8px 12px", "background": "gray-50", "checkboxSize": "16x16" } },
-            { "variant": "data", "tokens": { "width": "40px", "padding": "14px 12px", "checkboxSize": "16x16" } }
+            { "variant": "header", "tokens": { "layout": "flex", "borderBottom": "border-b border-gray-200", "background": "bg-gray-50" } },
+            { "variant": "data", "tokens": { "layout": "flex", "borderBottom": "border-b border-gray-200" } }
           ]
         }
       ]
