@@ -110,25 +110,26 @@
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)" } },
-            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
-            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
-            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-4 (16px)", "fontSize": "text-base (16px)" } }
+            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 py-1 (8px 4px)", "fontSize": "text-xs (12px)", "iconSize": "w-[11px] h-[11px]", "labelFont": "text-xs (12px)" } },
+            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "iconSize": "w-3 h-3 (12px)", "labelFont": "text-sm (14px)" } },
+            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-4 py-2 (16px 8px)", "fontSize": "text-base (16px)", "iconSize": "w-3.5 h-3.5 (14px)", "labelFont": "text-sm (14px)" } },
+            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-5 py-2.5 (20px 10px)", "fontSize": "text-lg (18px)", "iconSize": "w-[18px] h-[18px]", "labelFont": "text-base (16px)" } }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "placeholder": "gray-400 (#99A1AF)" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "border": "gray-200 (#E5E7EB)" } }
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "placeholder": "gray-400 (#99A1AF)", "rightIcon": "hidden" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "borderWidth": "border-2", "rightIcon": "hidden" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)", "rightIcon": "hidden" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "border": "gray-200 (#E5E7EB)", "rightIcon": "hidden" } },
+            { "variant": "filled", "tokens": { "border": "gray-200 (#E5E7EB)", "text": "gray-900 (#101828)", "rightIcon": "circle-x (gray-500 #6A7282) visible" } }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "labelFont": "text-sm font-medium (14px 500)", "helperFont": "text-xs (12px)" } }
+            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "helperFont": "text-xs (12px)", "gap": "gap-2 (8px)" } }
           ]
         }
       ]
@@ -234,16 +235,25 @@
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "placeholder": "gray-400 (#99A1AF)" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20", "dropdown-bg": "white (#FFFFFF)", "dropdown-shadow": "shadow-lg" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "placeholder": "gray-400 (#99A1AF)", "rightIcon": "hidden" } },
+            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "borderWidth": "border-2", "rightIcon": "circle-x (gray-500 #6A7282) visible", "dropdown": "visible" } },
+            { "variant": "filled", "tokens": { "border": "gray-200 (#E5E7EB)", "text": "gray-900 (#101828)", "rightIcon": "circle-x (gray-500 #6A7282) visible" } },
+            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)", "rightIcon": "hidden" } },
+            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "rightIcon": "hidden" } }
           ]
         },
         {
-          "category": "Common",
+          "category": "Input",
           "items": [
-            { "variant": "all", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)", "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)" } }
+            { "variant": "all", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "gap": "gap-1.5 (6px)" } }
+          ]
+        },
+        {
+          "category": "Dropdown",
+          "items": [
+            { "variant": "container", "tokens": { "background": "white (#FFFFFF)", "border": "gray-200 (#E5E7EB)", "borderRadius": "rounded-md (6px)", "padding": "py-2 (8px)", "shadow": "shadow-sm" } },
+            { "variant": "countRow", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-xs (12px)", "textColor": "gray-500 (#6A7282)" } },
+            { "variant": "option", "tokens": { "height": "h-9 (36px)", "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-sm (14px)", "textColor": "gray-900 (#101828)", "hoverBg": "gray-50 (#F9FAFB)" } }
           ]
         }
       ]
