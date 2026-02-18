@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>* { font-family: 'Inter', sans-serif; }</style>
 </head>
@@ -23,11 +24,11 @@
       </div>
       <!-- Footer: bg=#F9FAFB, padding=24/16, gap=12, justify=end, align=center -->
       <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
-        <!-- Cancel Button: Tertiary sm (bg=#FFFFFF, border=#E5E7EB 1px, radius=6, h=32, px=12 py=6, text=#101828 14px/500) -->
+        <!-- Cancel Button: Tertiary sm -->
         <button class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white text-sm font-medium text-[#101828]" style="padding: 6px 12px;">
           キャンセル
         </button>
-        <!-- Confirm Button: Primary sm (bg=#2B7FFF, radius=6, h=32, px=12 py=6, text=#FFFFFF 14px/500) -->
+        <!-- Confirm Button: Primary sm -->
         <button class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] text-sm font-medium text-white" style="padding: 6px 12px;">
           承認
         </button>
@@ -35,31 +36,62 @@
     </div>
   </section>
 
-  <!-- WITH OVERLAY -->
-  <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">WITH OVERLAY</h3>
-    <!-- Overlay: bg=#000000 opacity=50%, 1280x720 → scaled to fit -->
-    <div class="relative overflow-hidden rounded-lg" style="width: 640px; height: 360px;">
-      <!-- Overlay bg -->
-      <div class="absolute inset-0 bg-black/50"></div>
-      <!-- Centered Dialog -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px rgba(0,0,0,0.16); transform: scale(0.5); transform-origin: center;">
+  <!-- INTERACTIVE DEMO -->
+  <section x-data="{ open: false }">
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">INTERACTIVE DEMO</h3>
+    <!-- Trigger Button: Primary sm -->
+    <button
+      @click="open = true"
+      class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white transition-colors" style="padding: 6px 12px;">
+      モーダルを開く
+    </button>
+
+    <!-- Modal Overlay + Dialog -->
+    <template x-teleport="body">
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center"
+        @click.self="open = false"
+        style="background: rgba(0,0,0,0.5);"
+      >
+        <!-- Dialog -->
+        <div
+          x-show="open"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 scale-95"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-95"
+          class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]"
+          style="box-shadow: 0 8px 32px rgba(0,0,0,0.16);"
+          @click.stop
+        >
           <div class="flex flex-col gap-2 p-6">
             <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
             <p class="text-sm font-normal text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
           </div>
           <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
-            <button class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white text-sm font-medium text-[#101828]" style="padding: 6px 12px;">
+            <button
+              @click="open = false"
+              class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] transition-colors" style="padding: 6px 12px;">
               キャンセル
             </button>
-            <button class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] text-sm font-medium text-white" style="padding: 6px 12px;">
+            <button
+              @click="open = false"
+              class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white transition-colors" style="padding: 6px 12px;">
               承認
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </section>
 
 </body>
