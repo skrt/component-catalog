@@ -728,6 +728,142 @@
           ]
         }
       ]
+    },
+    {
+      "id": "header",
+      "name": "Header",
+      "description": "ヘッダーコンポーネント。ロゴ、会社名、ユーザーメニュー、ヘルプボタンを含むグローバルナビゲーション。",
+      "category": "layout",
+      "preview": "previews/header.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1712-5014",
+      "props": [
+        { "name": "Company Name", "type": "string", "default": "株式会社shizai", "description": "会社名テキスト" },
+        { "name": "User Name", "type": "string", "default": "酒井 亮太", "description": "ユーザー名テキスト" }
+      ],
+      "tokens": [
+        {
+          "category": "Layout",
+          "items": [
+            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL, space-between", "height": "h-16 (64px)", "padding": "px-6 (24px)", "background": "bg/primary (white)", "borderBottom": "border-b border/default (gray-200, 1px)" } }
+          ]
+        },
+        {
+          "category": "Logo",
+          "items": [
+            { "variant": "all", "tokens": { "width": "w-20 (80px)", "height": "h-[25px]", "color": "#0F1424" } }
+          ]
+        },
+        {
+          "category": "Right Section",
+          "items": [
+            { "variant": "all", "tokens": { "gap": "gap-6 (24px)", "companyFont": "text-base/normal (16px 400)", "companyColor": "text/primary", "userButton": "Button (xs, Sub)", "helpButton": "Button (xs, Sub)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "title",
+      "name": "Title",
+      "description": "タイトルコンポーネント。ページ・セクション・サブの3タイプ。補足テキスト付き。",
+      "category": "layout",
+      "preview": "previews/title.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1714-5204",
+      "props": [
+        { "name": "Type", "type": "enum", "default": "Page", "values": ["Page", "Section", "Sub"], "description": "Page: 24px / Section: 20px / Sub: 16px" },
+        { "name": "Subtitle", "type": "boolean", "default": "true", "description": "補足テキストの表示" },
+        { "name": "Title Text", "type": "string", "default": "タイトル", "description": "タイトルテキスト" },
+        { "name": "Subtitle Text", "type": "string", "default": "補足テキスト", "description": "補足テキスト" }
+      ],
+      "tokens": [
+        {
+          "category": "Type",
+          "items": [
+            { "variant": "Page", "tokens": { "titleFont": "text-2xl/bold (24px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } },
+            { "variant": "Section", "tokens": { "titleFont": "text-xl/bold (20px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } },
+            { "variant": "Sub", "tokens": { "titleFont": "text-base/bold (16px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            { "variant": "all", "tokens": { "layout": "VERTICAL", "gap": "gap-4 (16px)", "width": "w-[480px] FIXED" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calc",
+      "name": "Calc",
+      "description": "金額計算コンポーネント。小計・消費税（税率別内訳）・合計金額の表示に使用。",
+      "category": "data-display",
+      "preview": "previews/calc.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-5529",
+      "props": [
+        { "name": "Subtotal", "type": "string", "default": "370,000", "description": "小計金額" },
+        { "name": "Tax", "type": "string", "default": "36,000", "description": "消費税合計" },
+        { "name": "Total", "type": "string", "default": "406,000", "description": "合計金額" }
+      ],
+      "tokens": [
+        {
+          "category": "Layout",
+          "items": [
+            { "variant": "all", "tokens": { "layout": "VERTICAL", "gap": "gap-2 (8px)", "width": "w-60 (240px)", "fontSize": "text-sm (14px)" } }
+          ]
+        },
+        {
+          "category": "Row",
+          "items": [
+            { "variant": "normal", "tokens": { "layout": "flex justify-between", "labelColor": "text/primary", "valueColor": "text/primary" } },
+            { "variant": "total", "tokens": { "layout": "flex justify-between", "fontWeight": "font-bold (700)", "borderTop": "border-t border-gray-200" } },
+            { "variant": "taxDetail", "tokens": { "fontSize": "text-xs (12px)", "textColor": "text/secondary", "leftBorder": "w-0.5 bg-gray-200", "gap": "gap-1 (4px)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attachment",
+      "name": "Attachment",
+      "description": "添付ファイルコンポーネント。ファイル名・サイズの表示と削除ボタン付き。",
+      "category": "data-display",
+      "preview": "previews/attachment.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1719-15146",
+      "props": [
+        { "name": "File Name", "type": "string", "default": "sample-XXXXX.png（2,222KB）", "description": "ファイル名とサイズ" }
+      ],
+      "tokens": [
+        {
+          "category": "Layout",
+          "items": [
+            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL", "gap": "gap-2 (8px)", "fileButton": "Button (sm, tertiary)", "deleteButton": "IconButton (sm, tertiary, trash icon)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "po-preview",
+      "name": "PO Preview",
+      "description": "発注書プレビューコンポーネント。発注情報、アイテム一覧、金額計算を含む印刷用レイアウト。",
+      "category": "data-display",
+      "preview": "previews/po-preview.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-11371",
+      "props": [
+        { "name": "分納", "type": "boolean", "default": "false", "description": "false: 通常発注 / true: 分納（分割納品情報を表示）" }
+      ],
+      "tokens": [
+        {
+          "category": "Structure",
+          "items": [
+            { "variant": "all", "tokens": { "header": "発注書タイトル + 日付 + 管理番号", "parties": "発注元（会社名・挨拶・合計金額）+ 発注先（会社名・連絡先・住所・印影）", "items": "品名・希望納品日・支払期限・数量・単価・金額テーブル", "footer": "納品先 + 補足 + Calcコンポーネント（小計・消費税・合計）" } }
+          ]
+        },
+        {
+          "category": "Variant",
+          "items": [
+            { "variant": "分納=False", "tokens": { "description": "通常の発注書レイアウト。アイテムごとに1行表示。" } },
+            { "variant": "分納=True", "tokens": { "description": "分納対応レイアウト。アイテムごとに複数の分納回情報を表示。" } }
+          ]
+        }
+      ]
     }
   ]
 }
