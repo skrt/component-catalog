@@ -37,22 +37,17 @@
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex gap-6">
 
-    <!-- Sidebar: Category Filter -->
+    <!-- Sidebar: Component List -->
     <aside class="w-48 shrink-0 hidden md:block">
-      <nav class="sticky top-24 space-y-1">
-        <button
-          @click="activeCategory = null"
-          :class="!activeCategory ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-100'"
-          class="w-full text-left px-3 py-2 rounded-lg text-sm transition-colors"
-        >All</button>
-        <template x-for="cat in categories" :key="cat.id">
+      <nav class="sticky top-24 space-y-0.5 max-h-[calc(100vh-7rem)] overflow-y-auto">
+        <template x-for="comp in allComponentsSorted" :key="comp.id">
           <div>
-            <div x-show="cat.id === 'design-tokens'" class="border-t border-gray-200 my-2"></div>
+            <div x-show="comp._firstToken" class="border-t border-gray-200 my-2"></div>
             <button
-              @click="activeCategory = cat.id"
-              :class="activeCategory === cat.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-100'"
-              class="w-full text-left px-3 py-2 rounded-lg text-sm transition-colors"
-              x-text="cat.label"
+              @click="scrollToComponent(comp.id)"
+              :class="activeComponent === comp.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-100'"
+              class="w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors truncate"
+              x-text="comp.name"
             ></button>
           </div>
         </template>
@@ -62,30 +57,23 @@
     <!-- Main Content -->
     <main class="flex-1 min-w-0">
 
-      <!-- Mobile Category Tabs -->
-      <div class="md:hidden flex gap-2 overflow-x-auto pb-4 mb-4 -mx-1 px-1">
-        <button
-          @click="activeCategory = null"
-          :class="!activeCategory ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 border border-gray-300'"
-          class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shrink-0"
-        >All</button>
-        <template x-for="cat in categories" :key="cat.id">
-          <div class="flex items-center gap-2 shrink-0">
-            <div x-show="cat.id === 'design-tokens'" class="w-px h-5 bg-gray-300 shrink-0"></div>
-            <button
-              @click="activeCategory = cat.id"
-              :class="activeCategory === cat.id ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 border border-gray-300'"
-              class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shrink-0"
-              x-text="cat.label"
-            ></button>
-          </div>
-        </template>
+      <!-- Mobile Component Selector -->
+      <div class="md:hidden mb-4">
+        <select
+          @change="scrollToComponent($event.target.value); $event.target.value = ''"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white"
+        >
+          <option value="">Jump to component...</option>
+          <template x-for="comp in allComponentsSorted" :key="comp.id">
+            <option :value="comp.id" x-text="comp.name"></option>
+          </template>
+        </select>
       </div>
 
       <!-- Component List -->
       <div class="space-y-6">
         <template x-for="comp in filteredUIComponents" :key="comp.id">
-          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+          <div :id="'comp-' + comp.id" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
 
             <!-- Component Header -->
             <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between gap-3">
@@ -218,7 +206,7 @@
             <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Design Tokens</h2>
             <div class="space-y-6">
               <template x-for="comp in filteredTokenComponents" :key="comp.id">
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                <div :id="'comp-' + comp.id" class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                   <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between gap-3">
                     <div>
                       <h2 class="text-base font-semibold" x-text="comp.name"></h2>
@@ -311,7 +299,7 @@
 function catalog() {
   return {
     search: '',
-    activeCategory: null,
+    activeComponent: null,
     categories: [],
     components: [],
     tabs: {},
@@ -328,29 +316,46 @@ function catalog() {
       }
     },
 
+    get allComponentsSorted() {
+      const ui = this.components.filter(c => c.category !== 'design-tokens').sort((a, b) => a.name.localeCompare(b.name));
+      const tokens = this.components.filter(c => c.category === 'design-tokens').sort((a, b) => a.name.localeCompare(b.name));
+      if (tokens.length > 0) tokens[0]._firstToken = true;
+      return [...ui, ...tokens];
+    },
+
     get filteredComponents() {
       return this.components.filter(c => {
-        const matchesCategory = !this.activeCategory || c.category === this.activeCategory;
         const q = this.search.toLowerCase();
         const matchesSearch = !q
           || c.name.toLowerCase().includes(q)
           || c.description.toLowerCase().includes(q)
           || c.category.toLowerCase().includes(q);
-        return matchesCategory && matchesSearch;
+        return matchesSearch;
       });
     },
 
     get filteredUIComponents() {
-      return this.filteredComponents.filter(c => c.category !== 'design-tokens');
+      return this.filteredComponents.filter(c => c.category !== 'design-tokens').sort((a, b) => a.name.localeCompare(b.name));
     },
 
     get filteredTokenComponents() {
-      return this.filteredComponents.filter(c => c.category === 'design-tokens');
+      return this.filteredComponents.filter(c => c.category === 'design-tokens').sort((a, b) => a.name.localeCompare(b.name));
     },
 
     getCategoryLabel(id) {
       const cat = this.categories.find(c => c.id === id);
       return cat ? cat.label : id;
+    },
+
+    scrollToComponent(id) {
+      if (!id) return;
+      this.activeComponent = id;
+      const el = document.getElementById('comp-' + id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Clear highlight after a moment
+        setTimeout(() => { this.activeComponent = null; }, 2000);
+      }
     },
 
     getTab(compId) {
