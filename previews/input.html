@@ -38,10 +38,8 @@
           x-transition
           @click="value = ''; $el.previousElementSibling.focus()"
           class="shrink-0 w-3.5 h-3.5 text-gray-500 cursor-pointer"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         >
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M15 9l-6 6M9 9l6 6"/>
+          <use href="icons.svg#icon-circle-x"/>
         </svg>
       </div>
       <p class="text-xs text-gray-500">クリックして入力してみてください</p>
@@ -156,10 +154,7 @@
         <div class="flex items-center h-10 px-4 py-2 gap-2 border border-gray-200 rounded-md bg-white">
           <span class="flex-1 text-base text-gray-900 truncate">user@example.com</span>
           <!-- circle-x icon  14x14 fill=#6a7282 = gray-500 -->
-          <svg class="shrink-0 w-3.5 h-3.5 text-gray-500 cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M15 9l-6 6M9 9l6 6"/>
-          </svg>
+          <svg class="shrink-0 w-3.5 h-3.5 text-gray-500 cursor-pointer"><use href="icons.svg#icon-circle-x"/></svg>
         </div>
         <p class="text-xs text-gray-500">Helper text</p>
       </div>

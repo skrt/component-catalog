@@ -1,11 +1,29 @@
 {
   "categories": [
-    { "id": "actions", "label": "Actions" },
-    { "id": "design-tokens", "label": "Design Tokens" },
-    { "id": "data-display", "label": "Data Display" },
-    { "id": "feedback", "label": "Feedback" },
-    { "id": "forms", "label": "Forms" },
-    { "id": "layout", "label": "Layout" }
+    {
+      "id": "actions",
+      "label": "Actions"
+    },
+    {
+      "id": "data-display",
+      "label": "Data Display"
+    },
+    {
+      "id": "feedback",
+      "label": "Feedback"
+    },
+    {
+      "id": "forms",
+      "label": "Forms"
+    },
+    {
+      "id": "layout",
+      "label": "Layout"
+    },
+    {
+      "id": "design-tokens",
+      "label": "Design Tokens"
+    }
   ],
   "components": [
     {
@@ -16,36 +34,160 @@
       "preview": "previews/button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1625-1268",
       "props": [
-        { "name": "Size", "type": "enum", "default": "xs", "values": ["xs", "sm", "md", "lg"], "description": "ボタンのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
-        { "name": "Color", "type": "enum", "default": "primary", "values": ["primary", "secondary", "alert", "tertiary"], "description": "primary: 青背景・主要アクション / secondary: 淡青背景・補助 / alert: 赤背景・削除等 / tertiary: 白背景ボーダー" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "hover", "active", "disabled"], "description": "インタラクション状態" },
-        { "name": "Left Icon", "type": "boolean", "default": "true", "description": "左アイコンの表示" },
-        { "name": "Right Icon", "type": "boolean", "default": "true", "description": "右アイコン（chevron）の表示" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "xs",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "ボタンのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px"
+        },
+        {
+          "name": "Color",
+          "type": "enum",
+          "default": "primary",
+          "values": [
+            "primary",
+            "secondary",
+            "alert",
+            "tertiary"
+          ],
+          "description": "primary: 青背景・主要アクション / secondary: 淡青背景・補助 / alert: 赤背景・削除等 / tertiary: 白背景ボーダー"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "hover",
+            "active",
+            "disabled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Left Icon",
+          "type": "boolean",
+          "default": "true",
+          "description": "左アイコンの表示"
+        },
+        {
+          "name": "Right Icon",
+          "type": "boolean",
+          "default": "true",
+          "description": "右アイコン（chevron）の表示"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "padding": "px-2 py-1 (8px 4px)", "gap": "gap-1 (4px)", "fontSize": "text-xs (12px)", "lineHeight": "leading-4 (16px)" } },
-            { "variant": "sm", "tokens": { "padding": "px-3 py-1.5 (12px 6px)", "gap": "gap-1.5 (6px)", "fontSize": "text-sm (14px)", "lineHeight": "leading-5 (20px)" } },
-            { "variant": "md", "tokens": { "padding": "px-4 py-2.5 (16px 10px)", "gap": "gap-2 (8px)", "fontSize": "text-sm (14px)", "lineHeight": "leading-5 (20px)" } },
-            { "variant": "lg", "tokens": { "padding": "px-6 py-3 (24px 12px)", "gap": "gap-2 (8px)", "fontSize": "text-base (16px)", "lineHeight": "leading-6 (24px)" } }
+            {
+              "variant": "xs",
+              "tokens": {
+                "padding": "px-2 py-1 (8px 4px)",
+                "gap": "gap-1 (4px)",
+                "fontSize": "text-xs (12px)",
+                "lineHeight": "leading-4 (16px)"
+              }
+            },
+            {
+              "variant": "sm",
+              "tokens": {
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "gap": "gap-1.5 (6px)",
+                "fontSize": "text-sm (14px)",
+                "lineHeight": "leading-5 (20px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "padding": "px-4 py-2.5 (16px 10px)",
+                "gap": "gap-2 (8px)",
+                "fontSize": "text-sm (14px)",
+                "lineHeight": "leading-5 (20px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "padding": "px-6 py-3 (24px 12px)",
+                "gap": "gap-2 (8px)",
+                "fontSize": "text-base (16px)",
+                "lineHeight": "leading-6 (24px)"
+              }
+            }
           ]
         },
         {
           "category": "Color",
           "items": [
-            { "variant": "primary", "tokens": { "bg-default": "blue-500 (#2B7FFF)", "bg-hover": "blue-600 (#155DFC)", "bg-active": "blue-700 (#1447E6)", "foreground": "white (#FFFFFF)" } },
-            { "variant": "secondary", "tokens": { "bg-default": "blue-100 (#DBEAFE)", "bg-hover": "blue-200 (#BEDBFF)", "bg-active": "blue-300 (#8EC5FF)", "fg-default": "blue-700 (#1447E6)", "fg-hover": "blue-800 (#193CB8)", "fg-active": "blue-900 (#1C398E)" } },
-            { "variant": "alert", "tokens": { "bg-default": "red-500 (#FB2C36)", "bg-hover": "red-600 (#E7000B)", "bg-active": "red-700 (#C10007)", "foreground": "white (#FFFFFF)" } },
-            { "variant": "tertiary", "tokens": { "bg-default": "white (#FFFFFF)", "bg-hover": "gray-50 (#F9FAFB)", "bg-active": "gray-100 (#F3F4F6)", "foreground": "gray-900 (#101828)", "border": "gray-200 (#E5E7EB)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-200 (#E5E7EB)", "foreground": "white (#FFFFFF)" } }
+            {
+              "variant": "primary",
+              "tokens": {
+                "bg-default": "blue-500 (#2B7FFF)",
+                "bg-hover": "blue-600 (#155DFC)",
+                "bg-active": "blue-700 (#1447E6)",
+                "foreground": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "secondary",
+              "tokens": {
+                "bg-default": "blue-100 (#DBEAFE)",
+                "bg-hover": "blue-200 (#BEDBFF)",
+                "bg-active": "blue-300 (#8EC5FF)",
+                "fg-default": "blue-700 (#1447E6)",
+                "fg-hover": "blue-800 (#193CB8)",
+                "fg-active": "blue-900 (#1C398E)"
+              }
+            },
+            {
+              "variant": "alert",
+              "tokens": {
+                "bg-default": "red-500 (#FB2C36)",
+                "bg-hover": "red-600 (#E7000B)",
+                "bg-active": "red-700 (#C10007)",
+                "foreground": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "tertiary",
+              "tokens": {
+                "bg-default": "white (#FFFFFF)",
+                "bg-hover": "gray-50 (#F9FAFB)",
+                "bg-active": "gray-100 (#F3F4F6)",
+                "foreground": "gray-900 (#101828)",
+                "border": "gray-200 (#E5E7EB)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-200 (#E5E7EB)",
+                "foreground": "white (#FFFFFF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "fontFamily": "font-sans (Inter)", "fontWeight": "font-medium (500)", "letterSpacing": "tracking-normal (0)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "fontFamily": "font-sans (Inter)",
+                "fontWeight": "font-medium (500)",
+                "letterSpacing": "tracking-normal (0)"
+              }
+            }
           ]
         }
       ]
@@ -58,33 +200,122 @@
       "preview": "previews/icon-button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1632-784",
       "props": [
-        { "name": "Size", "type": "enum", "default": "xs", "values": ["xs", "sm", "md", "lg"], "description": "ボタンのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
-        { "name": "Color", "type": "enum", "default": "secondary", "values": ["secondary", "tertiary"], "description": "secondary: 淡青背景 / tertiary: 白背景ボーダー" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "hover", "active", "disabled"], "description": "インタラクション状態" },
-        { "name": "Attention", "type": "boolean", "default": "false", "description": "赤い通知バッジの表示" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "xs",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "ボタンのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px"
+        },
+        {
+          "name": "Color",
+          "type": "enum",
+          "default": "secondary",
+          "values": [
+            "secondary",
+            "tertiary"
+          ],
+          "description": "secondary: 淡青背景 / tertiary: 白背景ボーダー"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "hover",
+            "active",
+            "disabled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Attention",
+          "type": "boolean",
+          "default": "false",
+          "description": "赤い通知バッジの表示"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "width/height": "w-6 h-6 (24px)", "iconSize": "text-xs (12px)" } },
-            { "variant": "sm", "tokens": { "width/height": "w-8 h-8 (32px)", "iconSize": "text-sm (14px)" } },
-            { "variant": "md", "tokens": { "width/height": "w-10 h-10 (40px)", "iconSize": "text-base (16px)" } },
-            { "variant": "lg", "tokens": { "width/height": "w-12 h-12 (48px)", "iconSize": "text-lg (18px)" } }
+            {
+              "variant": "xs",
+              "tokens": {
+                "width/height": "w-6 h-6 (24px)",
+                "iconSize": "text-xs (12px)"
+              }
+            },
+            {
+              "variant": "sm",
+              "tokens": {
+                "width/height": "w-8 h-8 (32px)",
+                "iconSize": "text-sm (14px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "width/height": "w-10 h-10 (40px)",
+                "iconSize": "text-base (16px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "width/height": "w-12 h-12 (48px)",
+                "iconSize": "text-lg (18px)"
+              }
+            }
           ]
         },
         {
           "category": "Color",
           "items": [
-            { "variant": "secondary", "tokens": { "bg-default": "blue-100 (#DBEAFE)", "bg-hover": "blue-200 (#BEDBFF)", "bg-active": "blue-300 (#8EC5FF)", "icon": "blue-700 (#1447E6)" } },
-            { "variant": "tertiary", "tokens": { "bg-default": "white (#FFFFFF)", "bg-hover": "gray-50 (#F9FAFB)", "bg-active": "gray-100 (#F3F4F6)", "icon": "gray-900 (#101828)", "border": "gray-200 (#E5E7EB)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-200 (#E5E7EB)", "icon": "white (#FFFFFF)" } }
+            {
+              "variant": "secondary",
+              "tokens": {
+                "bg-default": "blue-100 (#DBEAFE)",
+                "bg-hover": "blue-200 (#BEDBFF)",
+                "bg-active": "blue-300 (#8EC5FF)",
+                "icon": "blue-700 (#1447E6)"
+              }
+            },
+            {
+              "variant": "tertiary",
+              "tokens": {
+                "bg-default": "white (#FFFFFF)",
+                "bg-hover": "gray-50 (#F9FAFB)",
+                "bg-active": "gray-100 (#F3F4F6)",
+                "icon": "gray-900 (#101828)",
+                "border": "gray-200 (#E5E7EB)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-200 (#E5E7EB)",
+                "icon": "white (#FFFFFF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "attentionBadge": "red-500 (#FB2C36)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "attentionBadge": "red-500 (#FB2C36)"
+              }
+            }
           ]
         }
       ]
@@ -97,39 +328,174 @@
       "preview": "previews/input.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1625-11162",
       "props": [
-        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "入力フィールドのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled", "filled"], "description": "インタラクション状態" },
-        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
-        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
-        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
-        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" },
-        { "name": "Left Icon", "type": "boolean", "default": "false", "description": "左アイコンの表示" },
-        { "name": "Right Icon", "type": "boolean", "default": "false", "description": "右アイコンの表示" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "入力フィールドのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "focus",
+            "error",
+            "disabled",
+            "filled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Error Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "エラーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "false",
+          "description": "必須マーク（*）の表示"
+        },
+        {
+          "name": "Left Icon",
+          "type": "boolean",
+          "default": "false",
+          "description": "左アイコンの表示"
+        },
+        {
+          "name": "Right Icon",
+          "type": "boolean",
+          "default": "false",
+          "description": "右アイコンの表示"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 py-1 (8px 4px)", "fontSize": "text-xs (12px)", "iconSize": "w-[11px] h-[11px]", "labelFont": "text-xs (12px)" } },
-            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "iconSize": "w-3 h-3 (12px)", "labelFont": "text-sm (14px)" } },
-            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-4 py-2 (16px 8px)", "fontSize": "text-base (16px)", "iconSize": "w-3.5 h-3.5 (14px)", "labelFont": "text-sm (14px)" } },
-            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-5 py-2.5 (20px 10px)", "fontSize": "text-lg (18px)", "iconSize": "w-[18px] h-[18px]", "labelFont": "text-base (16px)" } }
+            {
+              "variant": "xs",
+              "tokens": {
+                "height": "h-6 (24px)",
+                "padding": "px-2 py-1 (8px 4px)",
+                "fontSize": "text-xs (12px)",
+                "iconSize": "w-[11px] h-[11px]",
+                "labelFont": "text-xs (12px)"
+              }
+            },
+            {
+              "variant": "sm",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "fontSize": "text-sm (14px)",
+                "iconSize": "w-3 h-3 (12px)",
+                "labelFont": "text-sm (14px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "height": "h-10 (40px)",
+                "padding": "px-4 py-2 (16px 8px)",
+                "fontSize": "text-base (16px)",
+                "iconSize": "w-3.5 h-3.5 (14px)",
+                "labelFont": "text-sm (14px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "height": "h-12 (48px)",
+                "padding": "px-5 py-2.5 (20px 10px)",
+                "fontSize": "text-lg (18px)",
+                "iconSize": "w-[18px] h-[18px]",
+                "labelFont": "text-base (16px)"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)", "placeholder": "gray-400 (#99A1AF)", "rightIcon": "hidden" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "borderWidth": "border-2", "rightIcon": "hidden" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)", "rightIcon": "hidden" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "border": "gray-200 (#E5E7EB)", "rightIcon": "hidden" } },
-            { "variant": "filled", "tokens": { "border": "gray-200 (#E5E7EB)", "text": "gray-900 (#101828)", "rightIcon": "circle-x (gray-500 #6A7282) visible" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)",
+                "placeholder": "gray-400 (#99A1AF)",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "focus",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "borderWidth": "border-2",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "red-500 (#FB2C36)",
+                "errorText": "red-500 (#FB2C36)",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)",
+                "border": "gray-200 (#E5E7EB)",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "filled",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "text": "gray-900 (#101828)",
+                "rightIcon": "circle-x (gray-500 #6A7282) visible"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "helperFont": "text-xs (12px)", "gap": "gap-2 (8px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)",
+                "helperFont": "text-xs (12px)",
+                "gap": "gap-2 (8px)"
+              }
+            }
           ]
         }
       ]
@@ -142,35 +508,130 @@
       "preview": "previews/select.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1627-2381",
       "props": [
-        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "セレクトのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled"], "description": "インタラクション状態" },
-        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
-        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
-        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "セレクトのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "focus",
+            "error",
+            "disabled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "false",
+          "description": "必須マーク（*）の表示"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)" } },
-            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
-            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-3 (12px)", "fontSize": "text-sm (14px)" } },
-            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-4 (16px)", "fontSize": "text-base (16px)" } }
+            {
+              "variant": "xs",
+              "tokens": {
+                "height": "h-6 (24px)",
+                "padding": "px-2 (8px)",
+                "fontSize": "text-xs (12px)"
+              }
+            },
+            {
+              "variant": "sm",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "padding": "px-3 (12px)",
+                "fontSize": "text-sm (14px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "height": "h-10 (40px)",
+                "padding": "px-3 (12px)",
+                "fontSize": "text-sm (14px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "height": "h-12 (48px)",
+                "padding": "px-4 (16px)",
+                "fontSize": "text-base (16px)"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "chevron": "gray-400 (#99A1AF)" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)",
+                "chevron": "gray-400 (#99A1AF)"
+              }
+            },
+            {
+              "variant": "focus",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "ring": "ring-2 ring-blue-500/20"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "red-500 (#FB2C36)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)"
+              }
+            }
           ]
         }
       ]
@@ -183,36 +644,137 @@
       "preview": "previews/text-area.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1631-398",
       "props": [
-        { "name": "Size", "type": "enum", "default": "md", "values": ["xs", "sm", "md", "lg"], "description": "テキストエリアのサイズ" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "error", "disabled", "filled"], "description": "インタラクション状態" },
-        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
-        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
-        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
-        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "テキストエリアのサイズ"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "focus",
+            "error",
+            "disabled",
+            "filled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Error Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "エラーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "false",
+          "description": "必須マーク（*）の表示"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "xs", "tokens": { "padding": "px-2 py-1 (8px 4px)", "fontSize": "text-xs (12px)", "minHeight": "min-h-[60px]" } },
-            { "variant": "sm", "tokens": { "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "minHeight": "min-h-[72px]" } },
-            { "variant": "md", "tokens": { "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-sm (14px)", "minHeight": "min-h-[80px]" } },
-            { "variant": "lg", "tokens": { "padding": "px-4 py-3 (16px 12px)", "fontSize": "text-base (16px)", "minHeight": "min-h-[96px]" } }
+            {
+              "variant": "xs",
+              "tokens": {
+                "padding": "px-2 py-1 (8px 4px)",
+                "fontSize": "text-xs (12px)",
+                "minHeight": "min-h-[60px]"
+              }
+            },
+            {
+              "variant": "sm",
+              "tokens": {
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "fontSize": "text-sm (14px)",
+                "minHeight": "min-h-[72px]"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "padding": "px-3 py-2 (12px 8px)",
+                "fontSize": "text-sm (14px)",
+                "minHeight": "min-h-[80px]"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "padding": "px-4 py-3 (16px 12px)",
+                "fontSize": "text-base (16px)",
+                "minHeight": "min-h-[96px]"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "ring": "ring-2 ring-blue-500/20" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "focus",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "ring": "ring-2 ring-blue-500/20"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "red-500 (#FB2C36)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "resize": "resize-y" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)",
+                "resize": "resize-y"
+              }
+            }
           ]
         }
       ]
@@ -225,35 +787,140 @@
       "preview": "previews/combobox.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1641-1763",
       "props": [
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "focus", "filled", "error", "disabled"], "description": "インタラクション状態" },
-        { "name": "Label", "type": "boolean", "default": "true", "description": "ラベルの表示" },
-        { "name": "Helper Text", "type": "boolean", "default": "false", "description": "ヘルパーテキストの表示" },
-        { "name": "Error Text", "type": "boolean", "default": "false", "description": "エラーテキストの表示" },
-        { "name": "Required", "type": "boolean", "default": "false", "description": "必須マーク（*）の表示" }
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "focus",
+            "filled",
+            "error",
+            "disabled"
+          ],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Error Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "エラーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "false",
+          "description": "必須マーク（*）の表示"
+        }
       ],
       "tokens": [
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "placeholder": "gray-400 (#99A1AF)", "rightIcon": "hidden" } },
-            { "variant": "focus", "tokens": { "border": "blue-500 (#2B7FFF)", "borderWidth": "border-2", "rightIcon": "circle-x (gray-500 #6A7282) visible", "dropdown": "visible" } },
-            { "variant": "filled", "tokens": { "border": "gray-200 (#E5E7EB)", "text": "gray-900 (#101828)", "rightIcon": "circle-x (gray-500 #6A7282) visible" } },
-            { "variant": "error", "tokens": { "border": "red-500 (#FB2C36)", "errorText": "red-500 (#FB2C36)", "rightIcon": "hidden" } },
-            { "variant": "disabled", "tokens": { "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)", "rightIcon": "hidden" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)",
+                "placeholder": "gray-400 (#99A1AF)",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "focus",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "borderWidth": "border-2",
+                "rightIcon": "circle-x (gray-500 #6A7282) visible",
+                "dropdown": "visible"
+              }
+            },
+            {
+              "variant": "filled",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "text": "gray-900 (#101828)",
+                "rightIcon": "circle-x (gray-500 #6A7282) visible"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "red-500 (#FB2C36)",
+                "errorText": "red-500 (#FB2C36)",
+                "rightIcon": "hidden"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)",
+                "rightIcon": "hidden"
+              }
+            }
           ]
         },
         {
           "category": "Input",
           "items": [
-            { "variant": "all", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)", "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "gap": "gap-1.5 (6px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "fontSize": "text-sm (14px)",
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)",
+                "gap": "gap-1.5 (6px)"
+              }
+            }
           ]
         },
         {
           "category": "Dropdown",
           "items": [
-            { "variant": "container", "tokens": { "background": "white (#FFFFFF)", "border": "gray-200 (#E5E7EB)", "borderRadius": "rounded-md (6px)", "padding": "py-2 (8px)", "shadow": "shadow-sm" } },
-            { "variant": "countRow", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-xs (12px)", "textColor": "gray-500 (#6A7282)" } },
-            { "variant": "option", "tokens": { "height": "h-9 (36px)", "padding": "px-3 py-2 (12px 8px)", "fontSize": "text-sm (14px)", "textColor": "gray-900 (#101828)", "hoverBg": "gray-50 (#F9FAFB)" } }
+            {
+              "variant": "container",
+              "tokens": {
+                "background": "white (#FFFFFF)",
+                "border": "gray-200 (#E5E7EB)",
+                "borderRadius": "rounded-md (6px)",
+                "padding": "py-2 (8px)",
+                "shadow": "shadow-sm"
+              }
+            },
+            {
+              "variant": "countRow",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-2 (12px 8px)",
+                "fontSize": "text-xs (12px)",
+                "textColor": "gray-500 (#6A7282)"
+              }
+            },
+            {
+              "variant": "option",
+              "tokens": {
+                "height": "h-9 (36px)",
+                "padding": "px-3 py-2 (12px 8px)",
+                "fontSize": "text-sm (14px)",
+                "textColor": "gray-900 (#101828)",
+                "hoverBg": "gray-50 (#F9FAFB)"
+              }
+            }
           ]
         }
       ]
@@ -266,29 +933,83 @@
       "preview": "previews/switch.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7626",
       "props": [
-        { "name": "Size", "type": "enum", "default": "md", "values": ["sm", "md", "lg"], "description": "sm: 16×28px / md: 20×36px / lg: 24×44px" },
-        { "name": "On", "type": "boolean", "default": "false", "description": "ON/OFF 状態" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "sm: 16×28px / md: 20×36px / lg: 24×44px"
+        },
+        {
+          "name": "On",
+          "type": "boolean",
+          "default": "false",
+          "description": "ON/OFF 状態"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "sm", "tokens": { "track": "w-7 h-4 (28×16px)", "thumb": "w-3 h-3 (12px)", "translate": "translate-x-3" } },
-            { "variant": "md", "tokens": { "track": "w-9 h-5 (36×20px)", "thumb": "w-4 h-4 (16px)", "translate": "translate-x-4" } },
-            { "variant": "lg", "tokens": { "track": "w-11 h-6 (44×24px)", "thumb": "w-5 h-5 (20px)", "translate": "translate-x-5" } }
+            {
+              "variant": "sm",
+              "tokens": {
+                "track": "w-7 h-4 (28×16px)",
+                "thumb": "w-3 h-3 (12px)",
+                "translate": "translate-x-3"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "track": "w-9 h-5 (36×20px)",
+                "thumb": "w-4 h-4 (16px)",
+                "translate": "translate-x-4"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "track": "w-11 h-6 (44×24px)",
+                "thumb": "w-5 h-5 (20px)",
+                "translate": "translate-x-5"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "off", "tokens": { "track-bg": "gray-200 (#E5E7EB)", "thumb-bg": "white (#FFFFFF)" } },
-            { "variant": "on", "tokens": { "track-bg": "blue-500 (#2B7FFF)", "thumb-bg": "white (#FFFFFF)" } }
+            {
+              "variant": "off",
+              "tokens": {
+                "track-bg": "gray-200 (#E5E7EB)",
+                "thumb-bg": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "on",
+              "tokens": {
+                "track-bg": "blue-500 (#2B7FFF)",
+                "thumb-bg": "white (#FFFFFF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-full (9999px)", "transition": "transition-all duration-200" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-full (9999px)",
+                "transition": "transition-all duration-200"
+              }
+            }
           ]
         }
       ]
@@ -301,25 +1022,95 @@
       "preview": "previews/radio-button.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1632-921",
       "props": [
-        { "name": "Size", "type": "enum", "default": "sm", "values": ["sm", "md", "lg"], "description": "sm: radio 12px,text 14px / md: radio 16px,text 16px / lg: radio 20px,text 18px" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "selected", "disabled", "selected-disabled"], "description": "選択・無効状態" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "sm",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "sm: radio 12px,text 14px / md: radio 16px,text 16px / lg: radio 20px,text 18px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "selected",
+            "disabled",
+            "selected-disabled"
+          ],
+          "description": "選択・無効状態"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "sm", "tokens": { "radioSize": "w-3 h-3 (12px)", "fontSize": "text-sm (14px)", "gap": "gap-2 (8px)" } },
-            { "variant": "md", "tokens": { "radioSize": "w-4 h-4 (16px)", "fontSize": "text-base (16px)", "gap": "gap-2 (8px)" } },
-            { "variant": "lg", "tokens": { "radioSize": "w-5 h-5 (20px)", "fontSize": "text-lg (18px)", "gap": "gap-2 (8px)" } }
+            {
+              "variant": "sm",
+              "tokens": {
+                "radioSize": "w-3 h-3 (12px)",
+                "fontSize": "text-sm (14px)",
+                "gap": "gap-2 (8px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "radioSize": "w-4 h-4 (16px)",
+                "fontSize": "text-base (16px)",
+                "gap": "gap-2 (8px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "radioSize": "w-5 h-5 (20px)",
+                "fontSize": "text-lg (18px)",
+                "gap": "gap-2 (8px)"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)" } },
-            { "variant": "selected", "tokens": { "border": "blue-500 (#2B7FFF)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)" } },
-            { "variant": "disabled", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } },
-            { "variant": "selected-disabled", "tokens": { "border": "gray-400 (#99A1AF)", "background": "white (#FFFFFF)", "text": "gray-400 (#99A1AF)" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)"
+              }
+            },
+            {
+              "variant": "selected",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "background": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)"
+              }
+            },
+            {
+              "variant": "selected-disabled",
+              "tokens": {
+                "border": "gray-400 (#99A1AF)",
+                "background": "white (#FFFFFF)",
+                "text": "gray-400 (#99A1AF)"
+              }
+            }
           ]
         }
       ]
@@ -332,25 +1123,276 @@
       "preview": "previews/checkbox.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1634-980",
       "props": [
-        { "name": "Size", "type": "enum", "default": "sm", "values": ["sm", "md", "lg"], "description": "sm: box 12px,text 14px / md: box 16px,text 16px / lg: box 20px,text 18px" },
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "checked", "disabled", "checked-disabled"], "description": "チェック・無効状態" }
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "sm",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "sm: box 12px,text 14px / md: box 16px,text 16px / lg: box 20px,text 18px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "checked",
+            "disabled",
+            "checked-disabled"
+          ],
+          "description": "チェック・無効状態"
+        }
       ],
       "tokens": [
         {
           "category": "Size",
           "items": [
-            { "variant": "sm", "tokens": { "boxSize": "w-3 h-3 (12px)", "fontSize": "text-sm (14px)", "gap": "gap-2 (8px)", "borderRadius": "rounded-xs (2px)" } },
-            { "variant": "md", "tokens": { "boxSize": "w-4 h-4 (16px)", "fontSize": "text-base (16px)", "gap": "gap-2 (8px)", "borderRadius": "rounded-sm (4px)" } },
-            { "variant": "lg", "tokens": { "boxSize": "w-5 h-5 (20px)", "fontSize": "text-lg (18px)", "gap": "gap-2 (8px)", "borderRadius": "rounded-sm (4px)" } }
+            {
+              "variant": "sm",
+              "tokens": {
+                "boxSize": "w-3 h-3 (12px)",
+                "fontSize": "text-sm (14px)",
+                "gap": "gap-2 (8px)",
+                "borderRadius": "rounded-xs (2px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "boxSize": "w-4 h-4 (16px)",
+                "fontSize": "text-base (16px)",
+                "gap": "gap-2 (8px)",
+                "borderRadius": "rounded-sm (4px)"
+              }
+            },
+            {
+              "variant": "lg",
+              "tokens": {
+                "boxSize": "w-5 h-5 (20px)",
+                "fontSize": "text-lg (18px)",
+                "gap": "gap-2 (8px)",
+                "borderRadius": "rounded-sm (4px)"
+              }
+            }
           ]
         },
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "white (#FFFFFF)", "text": "gray-900 (#101828)" } },
-            { "variant": "checked", "tokens": { "background": "blue-500 (#2B7FFF)", "checkmark": "white (#FFFFFF)", "text": "gray-900 (#101828)" } },
-            { "variant": "disabled", "tokens": { "border": "gray-200 (#E5E7EB)", "background": "gray-50 (#F9FAFB)", "text": "gray-400 (#99A1AF)" } },
-            { "variant": "checked-disabled", "tokens": { "background": "gray-400 (#99A1AF)", "checkmark": "white (#FFFFFF)", "text": "gray-900 (#101828)" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)"
+              }
+            },
+            {
+              "variant": "checked",
+              "tokens": {
+                "background": "blue-500 (#2B7FFF)",
+                "checkmark": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "background": "gray-50 (#F9FAFB)",
+                "text": "gray-400 (#99A1AF)"
+              }
+            },
+            {
+              "variant": "checked-disabled",
+              "tokens": {
+                "background": "gray-400 (#99A1AF)",
+                "checkmark": "white (#FFFFFF)",
+                "text": "gray-900 (#101828)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "datepicker",
+      "name": "Datepicker",
+      "description": "日付選択コンポーネント。Datepicker Input（単一日付）、Calendar（カレンダーPopup）、Date Range Picker（期間選択）の3パーツ構成。",
+      "category": "forms",
+      "preview": "previews/datepicker.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1728-2465",
+      "props": [
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "sm",
+          "values": ["sm", "md"],
+          "description": "入力フィールドのサイズ。sm: 32px / md: 40px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": ["default", "focus", "error", "disabled", "filled"],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "true",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Error Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "エラーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "true",
+          "description": "必須マーク（*）の表示"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Datepicker Input",
+          "items": [
+            {
+              "variant": "sm",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "fontSize": "text-sm (14px)",
+                "iconSize": "w-3 h-3 (12px)",
+                "gap": "gap-1.5 (6px)"
+              }
+            },
+            {
+              "variant": "md",
+              "tokens": {
+                "height": "h-10 (40px)",
+                "padding": "px-3 py-2.5 (12px 10px)",
+                "fontSize": "text-sm (14px)",
+                "iconSize": "w-3 h-3 (12px)",
+                "gap": "gap-1.5 (6px)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "State",
+          "items": [
+            {
+              "variant": "default",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "borderWidth": "border (1px)",
+                "background": "white (#FFFFFF)",
+                "placeholder": "gray-400 (#99A1AF)",
+                "iconColor": "gray-500 (#6A7282)"
+              }
+            },
+            {
+              "variant": "focus",
+              "tokens": {
+                "border": "blue-500 (#2B7FFF)",
+                "borderWidth": "border-2 (2px)"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "red-500 (#FB2C36)",
+                "borderWidth": "border (1px)",
+                "errorText": "red-500 (#FB2C36)"
+              }
+            },
+            {
+              "variant": "disabled",
+              "tokens": {
+                "background": "gray-50 (#F9FAFB)",
+                "border": "gray-200 (#E5E7EB)"
+              }
+            },
+            {
+              "variant": "filled",
+              "tokens": {
+                "border": "gray-200 (#E5E7EB)",
+                "text": "gray-900 (#101828)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Calendar",
+          "items": [
+            {
+              "variant": "container",
+              "tokens": {
+                "width": "w-72 (288px)",
+                "padding": "p-3 (12px)",
+                "background": "white (#FFFFFF)",
+                "border": "gray-200 (#E5E7EB)",
+                "borderRadius": "rounded-lg (8px)",
+                "shadow": "shadow-md (0 4px 16px rgba(0,0,0,0.08))"
+              }
+            },
+            {
+              "variant": "day cell",
+              "tokens": {
+                "size": "h-9 w-9 (36px)",
+                "fontSize": "text-xs (12px)",
+                "borderRadius": "rounded-full (9999px)"
+              }
+            },
+            {
+              "variant": "selected",
+              "tokens": {
+                "background": "#3D62D3",
+                "text": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "range",
+              "tokens": {
+                "background": "#ECEFF9",
+                "text": "gray-500 (#6A7282)"
+              }
+            },
+            {
+              "variant": "outside month",
+              "tokens": {
+                "text": "gray-400 (#99A1AF)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "leftIcon": "calendar (12px)",
+                "placeholder": "yyyy/mm/dd",
+                "rangePlaceholder": "yyyy/mm/dd - yyyy/mm/dd",
+                "weekdayLabels": "月 火 水 木 金 土 日"
+              }
+            }
           ]
         }
       ]
@@ -363,23 +1405,86 @@
       "preview": "previews/alert.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1634-5472",
       "props": [
-        { "name": "Status", "type": "enum", "default": "info", "values": ["success", "warning", "error", "info"], "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報" },
-        { "name": "Description", "type": "boolean", "default": "true", "description": "説明テキストの表示" }
+        {
+          "name": "Status",
+          "type": "enum",
+          "default": "info",
+          "values": [
+            "success",
+            "warning",
+            "error",
+            "info"
+          ],
+          "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報"
+        },
+        {
+          "name": "Description",
+          "type": "boolean",
+          "default": "true",
+          "description": "説明テキストの表示"
+        }
       ],
       "tokens": [
         {
           "category": "Status",
           "items": [
-            { "variant": "success", "tokens": { "border": "#009966 (1px)", "background": "#F0FDF4", "icon": "#00A63E", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
-            { "variant": "warning", "tokens": { "border": "#E17100 (1px)", "background": "#FEFCE8", "icon": "#FD9A00", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
-            { "variant": "error", "tokens": { "border": "#E7000B (1px)", "background": "#FEF2F2", "icon": "#E7000B", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } },
-            { "variant": "info", "tokens": { "border": "#4A5565 (1px)", "background": "#F9FAFB", "icon": "#4A5565", "title": "black (#000000)", "description": "#4A5565 (gray-600)" } }
+            {
+              "variant": "success",
+              "tokens": {
+                "border": "#009966 (1px)",
+                "background": "#F0FDF4",
+                "icon": "#00A63E",
+                "title": "black (#000000)",
+                "description": "#4A5565 (gray-600)"
+              }
+            },
+            {
+              "variant": "warning",
+              "tokens": {
+                "border": "#E17100 (1px)",
+                "background": "#FEFCE8",
+                "icon": "#FD9A00",
+                "title": "black (#000000)",
+                "description": "#4A5565 (gray-600)"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "border": "#E7000B (1px)",
+                "background": "#FEF2F2",
+                "icon": "#E7000B",
+                "title": "black (#000000)",
+                "description": "#4A5565 (gray-600)"
+              }
+            },
+            {
+              "variant": "info",
+              "tokens": {
+                "border": "#4A5565 (1px)",
+                "background": "#F9FAFB",
+                "icon": "#4A5565",
+                "title": "black (#000000)",
+                "description": "#4A5565 (gray-600)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "borderWidth": "border (1px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)", "iconSize": "14px", "titleFont": "text-sm font-medium (14px 500)", "descFont": "text-sm font-normal (14px 400)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)",
+                "padding": "px-4 py-3 (16px 12px)",
+                "gap": "gap-3 (12px)",
+                "iconSize": "14px",
+                "titleFont": "text-sm font-medium (14px 500)",
+                "descFont": "text-sm font-normal (14px 400)"
+              }
+            }
           ]
         }
       ]
@@ -392,23 +1497,80 @@
       "preview": "previews/toast.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1637-6265",
       "props": [
-        { "name": "Status", "type": "enum", "default": "success", "values": ["success", "warning", "error", "info"], "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報" },
-        { "name": "Close", "type": "boolean", "default": "true", "description": "閉じるボタンの表示" }
+        {
+          "name": "Status",
+          "type": "enum",
+          "default": "success",
+          "values": [
+            "success",
+            "warning",
+            "error",
+            "info"
+          ],
+          "description": "success: 成功 / warning: 警告 / error: エラー / info: 情報"
+        },
+        {
+          "name": "Close",
+          "type": "boolean",
+          "default": "true",
+          "description": "閉じるボタンの表示"
+        }
       ],
       "tokens": [
         {
           "category": "Status",
           "items": [
-            { "variant": "success", "tokens": { "background": "#009966", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "warning", "tokens": { "background": "#FD9A00", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "error", "tokens": { "background": "#FB2C36", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } },
-            { "variant": "info", "tokens": { "background": "#6A7282", "text": "white (#FFFFFF)", "icon": "white (#FFFFFF)" } }
+            {
+              "variant": "success",
+              "tokens": {
+                "background": "#009966",
+                "text": "white (#FFFFFF)",
+                "icon": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "warning",
+              "tokens": {
+                "background": "#FD9A00",
+                "text": "white (#FFFFFF)",
+                "icon": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "error",
+              "tokens": {
+                "background": "#FB2C36",
+                "text": "white (#FFFFFF)",
+                "icon": "white (#FFFFFF)"
+              }
+            },
+            {
+              "variant": "info",
+              "tokens": {
+                "background": "#6A7282",
+                "text": "white (#FFFFFF)",
+                "icon": "white (#FFFFFF)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "borderRadius": "rounded-md (6px)", "padding": "px-4 py-3 (16px 12px)", "gap": "gap-3 (12px)", "contentGap": "gap-1 (4px)", "iconSize": "14px", "closeSize": "14px", "titleFont": "text-sm font-medium (14px 500)", "descFont": "text-sm font-normal (14px 400)", "width": "w-[360px]" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "padding": "px-4 py-3 (16px 12px)",
+                "gap": "gap-3 (12px)",
+                "contentGap": "gap-1 (4px)",
+                "iconSize": "14px",
+                "closeSize": "14px",
+                "titleFont": "text-sm font-medium (14px 500)",
+                "descFont": "text-sm font-normal (14px 400)",
+                "width": "w-[360px]"
+              }
+            }
           ]
         }
       ]
@@ -421,14 +1583,40 @@
       "preview": "previews/tooltip.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7651",
       "props": [
-        { "name": "Position", "type": "enum", "default": "top", "values": ["top", "bottom", "left", "right"], "description": "表示位置" },
-        { "name": "Label", "type": "string", "default": "Tooltip text", "description": "表示テキスト" }
+        {
+          "name": "Position",
+          "type": "enum",
+          "default": "top",
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "description": "表示位置"
+        },
+        {
+          "name": "Label",
+          "type": "string",
+          "default": "Tooltip text",
+          "description": "表示テキスト"
+        }
       ],
       "tokens": [
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "background": "gray-900 (#101828)", "text": "white (#FFFFFF)", "fontSize": "text-xs (12px)", "padding": "px-2.5 py-1.5 (10px 6px)", "borderRadius": "rounded-md (6px)", "arrow": "4px" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "background": "gray-900 (#101828)",
+                "text": "white (#FFFFFF)",
+                "fontSize": "text-xs (12px)",
+                "padding": "px-2.5 py-1.5 (10px 6px)",
+                "borderRadius": "rounded-md (6px)",
+                "arrow": "4px"
+              }
+            }
           ]
         }
       ]
@@ -441,20 +1629,49 @@
       "preview": "previews/popover.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7758",
       "props": [
-        { "name": "State", "type": "enum", "default": "default", "values": ["default", "hover"], "description": "表示状態" }
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "hover"
+          ],
+          "description": "表示状態"
+        }
       ],
       "tokens": [
         {
           "category": "State",
           "items": [
-            { "variant": "default", "tokens": { "text": "#101828 (gray-900)" } },
-            { "variant": "hover", "tokens": { "text": "#155DFC (blue-600)" } }
+            {
+              "variant": "default",
+              "tokens": {
+                "text": "#101828 (gray-900)"
+              }
+            },
+            {
+              "variant": "hover",
+              "tokens": {
+                "text": "#155DFC (blue-600)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "background": "white (#FFFFFF)", "border": "#E2E8F0 (slate-200, 1px)", "borderRadius": "rounded (4px)", "fontSize": "text-sm (14px)", "fontWeight": "font-normal (400)", "arrow": "上向き三角（16x8px, border=#CBD5E0）" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "background": "white (#FFFFFF)",
+                "border": "#E2E8F0 (slate-200, 1px)",
+                "borderRadius": "rounded (4px)",
+                "fontSize": "text-sm (14px)",
+                "fontWeight": "font-normal (400)",
+                "arrow": "上向き三角（16x8px, border=#CBD5E0）"
+              }
+            }
           ]
         }
       ]
@@ -467,40 +1684,108 @@
       "preview": "previews/modal.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7759",
       "props": [
-        { "name": "Title", "type": "string", "default": "Dialog Title", "description": "モーダルのタイトル" },
-        { "name": "Description", "type": "string", "default": "", "description": "説明テキスト" },
-        { "name": "Footer", "type": "boolean", "default": "true", "description": "フッター（アクションボタン）の表示" }
+        {
+          "name": "Title",
+          "type": "string",
+          "default": "Dialog Title",
+          "description": "モーダルのタイトル"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "default": "",
+          "description": "説明テキスト"
+        },
+        {
+          "name": "Footer",
+          "type": "boolean",
+          "default": "true",
+          "description": "フッター（アクションボタン）の表示"
+        }
       ],
       "tokens": [
         {
           "category": "Dialog",
           "items": [
-            { "variant": "all", "tokens": { "width": "w-[400px]", "background": "white (#FFFFFF)", "border": "#E5E7EB (1px)", "borderRadius": "rounded-xl (12px)", "shadow": "0 8px 32px rgba(0,0,0,0.16)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "width": "w-[400px]",
+                "background": "white (#FFFFFF)",
+                "border": "#E5E7EB (1px)",
+                "borderRadius": "rounded-xl (12px)",
+                "shadow": "0 8px 32px rgba(0,0,0,0.16)"
+              }
+            }
           ]
         },
         {
           "category": "Content",
           "items": [
-            { "variant": "all", "tokens": { "padding": "p-6 (24px)", "gap": "gap-2 (8px)", "titleFont": "text-lg font-medium (18px 500)", "titleColor": "#101828", "descFont": "text-sm font-normal (14px 400)", "descColor": "#4A5565" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "padding": "p-6 (24px)",
+                "gap": "gap-2 (8px)",
+                "titleFont": "text-lg font-medium (18px 500)",
+                "titleColor": "#101828",
+                "descFont": "text-sm font-normal (14px 400)",
+                "descColor": "#4A5565"
+              }
+            }
           ]
         },
         {
           "category": "Footer",
           "items": [
-            { "variant": "all", "tokens": { "background": "#F9FAFB", "padding": "px-6 py-4 (24px 16px)", "gap": "gap-3 (12px)", "justify": "end" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "background": "#F9FAFB",
+                "padding": "px-6 py-4 (24px 16px)",
+                "gap": "gap-3 (12px)",
+                "justify": "end"
+              }
+            }
           ]
         },
         {
           "category": "Buttons",
           "items": [
-            { "variant": "cancel", "tokens": { "type": "Tertiary Button (sm)", "background": "white (#FFFFFF)", "border": "#E5E7EB (1px)", "text": "#101828", "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "borderRadius": "rounded-md (6px)" } },
-            { "variant": "confirm", "tokens": { "type": "Primary Button (sm)", "background": "#2B7FFF", "text": "white (#FFFFFF)", "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "borderRadius": "rounded-md (6px)" } }
+            {
+              "variant": "cancel",
+              "tokens": {
+                "type": "Tertiary Button (sm)",
+                "background": "white (#FFFFFF)",
+                "border": "#E5E7EB (1px)",
+                "text": "#101828",
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "borderRadius": "rounded-md (6px)"
+              }
+            },
+            {
+              "variant": "confirm",
+              "tokens": {
+                "type": "Primary Button (sm)",
+                "background": "#2B7FFF",
+                "text": "white (#FFFFFF)",
+                "height": "h-8 (32px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "borderRadius": "rounded-md (6px)"
+              }
+            }
           ]
         },
         {
           "category": "Overlay",
           "items": [
-            { "variant": "all", "tokens": { "background": "black/50 (#000000 opacity 50%)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "background": "black/50 (#000000 opacity 50%)"
+              }
+            }
           ]
         }
       ]
@@ -508,30 +1793,137 @@
     {
       "id": "badge",
       "name": "Badge",
-      "description": "バッジ。ステータスやカテゴリの表示に使用。",
+      "description": "ステータスバッジ。発注書や納品の状態を示すラベル。各Typeにラベルと色が固定で紐づく。",
       "category": "data-display",
       "preview": "previews/badge.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1645-8251",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-5360",
       "props": [
-        { "name": "Color", "type": "enum", "default": "gray", "values": ["gray", "red", "orange", "yellow", "teal", "blue"], "description": "バッジのカラーバリアント" },
-        { "name": "Label", "type": "string", "default": "Badge", "description": "表示テキスト" }
+        {
+          "name": "Type",
+          "type": "enum",
+          "default": "draft",
+          "values": [
+            "draft",
+            "pending_approval",
+            "pending_send",
+            "pending_delivery",
+            "in_conversation",
+            "delivered",
+            "partially_delivered",
+            "returned",
+            "cancelled",
+            "expired",
+            "creating",
+            "created"
+          ],
+          "description": "ステータス種別。各Typeにラベルと色が固定で紐づく。Labelテキストの個別変更は不可。"
+        }
       ],
       "tokens": [
         {
-          "category": "Color",
+          "category": "Type",
           "items": [
-            { "variant": "gray", "tokens": { "background": "white (#FFFFFF)", "border": "#4A5565 (gray-600)", "text": "#4A5565 (gray-600)" } },
-            { "variant": "red", "tokens": { "background": "white (#FFFFFF)", "border": "#E7000B (red-600)", "text": "#E7000B (red-600)" } },
-            { "variant": "orange", "tokens": { "background": "white (#FFFFFF)", "border": "#F54A00 (orange-600)", "text": "#F54A00 (orange-600)" } },
-            { "variant": "yellow", "tokens": { "background": "white (#FFFFFF)", "border": "#E17100 (amber-600)", "text": "#E17100 (amber-600)" } },
-            { "variant": "teal", "tokens": { "background": "white (#FFFFFF)", "border": "#009689 (teal-600)", "text": "#009689 (teal-600)" } },
-            { "variant": "blue", "tokens": { "background": "white (#FFFFFF)", "border": "#155DFC (blue-600)", "text": "#155DFC (blue-600)" } }
+            {
+              "variant": "draft",
+              "tokens": {
+                "label": "下書き",
+                "color": "badge/gray"
+              }
+            },
+            {
+              "variant": "pending_approval",
+              "tokens": {
+                "label": "承認待ち",
+                "color": "badge/red"
+              }
+            },
+            {
+              "variant": "pending_send",
+              "tokens": {
+                "label": "送信待ち",
+                "color": "badge/orange"
+              }
+            },
+            {
+              "variant": "pending_delivery",
+              "tokens": {
+                "label": "納品待ち",
+                "color": "badge/amber"
+              }
+            },
+            {
+              "variant": "in_conversation",
+              "tokens": {
+                "label": "会話中",
+                "color": "badge/blue"
+              }
+            },
+            {
+              "variant": "delivered",
+              "tokens": {
+                "label": "納品済み",
+                "color": "badge/teal"
+              }
+            },
+            {
+              "variant": "partially_delivered",
+              "tokens": {
+                "label": "一部納品済み",
+                "color": "badge/blue"
+              }
+            },
+            {
+              "variant": "returned",
+              "tokens": {
+                "label": "差し戻し",
+                "color": "badge/gray"
+              }
+            },
+            {
+              "variant": "cancelled",
+              "tokens": {
+                "label": "取り消し",
+                "color": "badge/gray"
+              }
+            },
+            {
+              "variant": "expired",
+              "tokens": {
+                "label": "期限切れ",
+                "color": "badge/red"
+              }
+            },
+            {
+              "variant": "creating",
+              "tokens": {
+                "label": "作成中",
+                "color": "badge/amber"
+              }
+            },
+            {
+              "variant": "created",
+              "tokens": {
+                "label": "作成完了",
+                "color": "badge/teal"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "height": "h-5 (20px)", "padding": "px-2 (8px)", "fontSize": "text-xs (12px)", "fontWeight": "font-medium (500)", "borderRadius": "rounded-full (9999px)", "borderWidth": "border (1px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "height": "h-5 (20px)",
+                "padding": "px-2 (8px)",
+                "fontSize": "text-xs (12px)",
+                "fontWeight": "font-medium (500)",
+                "borderRadius": "rounded-full (9999px)",
+                "borderWidth": "border (1px)",
+                "background": "white (#FFFFFF)"
+              }
+            }
           ]
         }
       ]
@@ -544,24 +1936,80 @@
       "preview": "previews/detail-row.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1646-8409",
       "props": [
-        { "name": "Type", "type": "enum", "default": "text", "values": ["text", "badge", "link", "links"], "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / links: 複数リンク表示" },
-        { "name": "Title", "type": "string", "default": "Label", "description": "ラベルテキスト" },
-        { "name": "Content", "type": "string", "default": "Value", "description": "値テキスト" }
+        {
+          "name": "Type",
+          "type": "enum",
+          "default": "text",
+          "values": [
+            "text",
+            "badge",
+            "link",
+            "links"
+          ],
+          "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / links: 複数リンク表示"
+        },
+        {
+          "name": "Title",
+          "type": "string",
+          "default": "Label",
+          "description": "ラベルテキスト"
+        },
+        {
+          "name": "Content",
+          "type": "string",
+          "default": "Value",
+          "description": "値テキスト"
+        }
       ],
       "tokens": [
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL", "gap": "gap-2 (8px)", "labelFont": "text-base font-normal (16px 400)", "labelColor": "gray-500 (#6A7282)", "labelWidth": "w-[120px] FIXED", "valueFont": "text-base font-normal (16px 400)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "flex HORIZONTAL",
+                "gap": "gap-2 (8px)",
+                "labelFont": "text-base font-normal (16px 400)",
+                "labelColor": "gray-500 (#6A7282)",
+                "labelWidth": "w-[120px] FIXED",
+                "valueFont": "text-base font-normal (16px 400)"
+              }
+            }
           ]
         },
         {
           "category": "Type",
           "items": [
-            { "variant": "text", "tokens": { "valueColor": "gray-900 (#101828)", "align": "items-start" } },
-            { "variant": "link", "tokens": { "valueColor": "blue-600 (#155DFC)", "align": "items-start" } },
-            { "variant": "links", "tokens": { "valueColor": "blue-600 (#155DFC)", "separator": "/ gray-400 (#99A1AF)", "align": "items-start" } },
-            { "variant": "badge", "tokens": { "value": "Badge component instance (Color=red)", "align": "items-center" } }
+            {
+              "variant": "text",
+              "tokens": {
+                "valueColor": "gray-900 (#101828)",
+                "align": "items-start"
+              }
+            },
+            {
+              "variant": "link",
+              "tokens": {
+                "valueColor": "blue-600 (#155DFC)",
+                "align": "items-start"
+              }
+            },
+            {
+              "variant": "links",
+              "tokens": {
+                "valueColor": "blue-600 (#155DFC)",
+                "separator": "/ gray-400 (#99A1AF)",
+                "align": "items-start"
+              }
+            },
+            {
+              "variant": "badge",
+              "tokens": {
+                "value": "Badge component instance (Type=pending_approval)",
+                "align": "items-center"
+              }
+            }
           ]
         }
       ]
@@ -574,39 +2022,147 @@
       "preview": "previews/table.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1647-11090",
       "props": [
-        { "name": "Cell Type", "type": "enum", "default": "text", "values": ["text", "link", "badge", "button", "icon", "icon button", "checkbox"], "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）" }
+        {
+          "name": "Cell Type",
+          "type": "enum",
+          "default": "text",
+          "values": [
+            "text",
+            "link",
+            "badge",
+            "button",
+            "icon",
+            "icon button",
+            "checkbox"
+          ],
+          "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）"
+        }
       ],
       "tokens": [
         {
           "category": "Table (Container)",
           "items": [
-            { "variant": "all", "tokens": { "layout": "VERTICAL", "background": "white", "border": "border border-gray-200", "borderRadius": "rounded-md" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "VERTICAL",
+                "background": "white",
+                "border": "border border-gray-200",
+                "borderRadius": "rounded-md"
+              }
+            }
           ]
         },
         {
           "category": "Table / Header",
           "items": [
-            { "variant": "text", "tokens": { "height": "h-8", "background": "bg-gray-50", "padding": "py-2 px-3", "fontSize": "text-xs", "fontWeight": "font-medium", "textColor": "text-gray-600", "verticalAlign": "items-center" } },
-            { "variant": "checkbox", "tokens": { "width": "w-10", "height": "h-8", "background": "bg-gray-50", "padding": "py-2 px-3", "child": "Checkbox component (Size=md)" } }
+            {
+              "variant": "text",
+              "tokens": {
+                "height": "h-8",
+                "background": "bg-gray-50",
+                "padding": "py-2 px-3",
+                "fontSize": "text-xs",
+                "fontWeight": "font-medium",
+                "textColor": "text-gray-600",
+                "verticalAlign": "items-center"
+              }
+            },
+            {
+              "variant": "checkbox",
+              "tokens": {
+                "width": "w-10",
+                "height": "h-8",
+                "background": "bg-gray-50",
+                "padding": "py-2 px-3",
+                "child": "Checkbox component (Size=md)"
+              }
+            }
           ]
         },
         {
           "category": "Table / Data",
           "items": [
-            { "variant": "text", "tokens": { "padding": "px-3 py-3", "fontSize": "text-sm", "fontWeight": "font-normal", "textColor": "text-gray-900" } },
-            { "variant": "link", "tokens": { "padding": "px-3 py-3", "fontSize": "text-sm", "fontWeight": "font-normal", "textColor": "text-blue-500" } },
-            { "variant": "badge", "tokens": { "padding": "px-3 py-3", "child": "Badge component (Color=gray)" } },
-            { "variant": "button", "tokens": { "padding": "py-2.5 px-3", "child": "Button component (Size=xs, Color=secondary)", "hover": "hover:bg-blue-200 hover:text-blue-800", "active": "active:bg-blue-300 active:text-blue-900" } },
-            { "variant": "icon", "tokens": { "width": "w-8", "padding": "py-2.5 px-1", "child": "Icon area (w-4 h-4)" } },
-            { "variant": "icon button", "tokens": { "width": "w-12", "padding": "py-2.5 px-3", "child": "IconButton component (Size=xs, Color=secondary)", "hover": "hover:bg-blue-200 hover:text-blue-800", "active": "active:bg-blue-300 active:text-blue-900" } },
-            { "variant": "checkbox", "tokens": { "width": "w-10", "padding": "py-3.5 px-3", "child": "Checkbox component (Size=md)" } }
+            {
+              "variant": "text",
+              "tokens": {
+                "padding": "px-3 py-3",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900"
+              }
+            },
+            {
+              "variant": "link",
+              "tokens": {
+                "padding": "px-3 py-3",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-blue-500"
+              }
+            },
+            {
+              "variant": "badge",
+              "tokens": {
+                "padding": "px-3 py-3",
+                "child": "Badge component (Type=draft)"
+              }
+            },
+            {
+              "variant": "button",
+              "tokens": {
+                "padding": "py-2.5 px-3",
+                "child": "Button component (Size=xs, Color=secondary)",
+                "hover": "hover:bg-blue-200 hover:text-blue-800",
+                "active": "active:bg-blue-300 active:text-blue-900"
+              }
+            },
+            {
+              "variant": "icon",
+              "tokens": {
+                "width": "w-8",
+                "padding": "py-2.5 px-1",
+                "child": "Icon area (w-4 h-4)"
+              }
+            },
+            {
+              "variant": "icon button",
+              "tokens": {
+                "width": "w-12",
+                "padding": "py-2.5 px-3",
+                "child": "IconButton component (Size=xs, Color=secondary)",
+                "hover": "hover:bg-blue-200 hover:text-blue-800",
+                "active": "active:bg-blue-300 active:text-blue-900"
+              }
+            },
+            {
+              "variant": "checkbox",
+              "tokens": {
+                "width": "w-10",
+                "padding": "py-3.5 px-3",
+                "child": "Checkbox component (Size=md)"
+              }
+            }
           ]
         },
         {
           "category": "Table Row",
           "items": [
-            { "variant": "header", "tokens": { "layout": "flex", "borderBottom": "border-b border-gray-200", "background": "bg-gray-50" } },
-            { "variant": "data", "tokens": { "layout": "flex", "borderBottom": "border-b border-gray-200" } }
+            {
+              "variant": "header",
+              "tokens": {
+                "layout": "flex",
+                "borderBottom": "border-b border-gray-200",
+                "background": "bg-gray-50"
+              }
+            },
+            {
+              "variant": "data",
+              "tokens": {
+                "layout": "flex",
+                "borderBottom": "border-b border-gray-200"
+              }
+            }
           ]
         }
       ]
@@ -619,112 +2175,101 @@
       "preview": "previews/tabs.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7342",
       "props": [
-        { "name": "Style", "type": "enum", "default": "underline", "values": ["underline", "pill"], "description": "underline: 下線スタイル / pill: ピルスタイル" },
-        { "name": "Active", "type": "boolean", "default": "true", "description": "アクティブ状態" }
+        {
+          "name": "Style",
+          "type": "enum",
+          "default": "underline",
+          "values": [
+            "underline",
+            "pill"
+          ],
+          "description": "underline: 下線スタイル / pill: ピルスタイル"
+        },
+        {
+          "name": "Active",
+          "type": "boolean",
+          "default": "true",
+          "description": "アクティブ状態"
+        }
       ],
       "tokens": [
         {
           "category": "Underline",
           "items": [
-            { "variant": "active", "tokens": { "text": "blue-500 (#2B7FFF)", "border-bottom": "border-b-2 border-blue-500", "fontWeight": "font-medium (500)" } },
-            { "variant": "hover", "tokens": { "text": "blue-600 (#155DFC)", "border-bottom": "border-b-2 border-blue-600", "fontWeight": "font-medium (500)" } },
-            { "variant": "inactive", "tokens": { "text": "gray-600 (#4A5565)", "border-bottom": "border-b-2 border-transparent", "fontWeight": "font-normal (400)" } }
+            {
+              "variant": "active",
+              "tokens": {
+                "text": "blue-500 (#2B7FFF)",
+                "border-bottom": "border-b-2 border-blue-500",
+                "fontWeight": "font-medium (500)"
+              }
+            },
+            {
+              "variant": "hover",
+              "tokens": {
+                "text": "blue-600 (#155DFC)",
+                "border-bottom": "border-b-2 border-blue-600",
+                "fontWeight": "font-medium (500)"
+              }
+            },
+            {
+              "variant": "inactive",
+              "tokens": {
+                "text": "gray-600 (#4A5565)",
+                "border-bottom": "border-b-2 border-transparent",
+                "fontWeight": "font-normal (400)"
+              }
+            }
           ]
         },
         {
           "category": "Pill",
           "items": [
-            { "variant": "active", "tokens": { "background": "blue-100 (#DBEAFE)", "text": "blue-700 (#1447E6)", "borderRadius": "rounded-md (6px)", "fontWeight": "font-medium (500)", "counter-bg": "blue-100", "counter-radius": "rounded-sm (4px)" } },
-            { "variant": "hover", "tokens": { "background": "gray-100 (#F3F4F6)", "text": "gray-600 (#4A5565)", "fontWeight": "font-normal (400)", "counter-bg": "gray-100", "counter-radius": "rounded-full (9999px)" } },
-            { "variant": "inactive", "tokens": { "background": "white (#FFFFFF)", "text": "gray-600 (#4A5565)", "fontWeight": "font-normal (400)", "counter-bg": "gray-100", "counter-radius": "rounded-full (9999px)" } }
+            {
+              "variant": "active",
+              "tokens": {
+                "background": "blue-100 (#DBEAFE)",
+                "text": "blue-700 (#1447E6)",
+                "borderRadius": "rounded-md (6px)",
+                "fontWeight": "font-medium (500)",
+                "counter-bg": "blue-100",
+                "counter-radius": "rounded-sm (4px)"
+              }
+            },
+            {
+              "variant": "hover",
+              "tokens": {
+                "background": "gray-100 (#F3F4F6)",
+                "text": "gray-600 (#4A5565)",
+                "fontWeight": "font-normal (400)",
+                "counter-bg": "gray-100",
+                "counter-radius": "rounded-full (9999px)"
+              }
+            },
+            {
+              "variant": "inactive",
+              "tokens": {
+                "background": "white (#FFFFFF)",
+                "text": "gray-600 (#4A5565)",
+                "fontWeight": "font-normal (400)",
+                "counter-bg": "gray-100",
+                "counter-radius": "rounded-full (9999px)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "fontSize": "text-sm (14px)", "underline-padding": "px-3 py-2 (12px 8px)", "pill-padding": "px-2 py-1 (8px 4px)", "gap": "gap-1 (4px)" } }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "typography",
-      "name": "Typography",
-      "description": "タイポグラフィシステム。Inter フォント、13段階のサイズスケール。",
-      "category": "design-tokens",
-      "preview": "previews/typography.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=8-2",
-      "props": [
-        { "name": "Size", "type": "enum", "default": "text-base", "values": ["text-xs", "text-sm", "text-base", "text-lg", "text-xl", "text-2xl", "text-3xl", "text-4xl", "text-5xl", "text-6xl", "text-7xl", "text-8xl", "text-9xl"], "description": "フォントサイズ。text-xs: 12px / text-sm: 14px / text-base: 16px / text-lg: 18px / text-xl: 20px / text-2xl: 24px / text-3xl: 30px / text-4xl: 36px / text-5xl: 48px / text-6xl: 60px / text-7xl: 72px / text-8xl: 96px / text-9xl: 128px" },
-        { "name": "Weight", "type": "enum", "default": "Regular", "values": ["Thin", "Extra Light", "Light", "Regular", "Medium", "Semi Bold", "Bold", "Extra Bold", "Black"], "description": "フォントウェイト。100〜900" },
-        { "name": "Font Family", "type": "string", "default": "Inter", "description": "フォントファミリー" }
-      ],
-      "tokens": [
-        {
-          "category": "Font Size",
-          "items": [
-            { "variant": "text-xs", "tokens": { "fontSize": "text-xs (12px / 0.75rem)", "lineHeight": "leading-4 (16px / 1rem)" } },
-            { "variant": "text-sm", "tokens": { "fontSize": "text-sm (14px / 0.875rem)", "lineHeight": "leading-5 (20px / 1.25rem)" } },
-            { "variant": "text-base", "tokens": { "fontSize": "text-base (16px / 1rem)", "lineHeight": "leading-6 (24px / 1.5rem)" } },
-            { "variant": "text-lg", "tokens": { "fontSize": "text-lg (18px / 1.125rem)", "lineHeight": "leading-7 (28px / 1.75rem)" } },
-            { "variant": "text-xl", "tokens": { "fontSize": "text-xl (20px / 1.25rem)", "lineHeight": "leading-7 (28px / 1.75rem)" } },
-            { "variant": "text-2xl", "tokens": { "fontSize": "text-2xl (24px / 1.5rem)", "lineHeight": "leading-8 (32px / 2rem)" } },
-            { "variant": "text-3xl", "tokens": { "fontSize": "text-3xl (30px / 1.875rem)", "lineHeight": "leading-9 (36px / 2.25rem)" } },
-            { "variant": "text-4xl", "tokens": { "fontSize": "text-4xl (36px / 2.25rem)", "lineHeight": "leading-10 (40px / 2.5rem)" } },
-            { "variant": "text-5xl+", "tokens": { "fontSize": "text-5xl〜9xl (48〜128px)", "lineHeight": "leading-none (1)" } }
-          ]
-        },
-        {
-          "category": "Font Weight",
-          "items": [
-            { "variant": "Thin", "tokens": { "fontWeight": "font-thin (100)" } },
-            { "variant": "Extra Light", "tokens": { "fontWeight": "font-extralight (200)" } },
-            { "variant": "Light", "tokens": { "fontWeight": "font-light (300)" } },
-            { "variant": "Regular", "tokens": { "fontWeight": "font-normal (400)" } },
-            { "variant": "Medium", "tokens": { "fontWeight": "font-medium (500)" } },
-            { "variant": "Semi Bold", "tokens": { "fontWeight": "font-semibold (600)" } },
-            { "variant": "Bold", "tokens": { "fontWeight": "font-bold (700)" } },
-            { "variant": "Extra Bold", "tokens": { "fontWeight": "font-extrabold (800)" } },
-            { "variant": "Black", "tokens": { "fontWeight": "font-black (900)" } }
-          ]
-        },
-        {
-          "category": "Font Family",
-          "items": [
-            { "variant": "sans", "tokens": { "fontFamily": "font-sans (Inter, system-ui, sans-serif)" } },
-            { "variant": "serif", "tokens": { "fontFamily": "font-serif (Georgia, serif)" } },
-            { "variant": "mono", "tokens": { "fontFamily": "font-mono (Menlo, monospace)" } }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "colors",
-      "name": "Colors",
-      "description": "カラーパレット。TailwindCSS v4 準拠の22色 × 11段階。",
-      "category": "design-tokens",
-      "preview": "previews/colors.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2-9",
-      "props": [
-        { "name": "Color", "type": "enum", "default": "Blue", "values": ["Slate", "Gray", "Zinc", "Neutral", "Stone", "Red", "Orange", "Amber", "Yellow", "Lime", "Green", "Emerald", "Teal", "Cyan", "Sky", "Blue", "Indigo", "Violet", "Purple", "Fuchsia", "Pink", "Rose"], "description": "カラーファミリー" },
-        { "name": "Shade", "type": "enum", "default": "500", "values": ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"], "description": "色の濃さ。50: 最も薄い / 950: 最も濃い" }
-      ],
-      "tokens": [
-        {
-          "category": "Primitive",
-          "items": [
-            { "variant": "Base", "tokens": { "black": "black (#000000)", "white": "white (#FFFFFF)", "transparent": "transparent" } },
-            { "variant": "Pattern", "tokens": { "naming": "{color}-{shade}", "example": "blue-500 (#2B7FFF)" } }
-          ]
-        },
-        {
-          "category": "Semantic (UI で使うトークン)",
-          "items": [
-            { "variant": "Background", "tokens": { "bg/primary": "white (#FFFFFF)", "bg/secondary": "gray-50 (#F9FAFB)", "bg/tertiary": "gray-100 (#F3F4F6)", "bg/disabled": "gray-50 (#F9FAFB)", "bg/hover": "gray-50 (#F9FAFB)" } },
-            { "variant": "Text", "tokens": { "text/primary": "gray-900 (#101828)", "text/secondary": "gray-600 (#4A5565)", "text/tertiary": "gray-400 (#99A1AF)", "text/error": "red-500 (#FB2C36)" } },
-            { "variant": "Border", "tokens": { "border/default": "gray-200 (#E5E7EB)", "border/focus": "blue-500 (#2B7FFF)", "border/error": "red-500 (#FB2C36)", "border/disabled": "gray-200 (#E5E7EB)" } },
-            { "variant": "Brand", "tokens": { "brand/50": "blue-50 (#EFF6FF)", "brand/100": "blue-100 (#DBEAFE)", "brand/500": "blue-500 (#2B7FFF)", "brand/600": "blue-600 (#155DFC)", "brand/700": "blue-700 (#1447E6)", "brand/900": "blue-900 (#1C398E)" } },
-            { "variant": "Icon", "tokens": { "icon/default": "gray-500 (#6A7282)", "icon/disabled": "gray-300 (#D1D5DC)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "fontSize": "text-sm (14px)",
+                "underline-padding": "px-3 py-2 (12px 8px)",
+                "pill-padding": "px-2 py-1 (8px 4px)",
+                "gap": "gap-1 (4px)"
+              }
+            }
           ]
         }
       ]
@@ -737,26 +2282,60 @@
       "preview": "previews/header.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1712-5014",
       "props": [
-        { "name": "Company Name", "type": "string", "default": "株式会社shizai", "description": "会社名テキスト" },
-        { "name": "User Name", "type": "string", "default": "酒井 亮太", "description": "ユーザー名テキスト" }
+        {
+          "name": "Company Name",
+          "type": "string",
+          "default": "株式会社shizai",
+          "description": "会社名テキスト"
+        },
+        {
+          "name": "User Name",
+          "type": "string",
+          "default": "酒井 亮太",
+          "description": "ユーザー名テキスト"
+        }
       ],
       "tokens": [
         {
           "category": "Layout",
           "items": [
-            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL, space-between", "height": "h-16 (64px)", "padding": "px-6 (24px)", "background": "bg/primary (white)", "borderBottom": "border-b border/default (gray-200, 1px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "flex HORIZONTAL, space-between",
+                "height": "h-16 (64px)",
+                "padding": "px-6 (24px)",
+                "background": "bg/primary (white)"
+              }
+            }
           ]
         },
         {
           "category": "Logo",
           "items": [
-            { "variant": "all", "tokens": { "width": "w-20 (80px)", "height": "h-[25px]", "color": "#0F1424" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "width": "w-20 (80px)",
+                "height": "h-[25px]",
+                "color": "#0F1424"
+              }
+            }
           ]
         },
         {
           "category": "Right Section",
           "items": [
-            { "variant": "all", "tokens": { "gap": "gap-6 (24px)", "companyFont": "text-base/normal (16px 400)", "companyColor": "text/primary", "userButton": "Button (xs, Sub)", "helpButton": "Button (xs, Sub)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "gap": "gap-3 (12px)",
+                "companyFont": "text-base/normal (16px 400)",
+                "companyColor": "text/primary",
+                "userButton": "Button (xs, tertiary)",
+                "helpButton": "Button (xs, tertiary)"
+              }
+            }
           ]
         }
       ]
@@ -769,24 +2348,82 @@
       "preview": "previews/title.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1714-5204",
       "props": [
-        { "name": "Type", "type": "enum", "default": "Page", "values": ["Page", "Section", "Sub"], "description": "Page: 24px / Section: 20px / Sub: 16px" },
-        { "name": "Subtitle", "type": "boolean", "default": "true", "description": "補足テキストの表示" },
-        { "name": "Title Text", "type": "string", "default": "タイトル", "description": "タイトルテキスト" },
-        { "name": "Subtitle Text", "type": "string", "default": "補足テキスト", "description": "補足テキスト" }
+        {
+          "name": "Type",
+          "type": "enum",
+          "default": "Page",
+          "values": [
+            "Page",
+            "Section",
+            "Sub"
+          ],
+          "description": "Page: 24px / Section: 20px / Sub: 16px"
+        },
+        {
+          "name": "Subtitle",
+          "type": "boolean",
+          "default": "true",
+          "description": "補足テキストの表示"
+        },
+        {
+          "name": "Title Text",
+          "type": "string",
+          "default": "タイトル",
+          "description": "タイトルテキスト"
+        },
+        {
+          "name": "Subtitle Text",
+          "type": "string",
+          "default": "補足テキスト",
+          "description": "補足テキスト"
+        }
       ],
       "tokens": [
         {
           "category": "Type",
           "items": [
-            { "variant": "Page", "tokens": { "titleFont": "text-2xl/bold (24px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } },
-            { "variant": "Section", "tokens": { "titleFont": "text-xl/bold (20px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } },
-            { "variant": "Sub", "tokens": { "titleFont": "text-base/bold (16px 700)", "titleColor": "text/primary (#171923)", "subtitleFont": "text-sm/normal (14px 400)", "subtitleColor": "text/secondary (#4A5568)" } }
+            {
+              "variant": "Page",
+              "tokens": {
+                "titleFont": "text-2xl/bold (24px 700)",
+                "titleColor": "text/primary (#171923)",
+                "subtitleFont": "text-sm/normal (14px 400)",
+                "subtitleColor": "text/secondary (#4A5568)",
+                "gap": "gap-2 (8px)"
+              }
+            },
+            {
+              "variant": "Section",
+              "tokens": {
+                "titleFont": "text-xl/bold (20px 700)",
+                "titleColor": "text/primary (#171923)",
+                "subtitleFont": "text-sm/normal (14px 400)",
+                "subtitleColor": "text/secondary (#4A5568)",
+                "gap": "gap-1 (4px)"
+              }
+            },
+            {
+              "variant": "Sub",
+              "tokens": {
+                "titleFont": "text-base/bold (16px 700)",
+                "titleColor": "text/primary (#171923)",
+                "subtitleFont": "text-sm/normal (14px 400)",
+                "subtitleColor": "text/secondary (#4A5568)",
+                "gap": "gap-1 (4px)"
+              }
+            }
           ]
         },
         {
           "category": "Common",
           "items": [
-            { "variant": "all", "tokens": { "layout": "VERTICAL", "gap": "gap-4 (16px)", "width": "w-[480px] FIXED" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "VERTICAL",
+                "width": "w-[480px] FIXED"
+              }
+            }
           ]
         }
       ]
@@ -799,23 +2436,68 @@
       "preview": "previews/calc.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-5529",
       "props": [
-        { "name": "Subtotal", "type": "string", "default": "370,000", "description": "小計金額" },
-        { "name": "Tax", "type": "string", "default": "36,000", "description": "消費税合計" },
-        { "name": "Total", "type": "string", "default": "406,000", "description": "合計金額" }
+        {
+          "name": "Subtotal",
+          "type": "string",
+          "default": "370,000",
+          "description": "小計金額"
+        },
+        {
+          "name": "Tax",
+          "type": "string",
+          "default": "36,000",
+          "description": "消費税合計"
+        },
+        {
+          "name": "Total",
+          "type": "string",
+          "default": "406,000",
+          "description": "合計金額"
+        }
       ],
       "tokens": [
         {
           "category": "Layout",
           "items": [
-            { "variant": "all", "tokens": { "layout": "VERTICAL", "gap": "gap-2 (8px)", "width": "w-60 (240px)", "fontSize": "text-sm (14px)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "VERTICAL",
+                "gap": "gap-2 (8px)",
+                "width": "w-60 (240px)",
+                "fontSize": "text-sm (14px)"
+              }
+            }
           ]
         },
         {
           "category": "Row",
           "items": [
-            { "variant": "normal", "tokens": { "layout": "flex justify-between", "labelColor": "text/primary", "valueColor": "text/primary" } },
-            { "variant": "total", "tokens": { "layout": "flex justify-between", "fontWeight": "font-bold (700)", "borderTop": "border-t border-gray-200" } },
-            { "variant": "taxDetail", "tokens": { "fontSize": "text-xs (12px)", "textColor": "text/secondary", "leftBorder": "w-0.5 bg-gray-200", "gap": "gap-1 (4px)" } }
+            {
+              "variant": "normal",
+              "tokens": {
+                "layout": "flex justify-between",
+                "labelColor": "text/primary",
+                "valueColor": "text/primary"
+              }
+            },
+            {
+              "variant": "total",
+              "tokens": {
+                "layout": "flex justify-between",
+                "fontWeight": "font-bold (700)",
+                "borderTop": "border-t border-gray-200"
+              }
+            },
+            {
+              "variant": "taxDetail",
+              "tokens": {
+                "fontSize": "text-xs (12px)",
+                "textColor": "text/secondary",
+                "leftBorder": "w-0.5 bg-gray-200",
+                "gap": "gap-1 (4px)"
+              }
+            }
           ]
         }
       ]
@@ -828,13 +2510,26 @@
       "preview": "previews/attachment.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1719-15146",
       "props": [
-        { "name": "File Name", "type": "string", "default": "sample-XXXXX.png（2,222KB）", "description": "ファイル名とサイズ" }
+        {
+          "name": "File Name",
+          "type": "string",
+          "default": "sample-XXXXX.png（2,222KB）",
+          "description": "ファイル名とサイズ"
+        }
       ],
       "tokens": [
         {
           "category": "Layout",
           "items": [
-            { "variant": "all", "tokens": { "layout": "flex HORIZONTAL", "gap": "gap-2 (8px)", "fileButton": "Button (sm, tertiary)", "deleteButton": "IconButton (sm, tertiary, trash icon)" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "flex HORIZONTAL",
+                "gap": "gap-2 (8px)",
+                "fileButton": "Button (sm, tertiary)",
+                "deleteButton": "IconButton (sm, tertiary, trash icon)"
+              }
+            }
           ]
         }
       ]
@@ -847,20 +2542,381 @@
       "preview": "previews/po-preview.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-11371",
       "props": [
-        { "name": "分納", "type": "boolean", "default": "false", "description": "false: 通常発注 / true: 分納（分割納品情報を表示）" }
+        {
+          "name": "分納",
+          "type": "boolean",
+          "default": "false",
+          "description": "false: 通常発注 / true: 分納（分割納品情報を表示）"
+        }
       ],
       "tokens": [
         {
           "category": "Structure",
           "items": [
-            { "variant": "all", "tokens": { "header": "発注書タイトル + 日付 + 管理番号", "parties": "発注元（会社名・挨拶・合計金額）+ 発注先（会社名・連絡先・住所・印影）", "items": "品名・希望納品日・支払期限・数量・単価・金額テーブル", "footer": "納品先 + 補足 + Calcコンポーネント（小計・消費税・合計）" } }
+            {
+              "variant": "all",
+              "tokens": {
+                "header": "発注書タイトル + 日付 + 管理番号",
+                "parties": "発注元（会社名・挨拶・合計金額）+ 発注先（会社名・連絡先・住所・印影）",
+                "items": "品名・希望納品日・支払期限・数量・単価・金額テーブル",
+                "footer": "納品先 + 補足 + Calcコンポーネント（小計・消費税・合計）"
+              }
+            }
           ]
         },
         {
           "category": "Variant",
           "items": [
-            { "variant": "分納=False", "tokens": { "description": "通常の発注書レイアウト。アイテムごとに1行表示。" } },
-            { "variant": "分納=True", "tokens": { "description": "分納対応レイアウト。アイテムごとに複数の分納回情報を表示。" } }
+            {
+              "variant": "分納=False",
+              "tokens": {
+                "description": "通常の発注書レイアウト。アイテムごとに1行表示。"
+              }
+            },
+            {
+              "variant": "分納=True",
+              "tokens": {
+                "description": "分納対応レイアウト。アイテムごとに複数の分納回情報を表示。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "description": "タイポグラフィシステム。Inter フォント、13段階のサイズスケール。",
+      "category": "design-tokens",
+      "preview": "previews/typography.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=8-2",
+      "props": [
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "text-base",
+          "values": [
+            "text-xs",
+            "text-sm",
+            "text-base",
+            "text-lg",
+            "text-xl",
+            "text-2xl",
+            "text-3xl",
+            "text-4xl",
+            "text-5xl",
+            "text-6xl",
+            "text-7xl",
+            "text-8xl",
+            "text-9xl"
+          ],
+          "description": "フォントサイズ。text-xs: 12px / text-sm: 14px / text-base: 16px / text-lg: 18px / text-xl: 20px / text-2xl: 24px / text-3xl: 30px / text-4xl: 36px / text-5xl: 48px / text-6xl: 60px / text-7xl: 72px / text-8xl: 96px / text-9xl: 128px"
+        },
+        {
+          "name": "Weight",
+          "type": "enum",
+          "default": "Regular",
+          "values": [
+            "Thin",
+            "Extra Light",
+            "Light",
+            "Regular",
+            "Medium",
+            "Semi Bold",
+            "Bold",
+            "Extra Bold",
+            "Black"
+          ],
+          "description": "フォントウェイト。100〜900"
+        },
+        {
+          "name": "Font Family",
+          "type": "string",
+          "default": "Inter",
+          "description": "フォントファミリー"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Font Size",
+          "items": [
+            {
+              "variant": "text-xs",
+              "tokens": {
+                "fontSize": "text-xs (12px / 0.75rem)",
+                "lineHeight": "leading-4 (16px / 1rem)"
+              }
+            },
+            {
+              "variant": "text-sm",
+              "tokens": {
+                "fontSize": "text-sm (14px / 0.875rem)",
+                "lineHeight": "leading-5 (20px / 1.25rem)"
+              }
+            },
+            {
+              "variant": "text-base",
+              "tokens": {
+                "fontSize": "text-base (16px / 1rem)",
+                "lineHeight": "leading-6 (24px / 1.5rem)"
+              }
+            },
+            {
+              "variant": "text-lg",
+              "tokens": {
+                "fontSize": "text-lg (18px / 1.125rem)",
+                "lineHeight": "leading-7 (28px / 1.75rem)"
+              }
+            },
+            {
+              "variant": "text-xl",
+              "tokens": {
+                "fontSize": "text-xl (20px / 1.25rem)",
+                "lineHeight": "leading-7 (28px / 1.75rem)"
+              }
+            },
+            {
+              "variant": "text-2xl",
+              "tokens": {
+                "fontSize": "text-2xl (24px / 1.5rem)",
+                "lineHeight": "leading-8 (32px / 2rem)"
+              }
+            },
+            {
+              "variant": "text-3xl",
+              "tokens": {
+                "fontSize": "text-3xl (30px / 1.875rem)",
+                "lineHeight": "leading-9 (36px / 2.25rem)"
+              }
+            },
+            {
+              "variant": "text-4xl",
+              "tokens": {
+                "fontSize": "text-4xl (36px / 2.25rem)",
+                "lineHeight": "leading-10 (40px / 2.5rem)"
+              }
+            },
+            {
+              "variant": "text-5xl+",
+              "tokens": {
+                "fontSize": "text-5xl〜9xl (48〜128px)",
+                "lineHeight": "leading-none (1)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Font Weight",
+          "items": [
+            {
+              "variant": "Thin",
+              "tokens": {
+                "fontWeight": "font-thin (100)"
+              }
+            },
+            {
+              "variant": "Extra Light",
+              "tokens": {
+                "fontWeight": "font-extralight (200)"
+              }
+            },
+            {
+              "variant": "Light",
+              "tokens": {
+                "fontWeight": "font-light (300)"
+              }
+            },
+            {
+              "variant": "Regular",
+              "tokens": {
+                "fontWeight": "font-normal (400)"
+              }
+            },
+            {
+              "variant": "Medium",
+              "tokens": {
+                "fontWeight": "font-medium (500)"
+              }
+            },
+            {
+              "variant": "Semi Bold",
+              "tokens": {
+                "fontWeight": "font-semibold (600)"
+              }
+            },
+            {
+              "variant": "Bold",
+              "tokens": {
+                "fontWeight": "font-bold (700)"
+              }
+            },
+            {
+              "variant": "Extra Bold",
+              "tokens": {
+                "fontWeight": "font-extrabold (800)"
+              }
+            },
+            {
+              "variant": "Black",
+              "tokens": {
+                "fontWeight": "font-black (900)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Font Family",
+          "items": [
+            {
+              "variant": "sans",
+              "tokens": {
+                "fontFamily": "font-sans (Inter, system-ui, sans-serif)"
+              }
+            },
+            {
+              "variant": "serif",
+              "tokens": {
+                "fontFamily": "font-serif (Georgia, serif)"
+              }
+            },
+            {
+              "variant": "mono",
+              "tokens": {
+                "fontFamily": "font-mono (Menlo, monospace)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "Colors",
+      "description": "カラーパレット。TailwindCSS v4 準拠の22色 × 11段階。",
+      "category": "design-tokens",
+      "preview": "previews/colors.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2-9",
+      "props": [
+        {
+          "name": "Color",
+          "type": "enum",
+          "default": "Blue",
+          "values": [
+            "Slate",
+            "Gray",
+            "Zinc",
+            "Neutral",
+            "Stone",
+            "Red",
+            "Orange",
+            "Amber",
+            "Yellow",
+            "Lime",
+            "Green",
+            "Emerald",
+            "Teal",
+            "Cyan",
+            "Sky",
+            "Blue",
+            "Indigo",
+            "Violet",
+            "Purple",
+            "Fuchsia",
+            "Pink",
+            "Rose"
+          ],
+          "description": "カラーファミリー"
+        },
+        {
+          "name": "Shade",
+          "type": "enum",
+          "default": "500",
+          "values": [
+            "50",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "950"
+          ],
+          "description": "色の濃さ。50: 最も薄い / 950: 最も濃い"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Primitive",
+          "items": [
+            {
+              "variant": "Base",
+              "tokens": {
+                "black": "black (#000000)",
+                "white": "white (#FFFFFF)",
+                "transparent": "transparent"
+              }
+            },
+            {
+              "variant": "Pattern",
+              "tokens": {
+                "naming": "{color}-{shade}",
+                "example": "blue-500 (#2B7FFF)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Semantic (UI で使うトークン)",
+          "items": [
+            {
+              "variant": "Background",
+              "tokens": {
+                "bg/primary": "white (#FFFFFF)",
+                "bg/secondary": "gray-50 (#F9FAFB)",
+                "bg/tertiary": "gray-100 (#F3F4F6)",
+                "bg/disabled": "gray-50 (#F9FAFB)",
+                "bg/hover": "gray-50 (#F9FAFB)"
+              }
+            },
+            {
+              "variant": "Text",
+              "tokens": {
+                "text/primary": "gray-900 (#101828)",
+                "text/secondary": "gray-600 (#4A5565)",
+                "text/tertiary": "gray-400 (#99A1AF)",
+                "text/error": "red-500 (#FB2C36)"
+              }
+            },
+            {
+              "variant": "Border",
+              "tokens": {
+                "border/default": "gray-200 (#E5E7EB)",
+                "border/focus": "blue-500 (#2B7FFF)",
+                "border/error": "red-500 (#FB2C36)",
+                "border/disabled": "gray-200 (#E5E7EB)"
+              }
+            },
+            {
+              "variant": "Brand",
+              "tokens": {
+                "brand/50": "blue-50 (#EFF6FF)",
+                "brand/100": "blue-100 (#DBEAFE)",
+                "brand/500": "blue-500 (#2B7FFF)",
+                "brand/600": "blue-600 (#155DFC)",
+                "brand/700": "blue-700 (#1447E6)",
+                "brand/900": "blue-900 (#1C398E)"
+              }
+            },
+            {
+              "variant": "Icon",
+              "tokens": {
+                "icon/default": "gray-500 (#6A7282)",
+                "icon/disabled": "gray-300 (#D1D5DC)"
+              }
+            }
           ]
         }
       ]

@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            badge: {
+              gray: '#4A5565',
+              red: '#E7000B',
+              orange: '#F54A00',
+              amber: '#E17100',
+              blue: '#155DFC',
+              teal: '#009689',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>* { font-family: 'Inter', sans-serif; }</style>
 <style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
@@ -33,7 +51,7 @@
         <div class="w-[140px] shrink-0 px-3 py-2 text-xs font-medium text-gray-600">発注書番号</div>
         <div class="w-[140px] shrink-0 px-3 py-2 text-xs font-medium text-gray-600">入荷予定コード</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">件名</div>
-        <div class="w-[84px] shrink-0 px-3 py-2 text-xs font-medium text-gray-600">ステータス</div>
+        <div class="w-[104px] shrink-0 px-3 py-2 text-xs font-medium text-gray-600">ステータス</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">発注日</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">仕入先</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">納品先</div>
@@ -52,7 +70,7 @@
         </div>
         <!-- Table / Data Type=icon: w-8, py-2.5 px-1 -->
         <div class="w-8 shrink-0 py-2.5 px-1 flex items-center justify-center">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
         <!-- Table / Data Type=text: 14px/Regular gray-900 -->
         <div class="w-[140px] shrink-0 px-3 py-3 text-sm font-normal text-gray-900">1234567890123</div>
@@ -60,9 +78,9 @@
         <div class="w-[140px] shrink-0 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">1234567890123</a></div>
         <!-- Table / Data Type=text -->
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">パウチ追加分</div>
-        <!-- Table / Data Type=badge: Badge component (Color=gray) -->
-        <div class="w-[84px] shrink-0 px-3 py-3 flex items-center">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+        <!-- Table / Data Type=badge: Badge component (Type=draft) -->
+        <div class="w-[104px] shrink-0 px-3 py-3 flex items-center">
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">下書き</span>
         </div>
         <!-- Table / Data Type=text -->
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">2022/12/27(金)</div>
@@ -75,7 +93,7 @@
         <!-- Table / Data Type=icon button: w-12 -->
         <div class="w-12 shrink-0 flex items-center justify-center py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
         <!-- Table / Data Type=button: w-16, Button xs/secondary -->
@@ -90,13 +108,13 @@
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="w-8 shrink-0 py-2.5 px-1 flex items-center justify-center">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
         <div class="w-[140px] shrink-0 px-3 py-3 text-sm font-normal text-gray-900">1234567890123</div>
         <div class="w-[140px] shrink-0 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">1234567890123</a></div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">新配送箱の件</div>
-        <div class="w-[84px] shrink-0 px-3 py-3 flex items-center">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+        <div class="w-[104px] shrink-0 px-3 py-3 flex items-center">
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-red border-badge-red">承認待ち</span>
         </div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">2022/12/27(金)</div>
         <div class="flex-1 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">shizai</a></div>
@@ -104,7 +122,7 @@
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900 text-right">99,999,999</div>
         <div class="w-12 shrink-0 flex items-center justify-center py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
         <div class="w-16 shrink-0 flex items-center justify-center py-2.5 px-3">
@@ -118,13 +136,13 @@
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="w-8 shrink-0 py-2.5 px-1 flex items-center justify-center">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
         <div class="w-[140px] shrink-0 px-3 py-3 text-sm font-normal text-gray-900">1234567890123</div>
         <div class="w-[140px] shrink-0 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">1234567890123</a></div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">6~7月分の新規デザイン</div>
-        <div class="w-[84px] shrink-0 px-3 py-3 flex items-center">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+        <div class="w-[104px] shrink-0 px-3 py-3 flex items-center">
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-teal border-badge-teal">納品済み</span>
         </div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">2022/12/27(金)</div>
         <div class="flex-1 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">shizai</a></div>
@@ -132,7 +150,7 @@
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900 text-right">99,999,999</div>
         <div class="w-12 shrink-0 flex items-center justify-center py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
         <div class="w-16 shrink-0 flex items-center justify-center py-2.5 px-3">
@@ -146,13 +164,13 @@
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="w-8 shrink-0 py-2.5 px-1 flex items-center justify-center">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
         <div class="w-[140px] shrink-0 px-3 py-3 text-sm font-normal text-gray-900">1234567890123</div>
         <div class="w-[140px] shrink-0 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">1234567890123</a></div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">6月納品分</div>
-        <div class="w-[84px] shrink-0 px-3 py-3 flex items-center">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+        <div class="w-[104px] shrink-0 px-3 py-3 flex items-center">
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-orange border-badge-orange">送信待ち</span>
         </div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">2022/12/27(金)</div>
         <div class="flex-1 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">shizai</a></div>
@@ -160,7 +178,7 @@
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900 text-right">99,999,999</div>
         <div class="w-12 shrink-0 flex items-center justify-center py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
         <div class="w-16 shrink-0 flex items-center justify-center py-2.5 px-3">
@@ -174,13 +192,13 @@
           <input type="checkbox" class="w-4 h-4 rounded-sm border-gray-300 text-blue-600">
         </div>
         <div class="w-8 shrink-0 py-2.5 px-1 flex items-center justify-center">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
         <div class="w-[140px] shrink-0 px-3 py-3 text-sm font-normal text-gray-900">1234567890123</div>
         <div class="w-[140px] shrink-0 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">1234567890123</a></div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">配送箱発注の件</div>
-        <div class="w-[84px] shrink-0 px-3 py-3 flex items-center">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+        <div class="w-[104px] shrink-0 px-3 py-3 flex items-center">
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-amber border-badge-amber">納品待ち</span>
         </div>
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900">2022/12/27(金)</div>
         <div class="flex-1 px-3 py-3"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">shizai</a></div>
@@ -188,7 +206,7 @@
         <div class="flex-1 px-3 py-3 text-sm font-normal text-gray-900 text-right">99,999,999</div>
         <div class="w-12 shrink-0 flex items-center justify-center py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
         <div class="w-16 shrink-0 flex items-center justify-center py-2.5 px-3">
@@ -214,7 +232,7 @@
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">icon</span>
         <div class="flex items-center justify-center border border-dashed border-gray-200 rounded w-8 py-2.5 px-1">
-          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
       </div>
       <!-- Type=text -->
@@ -235,7 +253,7 @@
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">badge</span>
         <div class="px-3 py-3 border border-dashed border-gray-200 rounded">
-          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-gray-600 border-gray-600">Badge</span>
+          <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">下書き</span>
         </div>
       </div>
       <!-- Type=button -->
@@ -250,7 +268,7 @@
         <span class="text-[10px] text-gray-400 uppercase">icon button</span>
         <div class="flex items-center justify-center border border-dashed border-gray-200 rounded py-2.5 px-3">
           <button class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 active:bg-blue-300 text-blue-700 hover:text-blue-800 active:text-blue-900 transition-colors">
-            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            <svg class="w-3 h-3"><use href="icons.svg#icon-plus"/></svg>
           </button>
         </div>
       </div>
