@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>* { font-family: 'Inter', sans-serif; }</style>
 <style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
 <script>if (window !== window.top) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }</script>
 </head>
@@ -19,24 +17,25 @@
   <!-- Active: text=blue-500(#2B7FFF), border-b-2=blue-500, font-medium -->
   <!-- Hover: text=blue-600(#155DFC), no underline, font-medium -->
   <!-- Inactive: text=gray-600(#4A5565), no underline, font-normal -->
+  <!-- Padding: p-3 (12px all sides) -->
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Underline Tabs</h3>
-    <div class="border-b border-gray-200">
-      <nav class="flex gap-1">
+    <div class="border-b border-slate-200">
+      <nav class="flex">
         <!-- Active -->
-        <button class="text-sm font-medium px-3 py-2 border-b-2 border-blue-500 text-blue-500">
+        <button class="text-sm font-medium p-3 border-b-2 border-blue-500 text-blue-500">
           タブ1
         </button>
         <!-- Inactive -->
-        <button class="text-sm font-normal px-3 py-2 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
           タブ2
         </button>
         <!-- Inactive -->
-        <button class="text-sm font-normal px-3 py-2 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
           タブ3
         </button>
         <!-- Inactive -->
-        <button class="text-sm font-normal px-3 py-2 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-blue-600 hover:font-medium transition-colors">
           タブ4
         </button>
       </nav>
@@ -50,53 +49,75 @@
       <!-- Active -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">active</span>
-        <div class="border-b border-gray-200">
-          <button class="text-sm font-medium px-3 py-2 border-b-2 border-blue-500 text-blue-500">Tab</button>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-medium p-3 border-b-2 border-blue-500 text-blue-500">Tab</button>
         </div>
       </div>
       <!-- Inactive -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">inactive</span>
-        <div class="border-b border-gray-200">
-          <button class="text-sm font-normal px-3 py-2 border-b-2 border-transparent text-gray-600">Tab</button>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600">Tab</button>
         </div>
       </div>
       <!-- Hover -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">hover</span>
-        <div class="border-b border-gray-200">
-          <button class="text-sm font-medium px-3 py-2 border-b-2 border-transparent text-blue-600">Tab</button>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-medium p-3 border-b-2 border-transparent text-blue-600">Tab</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PILL TABS -->
-  <!-- Active: bg=blue-100(#DBEAFE), text=blue-700(#1447E6), font-medium, rounded-md(6px), counter bg=blue-100 rounded-sm -->
+  <!-- Active: bg=blue-100(#DBEAFE), text=blue-700(#1447E6), font-medium, rounded-md(6px), py-1.5, counter bg=blue-100 rounded-sm -->
   <!-- Hover: bg=gray-100(#F3F4F6), text=gray-600(#4A5565), font-normal, rounded-md(6px), counter bg=gray-100 rounded-full -->
-  <!-- Inactive: bg=white, text=gray-600(#4A5565), font-normal, rounded-md(6px), counter bg=gray-100 rounded-full -->
+  <!-- Inactive: bg=white, text=gray-600(#4A5565), font-normal, rounded-md(6px), counter bg=red-50 text=red-500 rounded-full -->
+  <!-- Inactive without counter: py-1.5, with counter: py-1 -->
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Pill Tabs</h3>
     <div class="flex gap-1">
       <!-- Active -->
-      <button class="flex items-center gap-1 text-sm font-medium px-2 py-1 rounded-md bg-blue-100 text-blue-700">
+      <button class="flex items-center gap-1 text-sm font-medium px-2 py-1.5 rounded-md bg-blue-100 text-blue-700">
         すべて
-        <span class="text-sm font-normal px-2 py-0.5 rounded-sm bg-blue-100 text-blue-700">999</span>
       </button>
-      <!-- Inactive -->
+      <!-- Inactive with counter -->
       <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
-        承認済み
-        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">999</span>
+        下書き
+        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
       </button>
-      <!-- Inactive -->
+      <!-- Inactive with counter -->
       <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
-        申請中
-        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">999</span>
+        承認待ち
+        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
       </button>
-      <!-- Inactive -->
+      <!-- Inactive with counter -->
       <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
-        却下
-        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">999</span>
+        送信待ち
+        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
+      </button>
+      <!-- Inactive with counter -->
+      <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
+        納品待ち
+        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
+      </button>
+      <!-- Inactive with counter -->
+      <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
+        会話中
+        <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
+      </button>
+      <!-- Inactive without counter -->
+      <button class="flex items-center gap-1 text-sm font-normal px-2 py-1.5 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
+        納品済み
+      </button>
+      <!-- Inactive without counter -->
+      <button class="flex items-center gap-1 text-sm font-normal px-2 py-1.5 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
+        差し戻し
+      </button>
+      <!-- Inactive without counter -->
+      <button class="flex items-center gap-1 text-sm font-normal px-2 py-1.5 rounded-md bg-white text-gray-600 hover:bg-gray-100 transition-colors">
+        取り消し
       </button>
     </div>
   </section>
@@ -118,7 +139,7 @@
         <span class="text-[10px] text-gray-400 uppercase">inactive</span>
         <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-white text-gray-600">
           Tab
-          <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">999</span>
+          <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
         </button>
       </div>
       <!-- Hover -->
@@ -126,7 +147,7 @@
         <span class="text-[10px] text-gray-400 uppercase">hover</span>
         <button class="flex items-center gap-1 text-sm font-normal px-2 py-1 rounded-md bg-gray-100 text-gray-600">
           Tab
-          <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">999</span>
+          <span class="text-sm font-normal px-2 py-0.5 rounded-full bg-red-50 text-red-500">999</span>
         </button>
       </div>
     </div>

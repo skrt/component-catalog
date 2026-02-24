@@ -5,10 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>* { font-family: 'Inter', sans-serif; }</style>
-<style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
-<script>if (window !== window.top) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }</script>
+  <style>
+    [x-cloak] { display: none !important; }
+    .hide-scrollbar { overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+  </style>
+<style>
+  #back-link { display: inline-flex; }
+  .in-iframe #back-link { display: none; }
+</style>
+<script>
+  var _inIframe = window !== window.top;
+  if (_inIframe) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }
+
+  // --- Demo overlay: open demo in a child iframe layered on top of parent ---
+  function _showDemoInParent(name) {
+    var pd = window.parent.document;
+    var existing = pd.getElementById('demo-overlay');
+    if (existing) existing.remove();
+
+    var overlay = pd.createElement('div');
+    overlay.id = 'demo-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;';
+
+    var iframe = pd.createElement('iframe');
+    iframe.style.cssText = 'width:100%;height:100%;border:none;';
+    // Load same page in demo-only mode
+    iframe.src = location.href.split('?')[0].split('#')[0] + '?demo=' + name + '&v=' + Date.now();
+    overlay.appendChild(iframe);
+
+    pd.body.appendChild(overlay);
+  }
+
+  // --- Demo-only mode: when loaded via ?demo=Name, show only the overlay ---
+  (function() {
+    var params = new URLSearchParams(location.search);
+    var demoName = params.get('demo');
+    if (!demoName) return;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide all normal page content
+      Array.from(document.body.children).forEach(function(el) { el.style.display = 'none'; });
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.overflow = 'hidden';
+
+      var source = document.getElementById('demo-' + demoName.toLowerCase());
+      if (!source) return;
+
+      // Backdrop
+      var backdrop = document.createElement('div');
+      backdrop.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);transition:background 0.2s ease;';
+      if (demoName !== 'Dialog') backdrop.style.padding = '64px 0';
+
+      // Clone modal from hidden source
+      var modal = source.cloneNode(true);
+      modal.removeAttribute('id');
+      modal.style.boxShadow = '0 8px 32px -8px rgba(0,0,0,0.16)';
+      modal.style.transform = 'scale(0.95)';
+      modal.style.opacity = '0';
+      modal.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+      if (demoName !== 'Dialog') {
+        modal.style.maxHeight = '80vh';
+        modal.style.height = '';
+      }
+
+      // Remove last row border (overlaps with footer border-top)
+      var allRows = modal.querySelectorAll('[data-checkbox-row], [data-member-row]');
+      if (allRows.length) allRows[allRows.length - 1].style.borderBottom = 'none';
+
+      backdrop.appendChild(modal);
+      document.body.appendChild(backdrop);
+
+      // Close: remove parent overlay iframe
+      var closeFn = function() {
+        backdrop.style.background = 'rgba(0,0,0,0)';
+        modal.style.transform = 'scale(0.95)';
+        modal.style.opacity = '0';
+        setTimeout(function() {
+          try { window.parent.document.getElementById('demo-overlay').remove(); } catch(e) {
+            location.href = location.pathname;
+          }
+        }, 200);
+      };
+
+      backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeFn(); });
+      modal.querySelectorAll('[data-close]').forEach(function(btn) { btn.addEventListener('click', closeFn); });
+
+      // ItemSelect: checkbox toggling
+      if (demoName === 'ItemSelect') {
+        var countEl = modal.querySelector('[data-count]');
+        var updateCount = function() {
+          if (!countEl) return;
+          var checked = modal.querySelectorAll('[data-checkbox][data-checked="true"]').length;
+          countEl.textContent = checked + '件選択中';
+        };
+        modal.querySelectorAll('[data-checkbox-row]').forEach(function(row) {
+          row.addEventListener('click', function(e) {
+            if (e.target.tagName === 'INPUT') return;
+            var cb = row.querySelector('[data-checkbox]');
+            if (!cb) return;
+            var isChecked = cb.getAttribute('data-checked') === 'true';
+            if (isChecked) {
+              cb.setAttribute('data-checked', 'false');
+              cb.className = 'w-4 h-4 rounded border border-[#e5e7eb] bg-white';
+              cb.innerHTML = '';
+            } else {
+              cb.setAttribute('data-checked', 'true');
+              cb.className = 'w-4 h-4 rounded bg-[#2b7fff] inline-flex items-center justify-center';
+              cb.innerHTML = '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+            }
+            updateCount();
+          });
+        });
+      }
+
+      // MemberSelect: row click to select
+      if (demoName === 'MemberSelect') {
+        modal.querySelectorAll('[data-member-row]').forEach(function(row) {
+          row.addEventListener('click', function() {
+            row.style.backgroundColor = '#EFF6FF';
+            setTimeout(closeFn, 250);
+          });
+        });
+      }
+
+      // Animate in
+      requestAnimationFrame(function() {
+        backdrop.style.background = 'rgba(0,0,0,0.5)';
+        modal.style.transform = 'scale(1)';
+        modal.style.opacity = '1';
+      });
+    });
+  })();
+</script>
 </head>
 <body class="bg-white p-6 space-y-10">
   <a href="../" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4" id="back-link">
@@ -16,89 +146,450 @@
     一覧に戻る
   </a>
 
-  <!-- MODAL DIALOG (card only) -->
+  <!-- ===== MODAL FOOTER ===== -->
   <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">MODAL DIALOG</h3>
-    <!-- Dialog: w=400, bg=#FFFFFF, border=#E5E7EB(1px), radius=12, shadow=0 8px 32px rgba(0,0,0,0.16) -->
-    <div class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px rgba(0,0,0,0.16);">
-      <!-- Content: padding=24px all, gap=8px, VERTICAL -->
-      <div class="flex flex-col gap-2 p-6">
-        <!-- Title: 18px, weight=500, color=#101828 -->
-        <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
-        <!-- Description: 14px, weight=400, color=#4A5565 -->
-        <p class="text-sm font-normal text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Modal Footer</h3>
+    <div class="space-y-4">
+      <!-- With count -->
+      <div class="space-y-1">
+        <span class="text-[10px] text-gray-400 uppercase">With Count</span>
+        <div class="w-[672px] flex items-center gap-3 justify-end bg-[#F9FAFB] border-t border-[#E5E7EB] px-6 py-4">
+          <p class="flex-1 text-sm text-[#101828] leading-5">0件選択中</p>
+          <div class="flex items-center gap-3">
+            <button class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+            <button class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">承認</button>
+          </div>
+        </div>
       </div>
-      <!-- Footer: bg=#F9FAFB, padding=24/16, gap=12, justify=end, align=center -->
-      <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
-        <!-- Cancel Button: Tertiary sm -->
-        <button class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white text-sm font-medium text-[#101828]" style="padding: 6px 12px;">
-          キャンセル
-        </button>
-        <!-- Confirm Button: Primary sm -->
-        <button class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] text-sm font-medium text-white" style="padding: 6px 12px;">
-          承認
-        </button>
+      <!-- Without count -->
+      <div class="space-y-1">
+        <span class="text-[10px] text-gray-400 uppercase">Without Count</span>
+        <div class="w-[672px] flex items-center gap-3 justify-end bg-[#F9FAFB] border-t border-[#E5E7EB] px-6 py-4">
+          <div class="flex items-center gap-3">
+            <button class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+            <button class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">承認</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- INTERACTIVE DEMO -->
-  <section x-data="{ open: false }">
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">INTERACTIVE DEMO</h3>
-    <!-- Trigger Button: Primary sm -->
-    <button
-      @click="open = true"
-      class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white transition-colors" style="padding: 6px 12px;">
-      モーダルを開く
-    </button>
+  <!-- ===== MODAL DIALOG ===== -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Modal Dialog</h3>
+    <div id="demo-dialog" class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);">
+      <div class="flex flex-col gap-2 p-6">
+        <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
+        <p class="text-sm text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
+      </div>
+      <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl px-6 py-4">
+        <button data-close class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+        <button data-close class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">承認</button>
+      </div>
+    </div>
+  </section>
 
-    <!-- Modal Overlay + Dialog -->
+  <!-- ===== MODAL / ITEMSELECT — Sub-components ===== -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Modal / ItemSelect</h3>
+
+    <!-- Header -->
+    <div class="space-y-1 mb-4">
+      <span class="text-[10px] text-gray-400 uppercase">Header</span>
+      <div class="w-[672px]">
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+          <div class="w-8 shrink-0"></div>
+          <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">アイテム名</span></div>
+          <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">カラー</span></div>
+          <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">サイズ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rows -->
+    <div class="space-y-1 mb-8">
+      <span class="text-[10px] text-gray-400 uppercase">Row (Default / Hover / Checked / Checked+Hover)</span>
+      <div class="w-[672px]">
+        <!-- Row: Unchecked Default -->
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+          <div class="w-8 shrink-0 flex items-center justify-center">
+            <span class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span>
+          </div>
+          <div class="flex-1 flex flex-col gap-1 px-2 py-3">
+            <span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span>
+            <span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-XL</span>
+          </div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+        </div>
+        <!-- Row: Unchecked Hover (static) -->
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] bg-[#F9FAFB]">
+          <div class="w-8 shrink-0 flex items-center justify-center">
+            <span class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span>
+          </div>
+          <div class="flex-1 flex flex-col gap-1 px-2 py-3">
+            <span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span>
+            <span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-XL</span>
+          </div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+        </div>
+        <!-- Row: Checked Default -->
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+          <div class="w-8 shrink-0 flex items-center justify-center">
+            <span class="w-4 h-4 rounded bg-[#2b7fff] inline-flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+          </div>
+          <div class="flex-1 flex flex-col gap-1 px-2 py-3">
+            <span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span>
+            <span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-XL</span>
+          </div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+        </div>
+        <!-- Row: Checked Hover (static) -->
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] bg-[#F9FAFB]">
+          <div class="w-8 shrink-0 flex items-center justify-center">
+            <span class="w-4 h-4 rounded bg-[#2b7fff] inline-flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+          </div>
+          <div class="flex-1 flex flex-col gap-1 px-2 py-3">
+            <span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span>
+            <span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-XL</span>
+          </div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+          <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full ItemSelect Modal -->
+    <div class="space-y-1">
+      <span class="text-[10px] text-gray-400 uppercase">Full Modal</span>
+      <div id="demo-itemselect" class="w-[672px] h-[600px] flex flex-col bg-white border border-[#E5E7EB] rounded-xl overflow-hidden" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);">
+        <!-- FixArea -->
+        <div class="shrink-0">
+          <div class="pt-6 pb-3 px-6">
+            <p class="text-base font-bold text-[#101828] leading-6">発注アイテムを選択</p>
+          </div>
+          <div class="flex flex-col gap-2 px-6 pb-3">
+            <div class="flex items-start gap-3">
+              <div class="flex-1 flex flex-col gap-2">
+                <label class="text-sm font-medium text-[#101828] leading-5">ID</label>
+                <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#2B7FFF] focus:ring-1 focus:ring-[#2B7FFF]" />
+              </div>
+              <div class="flex-1 flex flex-col gap-2">
+                <label class="text-sm font-medium text-[#101828] leading-5">アイテム名</label>
+                <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#2B7FFF] focus:ring-1 focus:ring-[#2B7FFF]" />
+              </div>
+            </div>
+            <p class="text-sm text-[#99A1AF] leading-5">検索結果：5件</p>
+          </div>
+          <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+            <div class="w-8 shrink-0"></div>
+            <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">アイテム名</span></div>
+            <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">カラー</span></div>
+            <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">サイズ</span></div>
+          </div>
+        </div>
+        <!-- ScrollArea -->
+        <div class="flex-1 hide-scrollbar">
+          <div data-checkbox-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+            <div class="w-8 shrink-0 flex items-center justify-center"><span data-checkbox data-checked="false" class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span></div>
+            <div class="flex-1 flex flex-col gap-1 px-2 py-3"><span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span><span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-XL</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+          </div>
+          <div data-checkbox-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+            <div class="w-8 shrink-0 flex items-center justify-center"><span data-checkbox data-checked="false" class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span></div>
+            <div class="flex-1 flex flex-col gap-1 px-2 py-3"><span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span><span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-NVY-L</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">NAVY</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">L</span></div>
+          </div>
+          <div data-checkbox-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+            <div class="w-8 shrink-0 flex items-center justify-center"><span data-checkbox data-checked="false" class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span></div>
+            <div class="flex-1 flex flex-col gap-1 px-2 py-3"><span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span><span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-BLK-M</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">BLACK</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">M</span></div>
+          </div>
+          <div data-checkbox-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+            <div class="w-8 shrink-0 flex items-center justify-center"><span data-checkbox data-checked="false" class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span></div>
+            <div class="flex-1 flex flex-col gap-1 px-2 py-3"><span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span><span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-BLK-S</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">BLACK</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">S</span></div>
+          </div>
+          <div data-checkbox-row class="flex items-center px-4 cursor-pointer hover:bg-[#F9FAFB]">
+            <div class="w-8 shrink-0 flex items-center justify-center"><span data-checkbox data-checked="false" class="w-4 h-4 rounded border border-[#e5e7eb] bg-white"></span></div>
+            <div class="flex-1 flex flex-col gap-1 px-2 py-3"><span class="text-sm text-[#101828] leading-5">サイドタックワイドパンツ</span><span class="text-xs text-[#99A1AF] leading-4">S-00-PT-019-WHT-XL</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">WHITE</span></div>
+            <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5">XL</span></div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <div class="shrink-0 flex items-center gap-3 justify-end bg-[#F9FAFB] border-t border-[#E5E7EB] px-6 py-4">
+          <p data-count class="flex-1 text-sm text-[#101828] leading-5">0件選択中</p>
+          <div class="flex items-center gap-3">
+            <button data-close class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+            <button data-close class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">選択完了</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODAL / MEMBERSELECT — Sub-components ===== -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Modal / MemberSelect</h3>
+
+    <!-- Header -->
+    <div class="space-y-1 mb-4">
+      <span class="text-[10px] text-gray-400 uppercase">Header</span>
+      <div class="w-[672px]">
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+          <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">氏名</span></div>
+          <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">管理権限</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row -->
+    <div class="space-y-1 mb-8">
+      <span class="text-[10px] text-gray-400 uppercase">Row (Default / Hover)</span>
+      <div class="w-[672px]">
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]">
+          <div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">酒井 亮太</span></div>
+          <div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div>
+        </div>
+        <div class="flex items-center px-4 border-b border-[#E5E7EB] bg-[#F9FAFB]">
+          <div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">酒井 亮太</span></div>
+          <div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full MemberSelect Modal -->
+    <div class="space-y-1">
+      <span class="text-[10px] text-gray-400 uppercase">Full Modal</span>
+      <div id="demo-memberselect" class="w-[672px] h-[500px] flex flex-col bg-white border border-[#E5E7EB] rounded-xl overflow-hidden" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);">
+        <div class="shrink-0">
+          <div class="pt-6 pb-3 px-6">
+            <p class="text-base font-bold text-[#101828] leading-6">1次承認者を選択</p>
+          </div>
+          <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+            <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">氏名</span></div>
+            <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">管理権限</span></div>
+          </div>
+        </div>
+        <div class="flex-1 hide-scrollbar">
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">酒井 亮太</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">田中 花子</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">編集者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">山田 太郎</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">佐藤 健一</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">編集者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">鈴木 美咲</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">伊藤 大輔</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">編集者</span></div></div>
+          <div data-member-row class="flex items-center px-4 border-b border-[#E5E7EB] cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">高橋 由美</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">管理者</span></div></div>
+          <div data-member-row class="flex items-center px-4 cursor-pointer hover:bg-[#F9FAFB]"><div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5">渡辺 翔太</span></div><div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5">編集者</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE DEMO ===== -->
+  <section x-data="{
+    openDialog: false,
+    openItemSelect: false,
+    openMemberSelect: false,
+    inIframe: window !== window.top,
+    itemRows: [
+      { name: 'サイドタックワイドパンツ', sku: 'S-00-PT-019-NVY-XL', color: 'NAVY', size: 'XL', checked: false },
+      { name: 'サイドタックワイドパンツ', sku: 'S-00-PT-019-NVY-L', color: 'NAVY', size: 'L', checked: false },
+      { name: 'サイドタックワイドパンツ', sku: 'S-00-PT-019-BLK-M', color: 'BLACK', size: 'M', checked: false },
+      { name: 'サイドタックワイドパンツ', sku: 'S-00-PT-019-BLK-S', color: 'BLACK', size: 'S', checked: false },
+      { name: 'サイドタックワイドパンツ', sku: 'S-00-PT-019-WHT-XL', color: 'WHITE', size: 'XL', checked: false }
+    ],
+    memberRows: [
+      { name: '酒井 亮太', role: '管理者' },
+      { name: '田中 花子', role: '編集者' },
+      { name: '山田 太郎', role: '管理者' },
+      { name: '佐藤 健一', role: '編集者' },
+      { name: '鈴木 美咲', role: '管理者' },
+      { name: '伊藤 大輔', role: '編集者' },
+      { name: '高橋 由美', role: '管理者' },
+      { name: '渡辺 翔太', role: '編集者' },
+      { name: '中村 修平', role: '管理者' },
+      { name: '小林 さくら', role: '編集者' },
+      { name: '加藤 雅人', role: '管理者' },
+      { name: '吉田 真理', role: '編集者' },
+      { name: '松本 隆', role: '管理者' },
+      { name: '井上 恵子', role: '編集者' },
+      { name: '木村 拓也', role: '管理者' }
+    ],
+    openDemo(name) {
+      if (this.inIframe) {
+        _showDemoInParent(name);
+        return;
+      }
+      this['open' + name] = true;
+    },
+    closeDemo(name) {
+      this['open' + name] = false;
+    }
+  }" x-cloak>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</h3>
+
+    <div class="flex items-center gap-3 flex-wrap">
+      <button
+        @click="openDemo('Dialog')"
+        class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-3 py-1.5 transition-colors">
+        Dialog
+      </button>
+      <button
+        @click="openDemo('ItemSelect')"
+        class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-3 py-1.5 transition-colors">
+        ItemSelect
+      </button>
+      <button
+        @click="openDemo('MemberSelect')"
+        class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-3 py-1.5 transition-colors">
+        MemberSelect
+      </button>
+    </div>
+
+    <!-- Dialog Overlay -->
     <template x-teleport="body">
       <div
-        x-show="open"
-        x-transition:enter="transition ease-out duration-200"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-150"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-50 flex items-center justify-center"
-        @click.self="open = false"
-        style="background: rgba(0,0,0,0.5);"
-      >
-        <!-- Dialog -->
-        <div
-          x-show="open"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 scale-95"
-          x-transition:enter-end="opacity-100 scale-100"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 scale-100"
-          x-transition:leave-end="opacity-0 scale-95"
-          class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]"
-          style="box-shadow: 0 8px 32px rgba(0,0,0,0.16);"
-          @click.stop
-        >
+        x-show="openDialog"
+        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center" @click.self="closeDemo('Dialog')"
+        style="background: rgba(0,0,0,0.5);">
+        <div x-show="openDialog"
+          x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+          class="w-[400px] rounded-xl bg-white border border-[#E5E7EB]" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);" @click.stop>
           <div class="flex flex-col gap-2 p-6">
             <p class="text-lg font-medium text-[#101828] leading-7">Dialog Title</p>
-            <p class="text-sm font-normal text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
+            <p class="text-sm text-[#4A5565] leading-5">Are you sure you want to proceed? This action cannot be undone.</p>
           </div>
-          <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl" style="padding: 16px 24px;">
-            <button
-              @click="open = false"
-              class="inline-flex items-center justify-center h-8 rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] transition-colors" style="padding: 6px 12px;">
-              キャンセル
-            </button>
-            <button
-              @click="open = false"
-              class="inline-flex items-center justify-center h-8 rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white transition-colors" style="padding: 6px 12px;">
-              承認
-            </button>
+          <div class="flex justify-end items-center gap-3 bg-[#F9FAFB] rounded-b-xl px-6 py-4">
+            <button @click="closeDemo('Dialog')" class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+            <button @click="closeDemo('Dialog')" class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">承認</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ItemSelect Overlay -->
+    <template x-teleport="body">
+      <div
+        x-show="openItemSelect"
+        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center py-16" @click.self="closeDemo('ItemSelect')"
+        style="background: rgba(0,0,0,0.5);">
+        <div x-show="openItemSelect"
+          x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+          class="w-[672px] max-h-full flex flex-col bg-white border border-[#E5E7EB] rounded-xl overflow-hidden" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);" @click.stop>
+          <div class="shrink-0">
+            <div class="pt-6 pb-3 px-6"><p class="text-base font-bold text-[#101828] leading-6">発注アイテムを選択</p></div>
+            <div class="flex flex-col gap-2 px-6 pb-3">
+              <div class="flex items-start gap-3">
+                <div class="flex-1 flex flex-col gap-2">
+                  <label class="text-sm font-medium text-[#101828] leading-5">ID</label>
+                  <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#2B7FFF] focus:ring-1 focus:ring-[#2B7FFF]" />
+                </div>
+                <div class="flex-1 flex flex-col gap-2">
+                  <label class="text-sm font-medium text-[#101828] leading-5">アイテム名</label>
+                  <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#2B7FFF] focus:ring-1 focus:ring-[#2B7FFF]" />
+                </div>
+              </div>
+              <p class="text-sm text-[#99A1AF] leading-5">検索結果：5件</p>
+            </div>
+            <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+              <div class="w-8 shrink-0"></div>
+              <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">アイテム名</span></div>
+              <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">カラー</span></div>
+              <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">サイズ</span></div>
+            </div>
+          </div>
+          <div class="flex-1 hide-scrollbar">
+            <template x-for="(item, i) in itemRows" :key="i">
+              <div @click="item.checked = !item.checked" class="flex items-center px-4 cursor-pointer hover:bg-[#F9FAFB]" :class="i < itemRows.length - 1 ? 'border-b border-[#E5E7EB]' : ''">
+                <div class="w-8 shrink-0 flex items-center justify-center">
+                  <span class="w-4 h-4 rounded inline-flex items-center justify-center transition-all"
+                    :class="item.checked ? 'bg-[#2b7fff]' : 'border border-[#e5e7eb] bg-white'">
+                    <svg x-show="item.checked" class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                </div>
+                <div class="flex-1 flex flex-col gap-1 px-2 py-3">
+                  <span class="text-sm text-[#101828] leading-5" x-text="item.name"></span>
+                  <span class="text-xs text-[#99A1AF] leading-4" x-text="item.sku"></span>
+                </div>
+                <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5" x-text="item.color"></span></div>
+                <div class="w-28 shrink-0 px-2 py-4 flex items-center"><span class="text-sm text-[#101828] leading-5" x-text="item.size"></span></div>
+              </div>
+            </template>
+          </div>
+          <div class="shrink-0 flex items-center gap-3 justify-end bg-[#F9FAFB] border-t border-[#E5E7EB] px-6 py-4">
+            <p class="flex-1 text-sm text-[#101828] leading-5" x-text="itemRows.filter(i => i.checked).length + '件選択中'"></p>
+            <div class="flex items-center gap-3">
+              <button @click="closeDemo('ItemSelect')" class="inline-flex items-center justify-center rounded-md border border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] active:bg-[#F3F4F6] text-sm font-medium text-[#101828] px-4 py-2.5 transition-colors">キャンセル</button>
+              <button @click="closeDemo('ItemSelect')" class="inline-flex items-center justify-center rounded-md bg-[#2B7FFF] hover:bg-[#155DFC] active:bg-[#1447E6] text-sm font-medium text-white px-4 py-2.5 transition-colors">選択完了</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- MemberSelect Overlay -->
+    <template x-teleport="body">
+      <div
+        x-show="openMemberSelect"
+        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center py-16" @click.self="closeDemo('MemberSelect')"
+        style="background: rgba(0,0,0,0.5);">
+        <div x-show="openMemberSelect"
+          x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+          class="w-[672px] max-h-full flex flex-col bg-white border border-[#E5E7EB] rounded-xl overflow-hidden" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);" @click.stop>
+          <div class="shrink-0">
+            <div class="pt-6 pb-3 px-6"><p class="text-base font-bold text-[#101828] leading-6">1次承認者を選択</p></div>
+            <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
+              <div class="flex-1 px-2"><span class="text-xs text-[#4A5565] leading-4">氏名</span></div>
+              <div class="w-28 shrink-0 px-2"><span class="text-xs text-[#4A5565] leading-4">管理権限</span></div>
+            </div>
+          </div>
+          <div class="flex-1 hide-scrollbar">
+            <template x-for="(member, i) in memberRows" :key="i">
+              <div @click="closeDemo('MemberSelect')" class="flex items-center px-4 cursor-pointer hover:bg-[#F9FAFB]" :class="i < memberRows.length - 1 ? 'border-b border-[#E5E7EB]' : ''">
+                <div class="flex-1 px-2 py-4"><span class="text-sm text-[#101828] leading-5" x-text="member.name"></span></div>
+                <div class="w-28 shrink-0 px-2 py-4"><span class="text-sm text-[#101828] leading-5" x-text="member.role"></span></div>
+              </div>
+            </template>
           </div>
         </div>
       </div>
     </template>
   </section>
 
+  <!-- Auto-open demo from hash -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const h = location.hash;
+        if (!h) return;
+        const el = document.querySelector('[x-data]');
+        if (!el || !el._x_dataStack) return;
+        const data = el._x_dataStack[0];
+        if (h === '#demo-dialog') data.openDemo('Dialog');
+        else if (h === '#demo-itemselect') data.openDemo('ItemSelect');
+        else if (h === '#demo-memberselect') data.openDemo('MemberSelect');
+      }, 500);
+    });
+  </script>
 </body>
 </html>

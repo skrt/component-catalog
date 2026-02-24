@@ -2920,6 +2920,286 @@
           ]
         }
       ]
+    },
+    {
+      "id": "approval-flow",
+      "name": "Approval Flow",
+      "description": "承認フローコンポーネント。承認ルート設定（Routing）と承認状況追跡（Approval Tracker）の2つのサブコンポーネントで構成。",
+      "category": "data-display",
+      "preview": "previews/approval-flow.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1743-6136",
+      "props": [
+        {
+          "name": "Sub Component",
+          "type": "enum",
+          "default": "Routing Step",
+          "values": [
+            "Routing Step",
+            "Routing",
+            "Approval Tracker Step",
+            "Approval Tracker Step Multi"
+          ],
+          "description": "サブコンポーネントの種類"
+        },
+        {
+          "name": "State (Routing Step)",
+          "type": "enum",
+          "default": "Unconfigured",
+          "values": [
+            "Unconfigured",
+            "Configured",
+            "Error",
+            "Add"
+          ],
+          "description": "Routing Step: Unconfigured=未設定 / Configured=承認者設定済み / Error=バリデーションエラー / Add=承認者追加ボタン"
+        },
+        {
+          "name": "State (Tracker Step)",
+          "type": "enum",
+          "default": "Unconfirmed",
+          "values": [
+            "Unconfirmed",
+            "Done",
+            "Reject"
+          ],
+          "description": "Tracker Step: Unconfirmed=承認待ち / Done=承認済み / Reject=差し戻し"
+        },
+        {
+          "name": "State (Tracker Multi)",
+          "type": "enum",
+          "default": "Default",
+          "values": [
+            "Default",
+            "Partial",
+            "Approval",
+            "Reject",
+            "Skip",
+            "And-Default",
+            "And-Partial",
+            "And-Approval",
+            "And-Reject"
+          ],
+          "description": "Tracker Multi: Default=全承認待ち / Partial=一部承認済み / Approval=全承認済み / Reject=差し戻しあり / Skip=単一ステップ / And-*=AND条件付き"
+        },
+        {
+          "name": "propValue (右側の線を表示)",
+          "type": "boolean",
+          "default": "true",
+          "description": "カード右側のコネクタ線の表示/非表示。最後のステップではfalse"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Card",
+          "items": [
+            {
+              "variant": "Base",
+              "tokens": {
+                "width": "w-[160px]",
+                "padding": "p-3 (12px)",
+                "gap": "gap-2 (8px)",
+                "borderRadius": "rounded-lg (8px)",
+                "border": "border gray-200 (#e5e7eb)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Border Color",
+          "items": [
+            {
+              "variant": "Default / Unconfirmed",
+              "tokens": {
+                "border": "gray-200 (#e5e7eb)"
+              }
+            },
+            {
+              "variant": "Done",
+              "tokens": {
+                "border": "green-600 (#00a63e)"
+              }
+            },
+            {
+              "variant": "Reject",
+              "tokens": {
+                "border": "red-600 (#e7000b)"
+              }
+            },
+            {
+              "variant": "Error (Routing)",
+              "tokens": {
+                "border": "red-500 (#fb2c36)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Connector Line",
+          "items": [
+            {
+              "variant": "Default",
+              "tokens": {
+                "width": "w-2 (8px)",
+                "height": "h-px (1px)",
+                "color": "gray-200 (#e5e7eb)"
+              }
+            },
+            {
+              "variant": "Done",
+              "tokens": {
+                "color": "green-600 (#00a63e)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Status Text",
+          "items": [
+            {
+              "variant": "Unconfirmed (承認待ち)",
+              "tokens": {
+                "color": "gray-600 (#4a5565)",
+                "icon": "circle-minus"
+              }
+            },
+            {
+              "variant": "Done (承認済み)",
+              "tokens": {
+                "color": "green-600 (#00a63e)",
+                "icon": "circle-check"
+              }
+            },
+            {
+              "variant": "Reject (差し戻し)",
+              "tokens": {
+                "color": "red-600 (#e7000b)",
+                "icon": "undo-2"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Routing Buttons",
+          "items": [
+            {
+              "variant": "Change (変更)",
+              "tokens": {
+                "bg": "blue-500 (#2b7fff)",
+                "text": "white",
+                "fontSize": "text-xs (12px)",
+                "fontWeight": "font-medium (500)",
+                "borderRadius": "rounded-md (6px)",
+                "padding": "px-2 py-1 (8px 4px)"
+              }
+            },
+            {
+              "variant": "Add (追加)",
+              "tokens": {
+                "bg": "blue-100 (#dbeafe)",
+                "text": "blue-700 (#1447e6)",
+                "fontSize": "text-xs (12px)",
+                "fontWeight": "font-medium (500)",
+                "borderRadius": "rounded-md (6px)",
+                "icon": "circle-plus"
+              }
+            },
+            {
+              "variant": "Close (×)",
+              "tokens": {
+                "size": "w-6 h-6 (24px)",
+                "bg": "white",
+                "border": "gray-200 (#e5e7eb)",
+                "borderRadius": "rounded-md (6px)",
+                "iconSize": "11px"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "description": "ページネーションコンポーネント。テーブル下部に配置し、ページ移動に使用。",
+      "category": "data-display",
+      "preview": "previews/pagination.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1647-8579",
+      "props": [
+        {
+          "name": "Page Count",
+          "type": "number",
+          "default": "5",
+          "description": "表示するページ数"
+        },
+        {
+          "name": "Current Page",
+          "type": "number",
+          "default": "1",
+          "description": "現在のページ番号"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Container",
+          "items": [
+            {
+              "variant": "Base",
+              "tokens": {
+                "bg": "white",
+                "padding": "px-4 py-2 (16px 8px)",
+                "layout": "flex items-center justify-end"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Page Button",
+          "items": [
+            {
+              "variant": "Default",
+              "tokens": {
+                "height": "h-8 (32px)",
+                "minWidth": "min-w-[32px]",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "bg": "white",
+                "border": "gray-200 (#e5e7eb)",
+                "borderRadius": "rounded-md (6px)",
+                "fontSize": "text-sm (14px)",
+                "fontWeight": "font-medium (500)",
+                "textColor": "gray-900 (#101828)",
+                "lineHeight": "leading-5 (20px)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Arrow Button",
+          "items": [
+            {
+              "variant": "Default",
+              "tokens": {
+                "size": "w-8 h-8 (32px)",
+                "bg": "white",
+                "border": "gray-200 (#e5e7eb)",
+                "borderRadius": "rounded-md (6px)",
+                "iconSize": "w-3 h-3 (12px)",
+                "iconColor": "gray-700"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Spacing",
+          "items": [
+            {
+              "variant": "Gap",
+              "tokens": {
+                "buttonGap": "gap-2 (8px)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
