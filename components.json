@@ -1791,6 +1791,97 @@
       ]
     },
     {
+      "id": "drawer",
+      "name": "Drawer",
+      "description": "右からスライドするDrawerパネル。仕入先とのメッセージ送受信に使用。",
+      "category": "layout",
+      "preview": "previews/drawer.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1731-4924",
+      "props": [
+        {
+          "name": "Attachment",
+          "type": "boolean",
+          "default": "false",
+          "description": "添付データ行の表示切替"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Panel",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "width": "w-[512px]",
+                "height": "h-full (viewport)",
+                "background": "white (#FFFFFF)",
+                "borderLeft": "#E5E7EB (1px)",
+                "shadow": "-4px 0 16px rgba(0,0,0,0.08)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Upper Area",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "padding": "p-6 (24px)",
+                "gap": "gap-3 (12px)",
+                "titleFont": "text-xl font-bold (20px 700)",
+                "titleColor": "#101828",
+                "closeButton": "w-8 h-8, border #E5E7EB, rounded-md"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Lower Area",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "padding": "p-6 (24px)",
+                "gap": "gap-4 (16px)",
+                "overflow": "overflow-y-auto",
+                "historyTitleFont": "text-xl font-bold (20px 700)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Message",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "gap": "gap-2 (8px)",
+                "senderFont": "text-base font-bold (16px 700)",
+                "senderColor": "#101828",
+                "dateFont": "text-xs (12px)",
+                "dateColor": "#99A1AF",
+                "bodyFont": "text-sm (14px)",
+                "incomingBodyColor": "#101828",
+                "outgoingBodyColor": "#4A5565"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Overlay",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "background": "black/50 (#000000 opacity 50%)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "badge",
       "name": "Badge",
       "description": "ステータスバッジ。発注書や納品の状態を示すラベル。各Typeにラベルと色が固定で紐づく。",
