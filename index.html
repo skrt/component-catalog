@@ -351,11 +351,18 @@ function catalog() {
       if (!id) return;
       this.activeComponent = id;
       const el = document.getElementById('comp-' + id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Clear highlight after a moment
-        setTimeout(() => { this.activeComponent = null; }, 2000);
-      }
+      if (!el) return;
+      const headerH = 72;
+      const scrollTo = () => {
+        const top = el.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top, behavior: 'instant' });
+      };
+      // Scroll immediately, then re-adjust after lazy iframes may have resized
+      scrollTo();
+      setTimeout(scrollTo, 100);
+      setTimeout(scrollTo, 300);
+      setTimeout(scrollTo, 600);
+      setTimeout(() => { this.activeComponent = null; }, 2000);
     },
 
     getTab(compId) {
