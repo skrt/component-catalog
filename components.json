@@ -2034,10 +2034,7 @@
             "button",
             "icon",
             "icon button",
-            "checkbox",
-            "multiline-text",
-            "multiline-number",
-            "text-icon"
+            "checkbox"
           ],
           "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）"
         }
@@ -2169,39 +2166,6 @@
                 "padding": "py-3.5 px-3",
                 "child": "Checkbox component (Size=md)"
               }
-            },
-            {
-              "variant": "multiline-text",
-              "tokens": {
-                "padding": "px-3 py-3",
-                "fontSize": "text-sm",
-                "fontWeight": "font-normal",
-                "textColor": "text-gray-900",
-                "whiteSpace": "whitespace-pre-wrap",
-                "lineHeight": "leading-relaxed"
-              }
-            },
-            {
-              "variant": "multiline-number",
-              "tokens": {
-                "padding": "px-3 py-3",
-                "fontSize": "text-sm",
-                "fontWeight": "font-normal",
-                "textColor": "text-gray-900",
-                "textAlign": "text-right",
-                "layout": "flex flex-col (multiple values stacked)"
-              }
-            },
-            {
-              "variant": "text-icon",
-              "tokens": {
-                "padding": "px-3 py-3",
-                "layout": "flex items-center gap-2",
-                "fontSize": "text-sm",
-                "fontWeight": "font-normal",
-                "textColor": "text-gray-900",
-                "iconButton": "w-6 h-6 rounded-full bg-gray-100"
-              }
             }
           ]
         },
@@ -2221,17 +2185,6 @@
               "tokens": {
                 "layout": "flex",
                 "borderBottom": "border-b border-gray-200"
-              }
-            },
-            {
-              "variant": "group-header",
-              "tokens": {
-                "layout": "flex items-center",
-                "height": "h-[40px]",
-                "background": "bg-gray-50",
-                "leftLabel": "flex-1 px-3 py-2 text-xs font-normal text-gray-900",
-                "subtotalLabel": "text-xs font-normal text-gray-500",
-                "subtotalNumber": "w-[100px] px-3 text-xs font-normal text-gray-900 text-right"
               }
             }
           ]
