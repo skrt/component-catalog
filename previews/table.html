@@ -53,7 +53,7 @@
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">発注日</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">仕入先</div>
         <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">納品先</div>
-        <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600">合計金額</div>
+        <div class="flex-1 px-3 py-2 text-xs font-medium text-gray-600 text-right">合計金額</div>
         <!-- Table / Header icon button placeholder: w-12 -->
         <div class="w-12 shrink-0"></div>
         <!-- Table / Header button placeholder: w-16 -->
@@ -257,6 +257,13 @@
           <span class="text-sm font-normal text-gray-900">Cell Data</span>
         </div>
       </div>
+      <!-- Type=number -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">number</span>
+        <div class="px-3 py-3 border border-dashed border-gray-200 rounded text-right">
+          <span class="text-sm font-normal text-gray-900">99,999</span>
+        </div>
+      </div>
       <!-- Type=link -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">link</span>
@@ -306,6 +313,105 @@
         <span class="text-[10px] text-gray-400 uppercase">text</span>
         <div class="bg-gray-50 px-3 py-2 rounded border border-dashed border-gray-200">
           <span class="text-xs font-medium text-gray-600">Header Label</span>
+        </div>
+      </div>
+      <!-- Type=Number -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">number</span>
+        <div class="bg-gray-50 px-3 py-2 rounded border border-dashed border-gray-200 text-right">
+          <span class="text-xs font-medium text-gray-600">Header Label</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE / EXPAND ROW -->
+  <!-- Expand area shown when a table row is toggled open. bg=gray-50, pl-72px indent -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">TABLE / EXPAND ROW</h3>
+    <div class="bg-gray-50 pl-[72px] w-[1280px] flex flex-col">
+
+      <!-- Expand Header Row: h-[40px] -->
+      <div class="flex items-center h-[40px]">
+        <!-- Expand Header Type=text: flex-1, px-3 py-2, text-xs/semibold gray-600 -->
+        <div class="flex-1 px-3 py-2 text-xs font-semibold text-gray-600">品名</div>
+        <div class="flex-1 px-3 py-2 text-xs font-semibold text-gray-600">希望納品日</div>
+        <!-- Expand Header Type=number: shrink-0, text-right -->
+        <div class="shrink-0 w-[100px] px-3 py-2 text-xs font-semibold text-gray-600 text-right">数量</div>
+        <div class="shrink-0 w-[100px] px-3 py-2 text-xs font-semibold text-gray-600 text-right">単価</div>
+        <div class="shrink-0 w-[120px] px-3 py-2 text-xs font-semibold text-gray-600 text-right">金額</div>
+      </div>
+
+      <!-- Expand Data Row 1: h-[40px] -->
+      <div class="flex items-center h-[40px]">
+        <!-- Expand Data Type=link: flex-1, px-3 py-2.5, text-sm/normal blue-500 -->
+        <div class="flex-1 px-3 py-2.5"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">アイテム名 / ID</a></div>
+        <!-- Expand Data Type=text: flex-1, px-3 py-2.5, text-sm/normal gray-900 -->
+        <div class="flex-1 px-3 py-2.5 text-sm font-normal text-gray-900">2026/02/26(木)</div>
+        <!-- Expand Data Type=number: shrink-0, text-right -->
+        <div class="shrink-0 w-[100px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">270</div>
+        <div class="shrink-0 w-[100px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">100</div>
+        <div class="shrink-0 w-[120px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">27,000</div>
+      </div>
+
+      <!-- Expand Data Row 2: h-[40px] (Data Rows are duplicable) -->
+      <div class="flex items-center h-[40px]">
+        <div class="flex-1 px-3 py-2.5"><a href="#" class="text-sm font-normal text-blue-500 hover:underline">アイテム名 / ID</a></div>
+        <div class="flex-1 px-3 py-2.5 text-sm font-normal text-gray-900">2026/02/26(木)</div>
+        <div class="shrink-0 w-[100px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">270</div>
+        <div class="shrink-0 w-[100px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">100</div>
+        <div class="shrink-0 w-[120px] px-3 py-2.5 text-sm font-normal text-gray-900 text-right">27,000</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TABLE / EXPAND HEADER -->
+  <!-- Sub-header cells inside Expand Row. Variants: text (left), number (right) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">TABLE / EXPAND HEADER</h3>
+    <div class="flex items-center gap-4">
+      <!-- Type=Text -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">text</span>
+        <div class="bg-gray-50 px-3 py-2 rounded border border-dashed border-gray-200">
+          <span class="text-xs font-semibold text-gray-600">Header</span>
+        </div>
+      </div>
+      <!-- Type=Number -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">number</span>
+        <div class="bg-gray-50 px-3 py-2 rounded border border-dashed border-gray-200 text-right">
+          <span class="text-xs font-semibold text-gray-600">Header</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE / EXPAND DATA -->
+  <!-- Data cells inside Expand Row. Variants: text (left), link (left, blue), number (right) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">TABLE / EXPAND DATA</h3>
+    <div class="flex items-center gap-4">
+      <!-- Type=Text -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">text</span>
+        <div class="px-3 py-2.5 border border-dashed border-gray-200 rounded">
+          <span class="text-sm font-normal text-gray-900">Cell Data</span>
+        </div>
+      </div>
+      <!-- Type=Link -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">link</span>
+        <div class="px-3 py-2.5 border border-dashed border-gray-200 rounded">
+          <a href="#" class="text-sm font-normal text-blue-500 hover:underline">Cell Data</a>
+        </div>
+      </div>
+      <!-- Type=Number -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">number</span>
+        <div class="px-3 py-2.5 border border-dashed border-gray-200 rounded text-right">
+          <span class="text-sm font-normal text-gray-900">99,999</span>
         </div>
       </div>
     </div>

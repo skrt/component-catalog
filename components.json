@@ -2028,6 +2028,7 @@
           "default": "text",
           "values": [
             "text",
+            "number",
             "link",
             "badge",
             "button",
@@ -2069,6 +2070,19 @@
               }
             },
             {
+              "variant": "number",
+              "tokens": {
+                "height": "h-8",
+                "background": "bg-gray-50",
+                "padding": "py-2 px-3",
+                "fontSize": "text-xs",
+                "fontWeight": "font-medium",
+                "textColor": "text-gray-600",
+                "textAlign": "text-right",
+                "verticalAlign": "items-center"
+              }
+            },
+            {
               "variant": "checkbox",
               "tokens": {
                 "width": "w-10",
@@ -2090,6 +2104,16 @@
                 "fontSize": "text-sm",
                 "fontWeight": "font-normal",
                 "textColor": "text-gray-900"
+              }
+            },
+            {
+              "variant": "number",
+              "tokens": {
+                "padding": "px-3 py-3",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "textAlign": "text-right"
               }
             },
             {
@@ -2161,6 +2185,85 @@
               "tokens": {
                 "layout": "flex",
                 "borderBottom": "border-b border-gray-200"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Table / Expand Row",
+          "items": [
+            {
+              "variant": "container",
+              "tokens": {
+                "layout": "flex flex-col",
+                "background": "bg-gray-50",
+                "paddingLeft": "pl-[72px]",
+                "width": "w-full (inherits parent table width)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Table / Expand Header",
+          "items": [
+            {
+              "variant": "text",
+              "tokens": {
+                "height": "h-[40px]",
+                "padding": "px-3 py-2",
+                "fontSize": "text-xs",
+                "fontWeight": "font-semibold",
+                "textColor": "text-gray-600",
+                "textAlign": "left (default)"
+              }
+            },
+            {
+              "variant": "number",
+              "tokens": {
+                "height": "h-[40px]",
+                "padding": "px-3 py-2",
+                "fontSize": "text-xs",
+                "fontWeight": "font-semibold",
+                "textColor": "text-gray-600",
+                "textAlign": "text-right"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Table / Expand Data",
+          "items": [
+            {
+              "variant": "text",
+              "tokens": {
+                "height": "h-[40px]",
+                "padding": "px-3 py-2.5",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "textAlign": "left (default)"
+              }
+            },
+            {
+              "variant": "link",
+              "tokens": {
+                "height": "h-[40px]",
+                "padding": "px-3 py-2.5",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-blue-500",
+                "textAlign": "left (default)"
+              }
+            },
+            {
+              "variant": "number",
+              "tokens": {
+                "height": "h-[40px]",
+                "padding": "px-3 py-2.5",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "textAlign": "text-right"
               }
             }
           ]
