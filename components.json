@@ -2034,7 +2034,11 @@
             "button",
             "icon",
             "icon button",
-            "checkbox"
+            "checkbox",
+            "select",
+            "multiline text",
+            "multiline number",
+            "date icon"
           ],
           "description": "セルの表示タイプ（Table / Data コンポーネントのバリアント）"
         }
@@ -2165,6 +2169,58 @@
                 "width": "w-10",
                 "padding": "py-3.5 px-3",
                 "child": "Checkbox component (Size=md)"
+              }
+            },
+            {
+              "variant": "select",
+              "tokens": {
+                "width": "w-[120px]",
+                "padding": "px-3 py-1.5",
+                "child": "Select component (Size=xs)",
+                "selectBg": "bg-white",
+                "selectBorder": "border border-gray-200",
+                "selectRadius": "rounded-md",
+                "selectPadding": "px-3 py-1.5",
+                "selectText": "text-sm font-normal text-gray-900",
+                "chevronIcon": "w-3 h-3"
+              }
+            },
+            {
+              "variant": "multiline text",
+              "tokens": {
+                "width": "w-[200px]",
+                "padding": "p-3",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "whiteSpace": "whitespace-pre-wrap",
+                "verticalAlign": "items-start"
+              }
+            },
+            {
+              "variant": "multiline number",
+              "tokens": {
+                "width": "w-[120px]",
+                "padding": "p-3",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "textAlign": "text-right",
+                "whiteSpace": "whitespace-pre-wrap",
+                "verticalAlign": "items-start"
+              }
+            },
+            {
+              "variant": "date icon",
+              "tokens": {
+                "width": "w-[180px]",
+                "padding": "px-3 py-2.5",
+                "gap": "gap-1",
+                "fontSize": "text-sm",
+                "fontWeight": "font-normal",
+                "textColor": "text-gray-900",
+                "iconButton": "w-6 h-6 bg-white border border-gray-200 rounded-md",
+                "iconSize": "w-[11px] h-[11px]"
               }
             }
           ]
