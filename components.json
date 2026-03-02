@@ -1927,84 +1927,96 @@
               "variant": "draft",
               "tokens": {
                 "label": "下書き",
-                "color": "badge/gray"
+                "text": "text-gray-600 (#4A5565)",
+                "border": "border-gray-600 (#4A5565)"
               }
             },
             {
               "variant": "pending_approval",
               "tokens": {
                 "label": "承認待ち",
-                "color": "badge/red"
+                "text": "text-red-600 (#E7000B)",
+                "border": "border-red-600 (#E7000B)"
               }
             },
             {
               "variant": "pending_send",
               "tokens": {
                 "label": "送信待ち",
-                "color": "badge/orange"
+                "text": "text-orange-600 (#F54A00)",
+                "border": "border-orange-600 (#F54A00)"
               }
             },
             {
               "variant": "pending_delivery",
               "tokens": {
                 "label": "納品待ち",
-                "color": "badge/amber"
+                "text": "text-amber-600 (#E17100)",
+                "border": "border-amber-600 (#E17100)"
               }
             },
             {
               "variant": "in_conversation",
               "tokens": {
                 "label": "会話中",
-                "color": "badge/blue"
+                "text": "text-blue-600 (#155DFC)",
+                "border": "border-blue-600 (#155DFC)"
               }
             },
             {
               "variant": "delivered",
               "tokens": {
                 "label": "納品済み",
-                "color": "badge/teal"
+                "text": "text-teal-600 (#009689)",
+                "border": "border-teal-600 (#009689)"
               }
             },
             {
               "variant": "partially_delivered",
               "tokens": {
                 "label": "一部納品済み",
-                "color": "badge/blue"
+                "text": "text-blue-600 (#155DFC)",
+                "border": "border-blue-600 (#155DFC)"
               }
             },
             {
               "variant": "returned",
               "tokens": {
                 "label": "差し戻し",
-                "color": "badge/gray"
+                "text": "text-gray-600 (#4A5565)",
+                "border": "border-gray-600 (#4A5565)"
               }
             },
             {
               "variant": "cancelled",
               "tokens": {
                 "label": "取り消し",
-                "color": "badge/gray"
+                "text": "text-gray-600 (#4A5565)",
+                "border": "border-gray-600 (#4A5565)"
               }
             },
             {
               "variant": "expired",
               "tokens": {
                 "label": "期限切れ",
-                "color": "badge/red"
+                "text": "text-red-600 (#E7000B)",
+                "border": "border-red-600 (#E7000B)"
               }
             },
             {
               "variant": "creating",
               "tokens": {
                 "label": "作成中",
-                "color": "badge/amber"
+                "text": "text-amber-600 (#E17100)",
+                "border": "border-amber-600 (#E17100)"
               }
             },
             {
               "variant": "created",
               "tokens": {
                 "label": "作成完了",
-                "color": "badge/teal"
+                "text": "text-teal-600 (#009689)",
+                "border": "border-teal-600 (#009689)"
               }
             }
           ]
