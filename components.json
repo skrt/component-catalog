@@ -1443,8 +1443,8 @@
                 "border": "border-emerald-600 (#009966) (1px)",
                 "background": "bg-green-50 (#F0FDF4)",
                 "icon": "text-green-600 (#00A63E)",
-                "title": "text-black (#000000)",
-                "description": "#4A5565 (gray-600)"
+                "title": "text-gray-900 (#101828)",
+                "description": "text-gray-600 (#4A5565)"
               }
             },
             {
@@ -1453,8 +1453,8 @@
                 "border": "border-amber-600 (#E17100) (1px)",
                 "background": "bg-yellow-50 (#FEFCE8)",
                 "icon": "text-amber-500 (#FD9A00)",
-                "title": "text-black (#000000)",
-                "description": "#4A5565 (gray-600)"
+                "title": "text-gray-900 (#101828)",
+                "description": "text-gray-600 (#4A5565)"
               }
             },
             {
@@ -1463,8 +1463,8 @@
                 "border": "border-red-600 (#E7000B) (1px)",
                 "background": "bg-red-50 (#FEF2F2)",
                 "icon": "text-red-600 (#E7000B)",
-                "title": "text-black (#000000)",
-                "description": "#4A5565 (gray-600)"
+                "title": "text-gray-900 (#101828)",
+                "description": "text-gray-600 (#4A5565)"
               }
             },
             {
@@ -1473,8 +1473,8 @@
                 "border": "border-gray-600 (#4A5565) (1px)",
                 "background": "bg-gray-50 (#F9FAFB)",
                 "icon": "text-gray-600 (#4A5565)",
-                "title": "text-black (#000000)",
-                "description": "#4A5565 (gray-600)"
+                "title": "text-gray-900 (#101828)",
+                "description": "text-gray-600 (#4A5565)"
               }
             }
           ]
@@ -1656,13 +1656,13 @@
             {
               "variant": "default",
               "tokens": {
-                "text": "#101828 (gray-900)"
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "hover",
               "tokens": {
-                "text": "#155DFC (blue-600)"
+                "text": "text-blue-600 (#155DFC)"
               }
             }
           ]
@@ -1674,7 +1674,7 @@
               "variant": "all",
               "tokens": {
                 "background": "bg-white (#FFFFFF)",
-                "border": "#E2E8F0 (slate-200, 1px)",
+                "border": "border-slate-200 (#E2E8F0) (1px)",
                 "borderRadius": "rounded (4px)",
                 "fontSize": "text-sm (14px)",
                 "fontWeight": "font-normal (400)",
