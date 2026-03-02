@@ -131,47 +131,47 @@
             {
               "variant": "primary",
               "tokens": {
-                "bg-default": "blue-500 (#2B7FFF)",
-                "bg-hover": "blue-600 (#155DFC)",
-                "bg-active": "blue-700 (#1447E6)",
-                "foreground": "white (#FFFFFF)"
+                "bg-default": "bg-blue-500 (#2B7FFF)",
+                "bg-hover": "bg-blue-600 (#155DFC)",
+                "bg-active": "bg-blue-700 (#1447E6)",
+                "foreground": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "secondary",
               "tokens": {
-                "bg-default": "blue-100 (#DBEAFE)",
-                "bg-hover": "blue-200 (#BEDBFF)",
-                "bg-active": "blue-300 (#8EC5FF)",
-                "fg-default": "blue-700 (#1447E6)",
-                "fg-hover": "blue-800 (#193CB8)",
-                "fg-active": "blue-900 (#1C398E)"
+                "bg-default": "bg-blue-100 (#DBEAFE)",
+                "bg-hover": "bg-blue-200 (#BEDBFF)",
+                "bg-active": "bg-blue-300 (#8EC5FF)",
+                "fg-default": "text-blue-700 (#1447E6)",
+                "fg-hover": "text-blue-800 (#193CB8)",
+                "fg-active": "text-blue-900 (#1C398E)"
               }
             },
             {
               "variant": "alert",
               "tokens": {
-                "bg-default": "red-500 (#FB2C36)",
-                "bg-hover": "red-600 (#E7000B)",
-                "bg-active": "red-700 (#C10007)",
-                "foreground": "white (#FFFFFF)"
+                "bg-default": "bg-red-500 (#FB2C36)",
+                "bg-hover": "bg-red-600 (#E7000B)",
+                "bg-active": "bg-red-700 (#C10007)",
+                "foreground": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "tertiary",
               "tokens": {
-                "bg-default": "white (#FFFFFF)",
-                "bg-hover": "gray-50 (#F9FAFB)",
-                "bg-active": "gray-100 (#F3F4F6)",
-                "foreground": "gray-900 (#101828)",
-                "border": "gray-200 (#E5E7EB)"
+                "bg-default": "bg-white (#FFFFFF)",
+                "bg-hover": "bg-gray-50 (#F9FAFB)",
+                "bg-active": "bg-gray-100 (#F3F4F6)",
+                "foreground": "text-gray-900 (#101828)",
+                "border": "border-gray-200 (#E5E7EB)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-200 (#E5E7EB)",
-                "foreground": "white (#FFFFFF)"
+                "background": "bg-gray-200 (#E5E7EB)",
+                "foreground": "text-white (#FFFFFF)"
               }
             }
           ]
@@ -281,27 +281,27 @@
             {
               "variant": "secondary",
               "tokens": {
-                "bg-default": "blue-100 (#DBEAFE)",
-                "bg-hover": "blue-200 (#BEDBFF)",
-                "bg-active": "blue-300 (#8EC5FF)",
-                "icon": "blue-700 (#1447E6)"
+                "bg-default": "bg-blue-100 (#DBEAFE)",
+                "bg-hover": "bg-blue-200 (#BEDBFF)",
+                "bg-active": "bg-blue-300 (#8EC5FF)",
+                "icon": "text-blue-700 (#1447E6)"
               }
             },
             {
               "variant": "tertiary",
               "tokens": {
-                "bg-default": "white (#FFFFFF)",
-                "bg-hover": "gray-50 (#F9FAFB)",
-                "bg-active": "gray-100 (#F3F4F6)",
-                "icon": "gray-900 (#101828)",
-                "border": "gray-200 (#E5E7EB)"
+                "bg-default": "bg-white (#FFFFFF)",
+                "bg-hover": "bg-gray-50 (#F9FAFB)",
+                "bg-active": "bg-gray-100 (#F3F4F6)",
+                "icon": "text-gray-900 (#101828)",
+                "border": "border-gray-200 (#E5E7EB)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-200 (#E5E7EB)",
-                "icon": "white (#FFFFFF)"
+                "background": "bg-gray-200 (#E5E7EB)",
+                "icon": "text-white (#FFFFFF)"
               }
             }
           ]
@@ -313,7 +313,7 @@
               "variant": "all",
               "tokens": {
                 "borderRadius": "rounded-md (6px)",
-                "attentionBadge": "red-500 (#FB2C36)"
+                "attentionBadge": "bg-red-500 (#FB2C36)"
               }
             }
           ]
@@ -442,17 +442,17 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)",
-                "placeholder": "gray-400 (#99A1AF)",
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)",
+                "placeholder": "text-gray-400 (#99A1AF)",
                 "rightIcon": "hidden"
               }
             },
             {
               "variant": "focus",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
+                "border": "border-blue-500 (#2B7FFF)",
                 "borderWidth": "border-2",
                 "rightIcon": "hidden"
               }
@@ -460,25 +460,25 @@
             {
               "variant": "error",
               "tokens": {
-                "border": "red-500 (#FB2C36)",
-                "errorText": "red-500 (#FB2C36)",
+                "border": "border-red-500 (#FB2C36)",
+                "errorText": "text-red-500 (#FB2C36)",
                 "rightIcon": "hidden"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)",
-                "border": "gray-200 (#E5E7EB)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)",
+                "border": "border-gray-200 (#E5E7EB)",
                 "rightIcon": "hidden"
               }
             },
             {
               "variant": "filled",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "text": "gray-900 (#101828)",
+                "border": "border-gray-200 (#E5E7EB)",
+                "text": "text-gray-900 (#101828)",
                 "rightIcon": "circle-x (gray-500 #6A7282) visible"
               }
             }
@@ -595,29 +595,29 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)",
-                "chevron": "gray-400 (#99A1AF)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "chevron": "text-gray-400 (#99A1AF)"
               }
             },
             {
               "variant": "focus",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
+                "border": "border-blue-500 (#2B7FFF)",
                 "ring": "ring-2 ring-blue-500/20"
               }
             },
             {
               "variant": "error",
               "tokens": {
-                "border": "red-500 (#FB2C36)"
+                "border": "border-red-500 (#FB2C36)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)"
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)"
               }
             }
           ]
@@ -738,28 +738,28 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)"
               }
             },
             {
               "variant": "focus",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
+                "border": "border-blue-500 (#2B7FFF)",
                 "ring": "ring-2 ring-blue-500/20"
               }
             },
             {
               "variant": "error",
               "tokens": {
-                "border": "red-500 (#FB2C36)"
+                "border": "border-red-500 (#FB2C36)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)"
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)"
               }
             }
           ]
@@ -832,16 +832,16 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)",
-                "placeholder": "gray-400 (#99A1AF)",
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "placeholder": "text-gray-400 (#99A1AF)",
                 "rightIcon": "hidden"
               }
             },
             {
               "variant": "focus",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
+                "border": "border-blue-500 (#2B7FFF)",
                 "borderWidth": "border-2",
                 "rightIcon": "circle-x (gray-500 #6A7282) visible",
                 "dropdown": "visible"
@@ -850,24 +850,24 @@
             {
               "variant": "filled",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "text": "gray-900 (#101828)",
+                "border": "border-gray-200 (#E5E7EB)",
+                "text": "text-gray-900 (#101828)",
                 "rightIcon": "circle-x (gray-500 #6A7282) visible"
               }
             },
             {
               "variant": "error",
               "tokens": {
-                "border": "red-500 (#FB2C36)",
-                "errorText": "red-500 (#FB2C36)",
+                "border": "border-red-500 (#FB2C36)",
+                "errorText": "text-red-500 (#FB2C36)",
                 "rightIcon": "hidden"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)",
                 "rightIcon": "hidden"
               }
             }
@@ -895,8 +895,8 @@
             {
               "variant": "container",
               "tokens": {
-                "background": "white (#FFFFFF)",
-                "border": "gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "border": "border-gray-200 (#E5E7EB)",
                 "borderRadius": "rounded-md (6px)",
                 "padding": "py-2 (8px)",
                 "shadow": "shadow-sm"
@@ -908,7 +908,7 @@
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-2 (12px 8px)",
                 "fontSize": "text-xs (12px)",
-                "textColor": "gray-500 (#6A7282)"
+                "textColor": "text-gray-500 (#6A7282)"
               }
             },
             {
@@ -917,8 +917,8 @@
                 "height": "h-9 (36px)",
                 "padding": "px-3 py-2 (12px 8px)",
                 "fontSize": "text-sm (14px)",
-                "textColor": "gray-900 (#101828)",
-                "hoverBg": "gray-50 (#F9FAFB)"
+                "textColor": "text-gray-900 (#101828)",
+                "hoverBg": "bg-gray-50 (#F9FAFB)"
               }
             }
           ]
@@ -987,15 +987,15 @@
             {
               "variant": "off",
               "tokens": {
-                "track-bg": "gray-200 (#E5E7EB)",
-                "thumb-bg": "white (#FFFFFF)"
+                "track-bg": "bg-gray-200 (#E5E7EB)",
+                "thumb-bg": "bg-white (#FFFFFF)"
               }
             },
             {
               "variant": "on",
               "tokens": {
-                "track-bg": "blue-500 (#2B7FFF)",
-                "thumb-bg": "white (#FFFFFF)"
+                "track-bg": "bg-blue-500 (#2B7FFF)",
+                "thumb-bg": "bg-white (#FFFFFF)"
               }
             }
           ]
@@ -1082,33 +1082,33 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "selected",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
-                "background": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)"
+                "border": "border-blue-500 (#2B7FFF)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)"
               }
             },
             {
               "variant": "selected-disabled",
               "tokens": {
-                "border": "gray-400 (#99A1AF)",
-                "background": "white (#FFFFFF)",
-                "text": "gray-400 (#99A1AF)"
+                "border": "border-gray-400 (#99A1AF)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-400 (#99A1AF)"
               }
             }
           ]
@@ -1186,33 +1186,33 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "checked",
               "tokens": {
-                "background": "blue-500 (#2B7FFF)",
-                "checkmark": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)"
+                "background": "bg-blue-500 (#2B7FFF)",
+                "checkmark": "text-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "background": "gray-50 (#F9FAFB)",
-                "text": "gray-400 (#99A1AF)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-gray-400 (#99A1AF)"
               }
             },
             {
               "variant": "checked-disabled",
               "tokens": {
-                "background": "gray-400 (#99A1AF)",
-                "checkmark": "white (#FFFFFF)",
-                "text": "gray-900 (#101828)"
+                "background": "bg-gray-400 (#99A1AF)",
+                "checkmark": "text-white (#FFFFFF)",
+                "text": "text-gray-900 (#101828)"
               }
             }
           ]
@@ -1231,14 +1231,23 @@
           "name": "Size",
           "type": "enum",
           "default": "sm",
-          "values": ["sm", "md"],
+          "values": [
+            "sm",
+            "md"
+          ],
           "description": "入力フィールドのサイズ。sm: 32px / md: 40px"
         },
         {
           "name": "State",
           "type": "enum",
           "default": "default",
-          "values": ["default", "focus", "error", "disabled", "filled"],
+          "values": [
+            "default",
+            "focus",
+            "error",
+            "disabled",
+            "filled"
+          ],
           "description": "インタラクション状態"
         },
         {
@@ -1298,40 +1307,40 @@
             {
               "variant": "default",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
+                "border": "border-gray-200 (#E5E7EB)",
                 "borderWidth": "border (1px)",
-                "background": "white (#FFFFFF)",
-                "placeholder": "gray-400 (#99A1AF)",
-                "iconColor": "gray-500 (#6A7282)"
+                "background": "bg-white (#FFFFFF)",
+                "placeholder": "text-gray-400 (#99A1AF)",
+                "iconColor": "text-gray-500 (#6A7282)"
               }
             },
             {
               "variant": "focus",
               "tokens": {
-                "border": "blue-500 (#2B7FFF)",
+                "border": "border-blue-500 (#2B7FFF)",
                 "borderWidth": "border-2 (2px)"
               }
             },
             {
               "variant": "error",
               "tokens": {
-                "border": "red-500 (#FB2C36)",
+                "border": "border-red-500 (#FB2C36)",
                 "borderWidth": "border (1px)",
-                "errorText": "red-500 (#FB2C36)"
+                "errorText": "text-red-500 (#FB2C36)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
-                "background": "gray-50 (#F9FAFB)",
-                "border": "gray-200 (#E5E7EB)"
+                "background": "bg-gray-50 (#F9FAFB)",
+                "border": "border-gray-200 (#E5E7EB)"
               }
             },
             {
               "variant": "filled",
               "tokens": {
-                "border": "gray-200 (#E5E7EB)",
-                "text": "gray-900 (#101828)"
+                "border": "border-gray-200 (#E5E7EB)",
+                "text": "text-gray-900 (#101828)"
               }
             }
           ]
@@ -1344,8 +1353,8 @@
               "tokens": {
                 "width": "w-72 (288px)",
                 "padding": "p-3 (12px)",
-                "background": "white (#FFFFFF)",
-                "border": "gray-200 (#E5E7EB)",
+                "background": "bg-white (#FFFFFF)",
+                "border": "border-gray-200 (#E5E7EB)",
                 "borderRadius": "rounded-lg (8px)",
                 "shadow": "shadow-md (0 4px 16px rgba(0,0,0,0.08))"
               }
@@ -1362,20 +1371,20 @@
               "variant": "selected",
               "tokens": {
                 "background": "#3D62D3",
-                "text": "white (#FFFFFF)"
+                "text": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "range",
               "tokens": {
                 "background": "#ECEFF9",
-                "text": "gray-500 (#6A7282)"
+                "text": "text-gray-500 (#6A7282)"
               }
             },
             {
               "variant": "outside month",
               "tokens": {
-                "text": "gray-400 (#99A1AF)"
+                "text": "text-gray-400 (#99A1AF)"
               }
             }
           ]
@@ -1434,7 +1443,7 @@
                 "border": "#009966 (1px)",
                 "background": "#F0FDF4",
                 "icon": "#00A63E",
-                "title": "black (#000000)",
+                "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
             },
@@ -1444,7 +1453,7 @@
                 "border": "#E17100 (1px)",
                 "background": "#FEFCE8",
                 "icon": "#FD9A00",
-                "title": "black (#000000)",
+                "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
             },
@@ -1454,7 +1463,7 @@
                 "border": "#E7000B (1px)",
                 "background": "#FEF2F2",
                 "icon": "#E7000B",
-                "title": "black (#000000)",
+                "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
             },
@@ -1464,7 +1473,7 @@
                 "border": "#4A5565 (1px)",
                 "background": "#F9FAFB",
                 "icon": "#4A5565",
-                "title": "black (#000000)",
+                "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
             }
@@ -1524,32 +1533,32 @@
               "variant": "success",
               "tokens": {
                 "background": "#009966",
-                "text": "white (#FFFFFF)",
-                "icon": "white (#FFFFFF)"
+                "text": "text-white (#FFFFFF)",
+                "icon": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "warning",
               "tokens": {
                 "background": "#FD9A00",
-                "text": "white (#FFFFFF)",
-                "icon": "white (#FFFFFF)"
+                "text": "text-white (#FFFFFF)",
+                "icon": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "error",
               "tokens": {
                 "background": "#FB2C36",
-                "text": "white (#FFFFFF)",
-                "icon": "white (#FFFFFF)"
+                "text": "text-white (#FFFFFF)",
+                "icon": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "info",
               "tokens": {
                 "background": "#6A7282",
-                "text": "white (#FFFFFF)",
-                "icon": "white (#FFFFFF)"
+                "text": "text-white (#FFFFFF)",
+                "icon": "text-white (#FFFFFF)"
               }
             }
           ]
@@ -1609,8 +1618,8 @@
             {
               "variant": "all",
               "tokens": {
-                "background": "gray-900 (#101828)",
-                "text": "white (#FFFFFF)",
+                "background": "bg-gray-900 (#101828)",
+                "text": "text-white (#FFFFFF)",
                 "fontSize": "text-xs (12px)",
                 "padding": "px-2.5 py-1.5 (10px 6px)",
                 "borderRadius": "rounded-md (6px)",
@@ -1664,7 +1673,7 @@
             {
               "variant": "all",
               "tokens": {
-                "background": "white (#FFFFFF)",
+                "background": "bg-white (#FFFFFF)",
                 "border": "#E2E8F0 (slate-200, 1px)",
                 "borderRadius": "rounded (4px)",
                 "fontSize": "text-sm (14px)",
@@ -1711,7 +1720,7 @@
               "variant": "all",
               "tokens": {
                 "width": "w-[400px]",
-                "background": "white (#FFFFFF)",
+                "background": "bg-white (#FFFFFF)",
                 "border": "#E5E7EB (1px)",
                 "borderRadius": "rounded-xl (12px)",
                 "shadow": "0 8px 32px rgba(0,0,0,0.16)"
@@ -1756,7 +1765,7 @@
               "variant": "cancel",
               "tokens": {
                 "type": "Tertiary Button (sm)",
-                "background": "white (#FFFFFF)",
+                "background": "bg-white (#FFFFFF)",
                 "border": "#E5E7EB (1px)",
                 "text": "#101828",
                 "height": "h-8 (32px)",
@@ -1769,7 +1778,7 @@
               "tokens": {
                 "type": "Primary Button (sm)",
                 "background": "#2B7FFF",
-                "text": "white (#FFFFFF)",
+                "text": "text-white (#FFFFFF)",
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "borderRadius": "rounded-md (6px)"
@@ -1814,7 +1823,7 @@
               "tokens": {
                 "width": "w-[512px]",
                 "height": "h-full (viewport)",
-                "background": "white (#FFFFFF)",
+                "background": "bg-white (#FFFFFF)",
                 "borderLeft": "#E5E7EB (1px)",
                 "shadow": "-4px 0 16px rgba(0,0,0,0.08)"
               }
@@ -2012,7 +2021,7 @@
                 "fontWeight": "font-medium (500)",
                 "borderRadius": "rounded-full (9999px)",
                 "borderWidth": "border (1px)",
-                "background": "white (#FFFFFF)"
+                "background": "bg-white (#FFFFFF)"
               }
             }
           ]
@@ -2062,7 +2071,7 @@
                 "layout": "flex HORIZONTAL",
                 "gap": "gap-2 (8px)",
                 "labelFont": "text-base font-normal (16px 400)",
-                "labelColor": "gray-500 (#6A7282)",
+                "labelColor": "text-gray-500 (#6A7282)",
                 "labelWidth": "w-[120px] FIXED",
                 "valueFont": "text-base font-normal (16px 400)"
               }
@@ -2075,21 +2084,21 @@
             {
               "variant": "text",
               "tokens": {
-                "valueColor": "gray-900 (#101828)",
+                "valueColor": "text-gray-900 (#101828)",
                 "align": "items-start"
               }
             },
             {
               "variant": "link",
               "tokens": {
-                "valueColor": "blue-600 (#155DFC)",
+                "valueColor": "text-blue-600 (#155DFC)",
                 "align": "items-start"
               }
             },
             {
               "variant": "links",
               "tokens": {
-                "valueColor": "blue-600 (#155DFC)",
+                "valueColor": "text-blue-600 (#155DFC)",
                 "separator": "/ gray-400 (#99A1AF)",
                 "align": "items-start"
               }
@@ -2449,7 +2458,7 @@
             {
               "variant": "active",
               "tokens": {
-                "text": "blue-500 (#2B7FFF)",
+                "text": "text-blue-500 (#2B7FFF)",
                 "border-bottom": "border-b-2 border-blue-500",
                 "fontWeight": "font-medium (500)"
               }
@@ -2457,7 +2466,7 @@
             {
               "variant": "hover",
               "tokens": {
-                "text": "blue-600 (#155DFC)",
+                "text": "text-blue-600 (#155DFC)",
                 "border-bottom": "border-b-2 border-blue-600",
                 "fontWeight": "font-medium (500)"
               }
@@ -2465,7 +2474,7 @@
             {
               "variant": "inactive",
               "tokens": {
-                "text": "gray-600 (#4A5565)",
+                "text": "text-gray-600 (#4A5565)",
                 "border-bottom": "border-b-2 border-transparent",
                 "fontWeight": "font-normal (400)"
               }
@@ -2478,8 +2487,8 @@
             {
               "variant": "active",
               "tokens": {
-                "background": "blue-100 (#DBEAFE)",
-                "text": "blue-700 (#1447E6)",
+                "background": "bg-blue-100 (#DBEAFE)",
+                "text": "text-blue-700 (#1447E6)",
                 "borderRadius": "rounded-md (6px)",
                 "fontWeight": "font-medium (500)",
                 "counter-bg": "blue-100",
@@ -2489,8 +2498,8 @@
             {
               "variant": "hover",
               "tokens": {
-                "background": "gray-100 (#F3F4F6)",
-                "text": "gray-600 (#4A5565)",
+                "background": "bg-gray-100 (#F3F4F6)",
+                "text": "text-gray-600 (#4A5565)",
                 "fontWeight": "font-normal (400)",
                 "counter-bg": "gray-100",
                 "counter-radius": "rounded-full (9999px)"
@@ -2499,8 +2508,8 @@
             {
               "variant": "inactive",
               "tokens": {
-                "background": "white (#FFFFFF)",
-                "text": "gray-600 (#4A5565)",
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-600 (#4A5565)",
                 "fontWeight": "font-normal (400)",
                 "counter-bg": "gray-100",
                 "counter-radius": "rounded-full (9999px)"
@@ -3124,29 +3133,29 @@
             {
               "variant": "Background",
               "tokens": {
-                "bg/primary": "white (#FFFFFF)",
-                "bg/secondary": "gray-50 (#F9FAFB)",
-                "bg/tertiary": "gray-100 (#F3F4F6)",
-                "bg/disabled": "gray-50 (#F9FAFB)",
-                "bg/hover": "gray-50 (#F9FAFB)"
+                "bg/primary": "bg-white (#FFFFFF)",
+                "bg/secondary": "bg-gray-50 (#F9FAFB)",
+                "bg/tertiary": "bg-gray-100 (#F3F4F6)",
+                "bg/disabled": "bg-gray-50 (#F9FAFB)",
+                "bg/hover": "bg-gray-50 (#F9FAFB)"
               }
             },
             {
               "variant": "Text",
               "tokens": {
-                "text/primary": "gray-900 (#101828)",
-                "text/secondary": "gray-600 (#4A5565)",
-                "text/tertiary": "gray-400 (#99A1AF)",
-                "text/error": "red-500 (#FB2C36)"
+                "text/primary": "text-gray-900 (#101828)",
+                "text/secondary": "text-gray-600 (#4A5565)",
+                "text/tertiary": "text-gray-400 (#99A1AF)",
+                "text/error": "text-red-500 (#FB2C36)"
               }
             },
             {
               "variant": "Border",
               "tokens": {
-                "border/default": "gray-200 (#E5E7EB)",
-                "border/focus": "blue-500 (#2B7FFF)",
-                "border/error": "red-500 (#FB2C36)",
-                "border/disabled": "gray-200 (#E5E7EB)"
+                "border/default": "border-gray-200 (#E5E7EB)",
+                "border/focus": "border-blue-500 (#2B7FFF)",
+                "border/error": "border-red-500 (#FB2C36)",
+                "border/disabled": "border-gray-200 (#E5E7EB)"
               }
             },
             {
@@ -3163,8 +3172,8 @@
             {
               "variant": "Icon",
               "tokens": {
-                "icon/default": "gray-500 (#6A7282)",
-                "icon/disabled": "gray-300 (#D1D5DC)"
+                "icon/default": "text-gray-500 (#6A7282)",
+                "icon/disabled": "text-gray-300 (#D1D5DC)"
               }
             }
           ]
@@ -3260,25 +3269,25 @@
             {
               "variant": "Default / Unconfirmed",
               "tokens": {
-                "border": "gray-200 (#e5e7eb)"
+                "border": "border-gray-200 (#e5e7eb)"
               }
             },
             {
               "variant": "Done",
               "tokens": {
-                "border": "green-600 (#00a63e)"
+                "border": "border-green-600 (#00a63e)"
               }
             },
             {
               "variant": "Reject",
               "tokens": {
-                "border": "red-600 (#e7000b)"
+                "border": "border-red-600 (#e7000b)"
               }
             },
             {
               "variant": "Error (Routing)",
               "tokens": {
-                "border": "red-500 (#fb2c36)"
+                "border": "border-red-500 (#fb2c36)"
               }
             }
           ]
@@ -3291,13 +3300,13 @@
               "tokens": {
                 "width": "w-2 (8px)",
                 "height": "h-px (1px)",
-                "color": "gray-200 (#e5e7eb)"
+                "color": "border-gray-200 (#e5e7eb)"
               }
             },
             {
               "variant": "Done",
               "tokens": {
-                "color": "green-600 (#00a63e)"
+                "color": "border-green-600 (#00a63e)"
               }
             }
           ]
@@ -3308,21 +3317,21 @@
             {
               "variant": "Unconfirmed (承認待ち)",
               "tokens": {
-                "color": "gray-600 (#4a5565)",
+                "color": "text-gray-600 (#4a5565)",
                 "icon": "circle-minus"
               }
             },
             {
               "variant": "Done (承認済み)",
               "tokens": {
-                "color": "green-600 (#00a63e)",
+                "color": "text-green-600 (#00a63e)",
                 "icon": "circle-check"
               }
             },
             {
               "variant": "Reject (差し戻し)",
               "tokens": {
-                "color": "red-600 (#e7000b)",
+                "color": "text-red-600 (#e7000b)",
                 "icon": "undo-2"
               }
             }
@@ -3334,7 +3343,7 @@
             {
               "variant": "Change (変更)",
               "tokens": {
-                "bg": "blue-500 (#2b7fff)",
+                "bg": "bg-blue-500 (#2b7fff)",
                 "text": "white",
                 "fontSize": "text-xs (12px)",
                 "fontWeight": "font-medium (500)",
@@ -3345,8 +3354,8 @@
             {
               "variant": "Add (追加)",
               "tokens": {
-                "bg": "blue-100 (#dbeafe)",
-                "text": "blue-700 (#1447e6)",
+                "bg": "bg-blue-100 (#dbeafe)",
+                "text": "text-blue-700 (#1447e6)",
                 "fontSize": "text-xs (12px)",
                 "fontWeight": "font-medium (500)",
                 "borderRadius": "rounded-md (6px)",
@@ -3358,7 +3367,7 @@
               "tokens": {
                 "size": "w-6 h-6 (24px)",
                 "bg": "white",
-                "border": "gray-200 (#e5e7eb)",
+                "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
                 "iconSize": "11px"
               }
@@ -3412,11 +3421,11 @@
                 "minWidth": "min-w-[32px]",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "bg": "white",
-                "border": "gray-200 (#e5e7eb)",
+                "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
                 "fontSize": "text-sm (14px)",
                 "fontWeight": "font-medium (500)",
-                "textColor": "gray-900 (#101828)",
+                "textColor": "text-gray-900 (#101828)",
                 "lineHeight": "leading-5 (20px)"
               }
             }
@@ -3430,7 +3439,7 @@
               "tokens": {
                 "size": "w-8 h-8 (32px)",
                 "bg": "white",
-                "border": "gray-200 (#e5e7eb)",
+                "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
                 "iconSize": "w-3 h-3 (12px)",
                 "iconColor": "gray-700"
