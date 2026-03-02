@@ -400,7 +400,7 @@
                 "height": "h-6 (24px)",
                 "padding": "px-2 py-1 (8px 4px)",
                 "fontSize": "text-xs (12px)",
-                "iconSize": "w-[11px] h-[11px]",
+                "iconSize": "w-3 h-3 (12px)",
                 "labelFont": "text-xs (12px)"
               }
             },
@@ -410,7 +410,7 @@
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "fontSize": "text-sm (14px)",
-                "iconSize": "w-3 h-3 (12px)",
+                "iconSize": "w-3.5 h-3.5 (14px)",
                 "labelFont": "text-sm (14px)"
               }
             },
@@ -420,7 +420,7 @@
                 "height": "h-10 (40px)",
                 "padding": "px-4 py-2 (16px 8px)",
                 "fontSize": "text-base (16px)",
-                "iconSize": "w-3.5 h-3.5 (14px)",
+                "iconSize": "w-4 h-4 (16px)",
                 "labelFont": "text-sm (14px)"
               }
             },
@@ -430,7 +430,7 @@
                 "height": "h-12 (48px)",
                 "padding": "px-5 py-2.5 (20px 10px)",
                 "fontSize": "text-lg (18px)",
-                "iconSize": "w-[18px] h-[18px]",
+                "iconSize": "w-5 h-5 (20px)",
                 "labelFont": "text-base (16px)"
               }
             }
@@ -1285,7 +1285,7 @@
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "fontSize": "text-sm (14px)",
-                "iconSize": "w-3 h-3 (12px)",
+                "iconSize": "w-3.5 h-3.5 (14px)",
                 "gap": "gap-1.5 (6px)"
               }
             },
@@ -1295,7 +1295,7 @@
                 "height": "h-10 (40px)",
                 "padding": "px-3 py-2.5 (12px 10px)",
                 "fontSize": "text-sm (14px)",
-                "iconSize": "w-3 h-3 (12px)",
+                "iconSize": "w-4 h-4 (16px)",
                 "gap": "gap-1.5 (6px)"
               }
             }
@@ -1370,14 +1370,14 @@
             {
               "variant": "selected",
               "tokens": {
-                "background": "#3D62D3",
+                "background": "bg-[#3D62D3]",
                 "text": "text-white (#FFFFFF)"
               }
             },
             {
               "variant": "range",
               "tokens": {
-                "background": "#ECEFF9",
+                "background": "bg-[#ECEFF9]",
                 "text": "text-gray-500 (#6A7282)"
               }
             },
@@ -1440,9 +1440,9 @@
             {
               "variant": "success",
               "tokens": {
-                "border": "#009966 (1px)",
-                "background": "#F0FDF4",
-                "icon": "#00A63E",
+                "border": "border-emerald-600 (#009966) (1px)",
+                "background": "bg-green-50 (#F0FDF4)",
+                "icon": "text-green-600 (#00A63E)",
                 "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
@@ -1450,9 +1450,9 @@
             {
               "variant": "warning",
               "tokens": {
-                "border": "#E17100 (1px)",
-                "background": "#FEFCE8",
-                "icon": "#FD9A00",
+                "border": "border-amber-600 (#E17100) (1px)",
+                "background": "bg-yellow-50 (#FEFCE8)",
+                "icon": "text-amber-500 (#FD9A00)",
                 "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
@@ -1460,9 +1460,9 @@
             {
               "variant": "error",
               "tokens": {
-                "border": "#E7000B (1px)",
-                "background": "#FEF2F2",
-                "icon": "#E7000B",
+                "border": "border-red-600 (#E7000B) (1px)",
+                "background": "bg-red-50 (#FEF2F2)",
+                "icon": "text-red-600 (#E7000B)",
                 "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
@@ -1470,9 +1470,9 @@
             {
               "variant": "info",
               "tokens": {
-                "border": "#4A5565 (1px)",
-                "background": "#F9FAFB",
-                "icon": "#4A5565",
+                "border": "border-gray-600 (#4A5565) (1px)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "icon": "text-gray-600 (#4A5565)",
                 "title": "text-black (#000000)",
                 "description": "#4A5565 (gray-600)"
               }
@@ -1489,7 +1489,7 @@
                 "borderWidth": "border (1px)",
                 "padding": "px-4 py-3 (16px 12px)",
                 "gap": "gap-3 (12px)",
-                "iconSize": "14px",
+                "iconSize": "w-4 h-4 (16px)",
                 "titleFont": "text-sm font-medium (14px 500)",
                 "descFont": "text-sm font-normal (14px 400)"
               }
@@ -1532,7 +1532,7 @@
             {
               "variant": "success",
               "tokens": {
-                "background": "#009966",
+                "background": "bg-emerald-600 (#009966)",
                 "text": "text-white (#FFFFFF)",
                 "icon": "text-white (#FFFFFF)"
               }
@@ -1540,7 +1540,7 @@
             {
               "variant": "warning",
               "tokens": {
-                "background": "#FD9A00",
+                "background": "bg-amber-500 (#FD9A00)",
                 "text": "text-white (#FFFFFF)",
                 "icon": "text-white (#FFFFFF)"
               }
@@ -1548,7 +1548,7 @@
             {
               "variant": "error",
               "tokens": {
-                "background": "#FB2C36",
+                "background": "bg-red-500 (#FB2C36)",
                 "text": "text-white (#FFFFFF)",
                 "icon": "text-white (#FFFFFF)"
               }
@@ -1556,7 +1556,7 @@
             {
               "variant": "info",
               "tokens": {
-                "background": "#6A7282",
+                "background": "bg-gray-500 (#6A7282)",
                 "text": "text-white (#FFFFFF)",
                 "icon": "text-white (#FFFFFF)"
               }
@@ -1573,8 +1573,8 @@
                 "padding": "px-4 py-3 (16px 12px)",
                 "gap": "gap-3 (12px)",
                 "contentGap": "gap-1 (4px)",
-                "iconSize": "14px",
-                "closeSize": "14px",
+                "iconSize": "w-4 h-4 (16px)",
+                "closeSize": "w-4 h-4 (16px)",
                 "titleFont": "text-sm font-medium (14px 500)",
                 "descFont": "text-sm font-normal (14px 400)",
                 "width": "w-[360px]"
@@ -1623,7 +1623,7 @@
                 "fontSize": "text-xs (12px)",
                 "padding": "px-2.5 py-1.5 (10px 6px)",
                 "borderRadius": "rounded-md (6px)",
-                "arrow": "4px"
+                "arrow": "w-1 h-1 (4px)"
               }
             }
           ]
@@ -1721,7 +1721,7 @@
               "tokens": {
                 "width": "w-[400px]",
                 "background": "bg-white (#FFFFFF)",
-                "border": "#E5E7EB (1px)",
+                "border": "border-gray-200 (#E5E7EB) (1px)",
                 "borderRadius": "rounded-xl (12px)",
                 "shadow": "0 8px 32px rgba(0,0,0,0.16)"
               }
@@ -1737,9 +1737,9 @@
                 "padding": "p-6 (24px)",
                 "gap": "gap-2 (8px)",
                 "titleFont": "text-lg font-medium (18px 500)",
-                "titleColor": "#101828",
+                "titleColor": "text-gray-900 (#101828)",
                 "descFont": "text-sm font-normal (14px 400)",
-                "descColor": "#4A5565"
+                "descColor": "text-gray-600 (#4A5565)"
               }
             }
           ]
@@ -1750,7 +1750,7 @@
             {
               "variant": "all",
               "tokens": {
-                "background": "#F9FAFB",
+                "background": "bg-gray-50 (#F9FAFB)",
                 "padding": "px-6 py-4 (24px 16px)",
                 "gap": "gap-3 (12px)",
                 "justify": "end"
@@ -1766,8 +1766,8 @@
               "tokens": {
                 "type": "Tertiary Button (sm)",
                 "background": "bg-white (#FFFFFF)",
-                "border": "#E5E7EB (1px)",
-                "text": "#101828",
+                "border": "border-gray-200 (#E5E7EB) (1px)",
+                "text": "text-gray-900 (#101828)",
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "borderRadius": "rounded-md (6px)"
@@ -1777,7 +1777,7 @@
               "variant": "confirm",
               "tokens": {
                 "type": "Primary Button (sm)",
-                "background": "#2B7FFF",
+                "background": "bg-blue-500 (#2B7FFF)",
                 "text": "text-white (#FFFFFF)",
                 "height": "h-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
@@ -1824,7 +1824,7 @@
                 "width": "w-[512px]",
                 "height": "h-full (viewport)",
                 "background": "bg-white (#FFFFFF)",
-                "borderLeft": "#E5E7EB (1px)",
+                "borderLeft": "border-gray-200 (#E5E7EB) (1px)",
                 "shadow": "-4px 0 16px rgba(0,0,0,0.08)"
               }
             }
@@ -1839,7 +1839,7 @@
                 "padding": "p-6 (24px)",
                 "gap": "gap-3 (12px)",
                 "titleFont": "text-xl font-bold (20px 700)",
-                "titleColor": "#101828",
+                "titleColor": "text-gray-900 (#101828)",
                 "closeButton": "w-8 h-8, border #E5E7EB, rounded-md"
               }
             }
@@ -1867,12 +1867,12 @@
               "tokens": {
                 "gap": "gap-2 (8px)",
                 "senderFont": "text-base font-bold (16px 700)",
-                "senderColor": "#101828",
+                "senderColor": "text-gray-900 (#101828)",
                 "dateFont": "text-xs (12px)",
-                "dateColor": "#99A1AF",
+                "dateColor": "text-gray-400 (#99A1AF)",
                 "bodyFont": "text-sm (14px)",
-                "incomingBodyColor": "#101828",
-                "outgoingBodyColor": "#4A5565"
+                "incomingBodyColor": "text-gray-900 (#101828)",
+                "outgoingBodyColor": "text-gray-600 (#4A5565)"
               }
             }
           ]
@@ -2320,7 +2320,7 @@
                 "fontWeight": "font-normal",
                 "textColor": "text-gray-900",
                 "iconButton": "w-6 h-6 bg-white border border-gray-200 rounded-md",
-                "iconSize": "w-[11px] h-[11px]"
+                "iconSize": "w-3 h-3 (12px)"
               }
             }
           ]
@@ -2577,7 +2577,7 @@
               "tokens": {
                 "width": "w-20 (80px)",
                 "height": "h-[25px]",
-                "color": "#0F1424"
+                "color": "text-[#0F1424]"
               }
             }
           ]
@@ -3369,7 +3369,7 @@
                 "bg": "white",
                 "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
-                "iconSize": "11px"
+                "iconSize": "w-3 h-3 (12px)"
               }
             }
           ]
@@ -3418,7 +3418,7 @@
               "variant": "Default",
               "tokens": {
                 "height": "h-8 (32px)",
-                "minWidth": "min-w-[32px]",
+                "minWidth": "min-w-8 (32px)",
                 "padding": "px-3 py-1.5 (12px 6px)",
                 "bg": "white",
                 "border": "border-gray-200 (#e5e7eb)",
@@ -3441,7 +3441,7 @@
                 "bg": "white",
                 "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
-                "iconSize": "w-3 h-3 (12px)",
+                "iconSize": "w-3.5 h-3.5 (14px)",
                 "iconColor": "gray-700"
               }
             }
