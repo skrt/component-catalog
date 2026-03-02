@@ -2056,9 +2056,9 @@
             "text",
             "badge",
             "link",
-            "links"
+            "slot"
           ],
-          "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / links: 複数リンク表示"
+          "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / slot: WMSで変動する要素に使います"
         },
         {
           "name": "Title",
@@ -2071,6 +2071,18 @@
           "type": "string",
           "default": "Value",
           "description": "値テキスト"
+        },
+        {
+          "name": "Content2",
+          "type": "string",
+          "default": "コンテンツ",
+          "description": "2番目の値テキスト（slot タイプのみ）"
+        },
+        {
+          "name": "Content3",
+          "type": "string",
+          "default": "コンテンツ",
+          "description": "3番目の値テキスト（slot タイプのみ）"
         }
       ],
       "tokens": [
@@ -2083,7 +2095,7 @@
                 "layout": "flex HORIZONTAL",
                 "gap": "gap-2 (8px)",
                 "labelFont": "text-base font-normal (16px 400)",
-                "labelColor": "text-gray-500 (#6A7282)",
+                "labelColor": "text-gray-600 (#4A5565)",
                 "labelWidth": "w-[120px] FIXED",
                 "valueFont": "text-base font-normal (16px 400)"
               }
@@ -2103,15 +2115,15 @@
             {
               "variant": "link",
               "tokens": {
-                "valueColor": "text-blue-600 (#155DFC)",
+                "valueColor": "text-blue-500 (#2B7FFF)",
                 "align": "items-start"
               }
             },
             {
-              "variant": "links",
+              "variant": "slot",
               "tokens": {
-                "valueColor": "text-blue-600 (#155DFC)",
-                "separator": "/ gray-400 (#99A1AF)",
+                "valueColor": "text-blue-500 (#2B7FFF)",
+                "separator": "text-gray-400 (#99A1AF)",
                 "align": "items-start"
               }
             },
