@@ -2602,7 +2602,7 @@
               "tokens": {
                 "gap": "gap-3 (12px)",
                 "companyFont": "text-base/normal (16px 400)",
-                "companyColor": "text/primary",
+                "companyColor": "text-gray-900 (#101828)",
                 "userButton": "Button (xs, tertiary)",
                 "helpButton": "Button (xs, tertiary)"
               }
@@ -2748,8 +2748,8 @@
               "variant": "normal",
               "tokens": {
                 "layout": "flex justify-between",
-                "labelColor": "text/primary",
-                "valueColor": "text/primary"
+                "labelColor": "text-gray-900 (#101828)",
+                "valueColor": "text-gray-900 (#101828)"
               }
             },
             {
@@ -2764,7 +2764,7 @@
               "variant": "taxDetail",
               "tokens": {
                 "fontSize": "text-xs (12px)",
-                "textColor": "text/secondary",
+                "textColor": "text-gray-600 (#4A5565)",
                 "leftBorder": "w-0.5 bg-gray-200",
                 "gap": "gap-1 (4px)"
               }
