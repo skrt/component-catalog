@@ -3215,17 +3215,15 @@
         {
           "name": "Sub Component",
           "type": "enum",
-          "default": "Routing Step",
+          "default": "Routing",
           "values": [
-            "Routing Step",
             "Routing",
-            "Approval Tracker Step",
-            "Approval Tracker Step Multi"
+            "Approval Tracker"
           ],
           "description": "サブコンポーネントの種類"
         },
         {
-          "name": "State (Routing Step)",
+          "name": "State (Routing)",
           "type": "enum",
           "default": "Unconfigured",
           "values": [
@@ -3234,10 +3232,10 @@
             "Error",
             "Add"
           ],
-          "description": "Routing Step: Unconfigured=未設定 / Configured=承認者設定済み / Error=バリデーションエラー / Add=承認者追加ボタン"
+          "description": "Routing: Unconfigured=未設定 / Configured=承認者設定済み / Error=バリデーションエラー / Add=承認者追加ボタン"
         },
         {
-          "name": "State (Tracker Step)",
+          "name": "State (Approval Tracker)",
           "type": "enum",
           "default": "Unconfirmed",
           "values": [
@@ -3245,24 +3243,7 @@
             "Done",
             "Reject"
           ],
-          "description": "Tracker Step: Unconfirmed=承認待ち / Done=承認済み / Reject=差し戻し"
-        },
-        {
-          "name": "State (Tracker Multi)",
-          "type": "enum",
-          "default": "Default",
-          "values": [
-            "Default",
-            "Partial",
-            "Approval",
-            "Reject",
-            "Skip",
-            "And-Default",
-            "And-Partial",
-            "And-Approval",
-            "And-Reject"
-          ],
-          "description": "Tracker Multi: Default=全承認待ち / Partial=一部承認済み / Approval=全承認済み / Reject=差し戻しあり / Skip=単一ステップ / And-*=AND条件付き"
+          "description": "Approval Tracker: Unconfirmed=承認待ち / Done=承認済み / Reject=差し戻し"
         },
         {
           "name": "propValue (右側の線を表示)",
