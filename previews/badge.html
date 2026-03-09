@@ -30,57 +30,87 @@
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
     一覧に戻る
   </a>
+
+  <!-- ==================== COLOR VARIANTS ==================== -->
   <section>
-    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">STATUS TYPES</h3>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">COLOR VARIANTS</h3>
     <div class="flex flex-row flex-wrap items-center gap-3">
-      <!-- draft: gray -->
+      <!-- gray -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
-        下書き
+        ラベル
       </span>
-      <!-- pending_approval: red -->
+      <!-- red -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-red border-badge-red">
-        承認待ち
+        ラベル
       </span>
-      <!-- pending_send: orange -->
+      <!-- orange -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-orange border-badge-orange">
-        送信待ち
+        ラベル
       </span>
-      <!-- pending_delivery: amber -->
+      <!-- amber -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-amber border-badge-amber">
-        納品待ち
+        ラベル
       </span>
-      <!-- in_conversation: blue -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-blue border-badge-blue">
-        会話中
-      </span>
-      <!-- delivered: teal -->
+      <!-- teal -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-teal border-badge-teal">
-        納品済み
+        ラベル
       </span>
-      <!-- partially_delivered: blue -->
+      <!-- blue -->
       <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-blue border-badge-blue">
-        一部納品済み
+        ラベル
       </span>
-      <!-- returned: gray -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
-        差し戻し
-      </span>
-      <!-- cancelled: gray -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
-        取り消し
-      </span>
-      <!-- expired: red -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-red border-badge-red">
-        期限切れ
-      </span>
-      <!-- creating: amber -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-amber border-badge-amber">
-        作成中
-      </span>
-      <!-- created: teal -->
-      <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-teal border-badge-teal">
-        作成完了
-      </span>
+    </div>
+  </section>
+
+  <!-- ==================== BADGE — USAGE PATTERNS ==================== -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BADGE — USAGE PATTERNS</h3>
+
+    <!-- 発注書ステータス -->
+    <div class="space-y-3">
+      <p class="text-xs font-medium text-gray-500">発注書ステータス</p>
+      <div class="flex flex-row flex-wrap items-center gap-3">
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
+          下書き
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-red border-badge-red">
+          承認待ち
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-orange border-badge-orange">
+          送信待ち
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-amber border-badge-amber">
+          納品待ち
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-teal border-badge-teal">
+          納品済み
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-blue border-badge-blue">
+          一部納品済み
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
+          差し戻し
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-gray border-badge-gray">
+          取り消し
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-red border-badge-red">
+          期限切れ
+        </span>
+      </div>
+    </div>
+
+    <!-- CSV出力ステータス -->
+    <div class="space-y-3 mt-6">
+      <p class="text-xs font-medium text-gray-500">CSV出力ステータス</p>
+      <div class="flex flex-row flex-wrap items-center gap-3">
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-amber border-badge-amber">
+          作成中
+        </span>
+        <span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-medium bg-white border text-badge-teal border-badge-teal">
+          作成完了
+        </span>
+      </div>
     </div>
   </section>
 </body>
