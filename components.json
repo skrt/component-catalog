@@ -1688,28 +1688,35 @@
     {
       "id": "modal",
       "name": "Modal",
-      "description": "モーダルダイアログ。確認、フォーム入力などの割り込み操作に使用。",
+      "description": "モーダルダイアログ群。Modal Dialog（確認ダイアログ）、Modal Footer（フッター）、Modal / Table（テーブル選択モーダル）で構成。各コンポーネントはSlotでコンテンツを自由に差し替え可能。",
       "category": "feedback",
       "preview": "previews/modal.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7759",
       "props": [
         {
-          "name": "Title",
-          "type": "string",
-          "default": "Dialog Title",
-          "description": "モーダルのタイトル"
+          "name": "Modal Dialog",
+          "type": "component",
+          "description": "Title (Text), Contents (Slot)"
         },
         {
-          "name": "Description",
-          "type": "string",
-          "default": "",
-          "description": "説明テキスト"
+          "name": "Modal Footer",
+          "type": "component",
+          "description": "Countを表示 (Boolean), Actions (Slot)"
         },
         {
-          "name": "Footer",
-          "type": "boolean",
-          "default": "true",
-          "description": "フッター（アクションボタン）の表示"
+          "name": "Modal / Table",
+          "type": "component",
+          "description": "Filter (Slot), Header (Slot), Table (Slot)"
+        },
+        {
+          "name": "ItemSelect Row",
+          "type": "component",
+          "description": "State: default/hover"
+        },
+        {
+          "name": "MemberSelect Row",
+          "type": "component",
+          "description": "State: default/hover"
         }
       ],
       "tokens": [
