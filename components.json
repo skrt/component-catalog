@@ -3372,9 +3372,9 @@
               "variant": "all",
               "tokens": {
                 "padding": "p-2 (8px)",
-                "text": "text-sm/normal (14px)",
+                "background": "bg-gray-50 (#F9FAFB)",
+                "text": "text-xs/semibold (12px)",
                 "textColor": "text-gray-900 (#101828)",
-                "borderRight": "border-gray-200 (#E5E7EB)",
                 "direction": "vertical (縦書き)"
               }
             }
