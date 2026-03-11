@@ -3338,7 +3338,7 @@
     },
     {
       "id": "price-list",
-      "name": "Price List",
+      "name": "PriceList",
       "description": "単価表コンポーネント。数量×単価の価格テーブルをラベル付きで表示。行数は1〜6行で可変。",
       "category": "data-display",
       "preview": "previews/price-list.html",
