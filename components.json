@@ -1915,7 +1915,8 @@
             "orange",
             "amber",
             "teal",
-            "blue"
+            "blue",
+            "violet"
           ],
           "description": "バッジの色。ラベルテキストは使用時に自由に設定する。"
         }
@@ -1964,6 +1965,13 @@
               "tokens": {
                 "text": "text-badge-blue (#155DFC)",
                 "border": "border-badge-blue (#155DFC)"
+              }
+            },
+            {
+              "variant": "violet",
+              "tokens": {
+                "text": "text-badge-violet (#7F22FE)",
+                "border": "border-badge-violet (#7F22FE)"
               }
             }
           ]
@@ -3322,6 +3330,95 @@
                 "border": "border-gray-200 (#e5e7eb)",
                 "borderRadius": "rounded-md (6px)",
                 "iconSize": "w-3 h-3 (12px)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "price-list",
+      "name": "Price List",
+      "description": "単価表コンポーネント。数量×単価の価格テーブルをラベル付きで表示。行数は1〜6行で可変。",
+      "category": "data-display",
+      "preview": "previews/price-list.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1918-29693",
+      "props": [
+        {
+          "name": "Rows",
+          "type": "number",
+          "default": "6",
+          "description": "表示する行数（1〜6行）。不要な行はvisible=falseで非表示"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Layout",
+          "items": [
+            {
+              "variant": "Root",
+              "tokens": {
+                "layout": "flex HORIZONTAL",
+                "gap": "gap-0 (0px)",
+                "sizing": "HUG × HUG"
+              }
+            }
+          ]
+        },
+        {
+          "category": "ラベル",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "padding": "p-2 (8px)",
+                "text": "text-sm/normal (14px)",
+                "textColor": "text-gray-900 (#101828)",
+                "borderRight": "border-gray-200 (#E5E7EB)",
+                "direction": "vertical (縦書き)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Header Cell",
+          "items": [
+            {
+              "variant": "Table / Header (number)",
+              "tokens": {
+                "width": "w-20 (80px)",
+                "padding": "px-3 py-1.5 (12px 6px)",
+                "fontSize": "text-xs/medium (12px)",
+                "textColor": "text-gray-600 (#4A5565)",
+                "bg": "bg-gray-50 (#F9FAFB)",
+                "textAlign": "right"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Data Cell",
+          "items": [
+            {
+              "variant": "Table / Data (number) compact",
+              "tokens": {
+                "width": "w-20 (80px)",
+                "padding": "px-3 py-1 (12px 4px)",
+                "fontSize": "text-sm/normal (14px)",
+                "textColor": "text-gray-900 (#101828)",
+                "textAlign": "right"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Row Separator",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "border": "border-t border-gray-200 (#E5E7EB)",
+                "strokeSide": "bottom only (0,0,1,0)"
               }
             }
           ]
