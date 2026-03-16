@@ -353,22 +353,28 @@ function catalog() {
       return cat ? cat.label : id;
     },
 
+    _scrollTarget: null,
+    _scrollTimer: null,
+
     scrollToComponent(id) {
       if (!id) return;
       this.activeComponent = id;
       const el = document.getElementById('comp-' + id);
       if (!el) return;
+      this._scrollTarget = el;
+      this._scrollToEl(el);
+      // Clear scroll target after iframes have had time to load
+      clearTimeout(this._scrollTimer);
+      this._scrollTimer = setTimeout(() => {
+        this._scrollTarget = null;
+        this.activeComponent = null;
+      }, 5000);
+    },
+
+    _scrollToEl(el) {
       const headerH = 72;
-      const scrollTo = () => {
-        const top = el.getBoundingClientRect().top + window.scrollY - headerH;
-        window.scrollTo({ top, behavior: 'instant' });
-      };
-      // Scroll immediately, then re-adjust after lazy iframes may have resized
-      scrollTo();
-      setTimeout(scrollTo, 100);
-      setTimeout(scrollTo, 300);
-      setTimeout(scrollTo, 600);
-      setTimeout(() => { this.activeComponent = null; }, 2000);
+      const top = el.getBoundingClientRect().top + window.scrollY - headerH;
+      window.scrollTo({ top, behavior: 'instant' });
     },
 
     getTab(compId) {
@@ -386,6 +392,10 @@ function catalog() {
           iframe.style.height = h + 'px';
         } catch (e) {
           iframe.style.height = '400px';
+        }
+        // Re-scroll to target if an iframe above it changed layout
+        if (this._scrollTarget) {
+          this._scrollToEl(this._scrollTarget);
         }
       };
       doResize();
