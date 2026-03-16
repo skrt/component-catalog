@@ -44,16 +44,22 @@
         <path d="M46.434 21.4388L54.3881 8.553V8.0401H41.7412V11.1582H49.1478L41.123 24.1621V24.596H54.4102V21.4388H46.434V21.4388Z" fill="#0F1424"/>
         <path d="M70.3762 8.03166L69.9387 10.102C68.4352 8.55925 66.322 7.63734 63.8804 7.63734C58.9464 7.63734 55.2568 11.3343 55.2568 16.31C55.2568 21.2724 58.9464 25 63.8804 25C66.2941 25 68.3864 24.0915 69.8866 22.5743L70.2167 24.588H72.9644V8.03208L70.3762 8.03166V8.03166ZM64.1481 21.7418C61.026 21.7418 58.7228 19.409 58.7228 16.31C58.7228 13.2109 61.026 10.8781 64.1481 10.8781C67.2703 10.8781 69.5515 13.1892 69.5515 16.31C69.5515 19.4307 67.2703 21.7418 64.1481 21.7418Z" fill="#0F1424"/>
       </svg>
-      <!-- Right: Company + Buttons, gap-12px -->
-      <div class="flex items-center gap-3">
-        <span class="text-base" style="color:#101828;">株式会社shizai</span>
+      <!-- Right: Workspace + User + Help, gap-16px -->
+      <div class="flex items-center gap-4">
+        <!-- ワークスペース切り替え: Company Name + Switch Button, gap-4px -->
+        <div class="flex items-center gap-1">
+          <span class="text-base" style="color:#101828;">株式会社shizai</span>
+          <button class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-md border border-[#e5e7eb] bg-btn-tertiary-default text-btn-text-tertiary hover:bg-btn-tertiary-hover active:bg-btn-tertiary-active transition-colors">
+            ワークスペースを切り替え
+          </button>
+        </div>
         <!-- User Button: xs, tertiary — Text + Right Icon (chevron-down) -->
-        <button class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-md border border-[#e5e7eb] bg-btn-tertiary-default text-btn-text-tertiary hover:bg-btn-tertiary-hover active:bg-btn-tertiary-active transition-colors">
+        <button class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-md border border-[#e5e7eb] bg-btn-tertiary-default text-btn-text-tertiary hover:bg-btn-tertiary-hover active:bg-btn-tertiary-active transition-colors">
           酒井 亮太
           <svg class="w-3 h-3"><use href="icons.svg#icon-chevron-down"/></svg>
         </button>
         <!-- Help Button: xs, tertiary — Left Icon (circle-help) + Text -->
-        <button class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-md border border-[#e5e7eb] bg-btn-tertiary-default text-btn-text-tertiary hover:bg-btn-tertiary-hover active:bg-btn-tertiary-active transition-colors">
+        <button class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-md border border-[#e5e7eb] bg-btn-tertiary-default text-btn-text-tertiary hover:bg-btn-tertiary-hover active:bg-btn-tertiary-active transition-colors">
           <svg class="w-3 h-3"><use href="icons.svg#icon-circle-help"/></svg>
           ヘルプ
         </button>

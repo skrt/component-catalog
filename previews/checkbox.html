@@ -17,11 +17,18 @@
     一覧に戻る
   </a>
 
+  <!--
+    Rails実装メモ:
+    カタログでは <span> + SVG で描画しているが、Rails では @tailwindcss/forms (strategy: class) を使用。
+    <input type="checkbox" class="form-checkbox w-4 h-4 rounded-sm border-gray-200 text-blue-500 focus:ring-blue-500">
+    チェック色: text-blue-500 (#2b7fff相当), ボーダー: border-gray-200 (#e5e7eb)
+  -->
+
   <div class="space-y-10">
 
     <!-- Sizes -->
     <div>
-      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">Sizes</p>
+      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Sizes</p>
       <div class="flex flex-wrap items-end gap-6">
         <!-- sm: checkbox 12px rounded-sm, text 14px, gap 8px -->
         <label class="inline-flex items-center gap-2 cursor-pointer">
@@ -43,7 +50,7 @@
 
     <!-- States -->
     <div>
-      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">States</p>
+      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">States</p>
       <div class="flex flex-wrap items-center gap-6">
         <!-- Default -->
         <div class="text-center space-y-1.5">
@@ -86,7 +93,7 @@
 
     <!-- Interactive Demo -->
     <div x-data="{ items: [{label:'Option A', checked: true}, {label:'Option B', checked: false}, {label:'Option C', checked: true}, {label:'Disabled', checked: false, disabled: true}] }" x-cloak>
-      <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</p>
+      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</p>
       <div class="space-y-3">
         <template x-for="(item, i) in items" :key="i">
           <label class="flex items-center gap-2" :class="item.disabled ? 'cursor-not-allowed' : 'cursor-pointer'" @click="if (!item.disabled) item.checked = !item.checked">

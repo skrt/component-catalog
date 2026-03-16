@@ -314,6 +314,12 @@ function catalog() {
       } catch (e) {
         console.error('Failed to load components.json:', e);
       }
+      // Handle URL hash navigation (e.g. #comp-button)
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#comp-')) {
+        const id = hash.replace('#comp-', '');
+        this.$nextTick(() => this.scrollToComponent(id));
+      }
     },
 
     get allComponentsSorted() {
