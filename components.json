@@ -2667,6 +2667,48 @@
       ]
     },
     {
+      "id": "card",
+      "name": "Card",
+      "description": "汎用カードコンテナ。タイトルとコンテンツスロットで構成。設定パネルや情報グループの表示に使用。",
+      "category": "layout",
+      "preview": "previews/card.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2066-18617",
+      "props": [
+        {
+          "name": "Title",
+          "type": "string",
+          "default": "カードタイトル",
+          "description": "カードのタイトルテキスト"
+        },
+        {
+          "name": "Contents",
+          "type": "slot",
+          "default": "-",
+          "description": "カード内のコンテンツ領域"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Card",
+          "items": [
+            {
+              "variant": "Base",
+              "tokens": {
+                "background": "bg-gray-50 (#F9FAFB)",
+                "borderRadius": "rounded-lg (8px)",
+                "padding": "p-6 (24px)",
+                "gap": "gap-2 (8px)",
+                "titleFont": "text-base/bold (16px 700)",
+                "titleColor": "text/primary (#101828)",
+                "layout": "VERTICAL",
+                "width": "w-[448px] FIXED"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "calc",
       "name": "Calc",
       "description": "金額計算コンポーネント。小計・消費税（税率別内訳）・合計金額の表示に使用。",
