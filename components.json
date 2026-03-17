@@ -2773,11 +2773,11 @@
       ]
     },
     {
-      "id": "po-preview",
-      "name": "PO Preview",
+      "id": "order-preview",
+      "name": "Order Preview",
       "description": "発注書プレビューコンポーネント。発注情報、アイテム一覧、金額計算を含む印刷用レイアウト。",
       "category": "data-display",
-      "preview": "previews/po-preview.html",
+      "preview": "previews/order-preview.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1715-11371",
       "props": [
         {
