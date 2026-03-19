@@ -4,35 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style></style>
 <style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
 <script>if (window !== window.top) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }</script>
 </head>
-<body class="bg-white p-6 space-y-10">
+<body class="bg-white p-8">
   <a href="../" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4" id="back-link">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
     一覧に戻る
   </a>
 
+  <div class="space-y-10">
+
   <!-- INTERACTIVE DEMO -->
   <section x-data="{ value: '', focused: false }">
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Interactive Demo</h3>
-    <div class="w-80 space-y-2">
-      <label class="block text-sm font-normal text-gray-900">メールアドレス <span class="text-red-500">*</span></label>
+    <div class="w-56 space-y-2">
+      <label class="block text-sm font-normal text-gray-900">数量 <span class="text-red-500">*</span></label>
       <div
-        class="flex items-center h-10 px-4 py-2 gap-2 rounded-md bg-white transition-colors"
+        class="flex items-center h-10 px-4 py-2 rounded-md bg-white transition-colors"
         :class="focused ? 'border border-blue-500 ring-1 ring-blue-500' : 'border border-gray-200'"
       >
         <input
           type="text"
-          placeholder="例：user@example.com"
+          inputmode="numeric"
+          placeholder="0"
           x-model="value"
           @focus="focused = true"
           @blur="focused = false"
-          class="flex-1 text-base text-gray-900 placeholder-gray-400 outline-none bg-transparent"
+          class="flex-1 text-base text-gray-900 placeholder-gray-400 outline-none bg-transparent text-right"
         />
       </div>
-      <p class="text-xs text-gray-500">クリックして入力してみてください</p>
+      <p class="text-xs text-gray-500">数値を入力してください</p>
     </div>
   </section>
 
@@ -41,48 +45,48 @@
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Sizes</h3>
     <div class="flex items-start gap-6 flex-wrap">
 
-      <!-- XS  h=24 padding 4/8 fontSize=12 icon=11 borderRadius=6 -->
+      <!-- XS  h=24 padding 4/8 fontSize=12 -->
       <div class="w-56 space-y-2">
         <label class="block text-xs font-normal text-gray-900">Label <span class="text-red-500">*</span></label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-6 px-2 py-1 text-xs border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-6 px-2 py-1 text-xs text-right border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
-      <!-- SM  h=32 padding 6/12 fontSize=14 icon=12 borderRadius=6 -->
+      <!-- SM  h=32 padding 6/12 fontSize=14 -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-900">Label <span class="text-red-500">*</span></label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-8 px-3 py-1.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-8 px-3 py-1.5 text-sm text-right border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
-      <!-- MD  h=40 padding 8/16 fontSize=16 icon=14 borderRadius=6 -->
+      <!-- MD  h=40 padding 8/16 fontSize=16 -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-900">Label <span class="text-red-500">*</span></label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-10 px-4 py-2 text-base border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
-      <!-- LG  h=48 padding 10/20 fontSize=18 icon=18 borderRadius=6 -->
+      <!-- LG  h=48 padding 10/20 fontSize=18 -->
       <div class="w-56 space-y-2">
         <label class="block text-base font-normal text-gray-900">Label <span class="text-red-500">*</span></label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-12 px-5 py-2.5 text-lg border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-12 px-5 py-2.5 text-lg text-right border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
-        <p class="text-sm text-gray-500">Helper text</p>
+        <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
     </div>
@@ -99,41 +103,41 @@
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-10 px-4 py-2 text-base border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-gray-200 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
-      <!-- Focus  stroke=#2b7fff = blue-500 -->
+      <!-- Focus -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-900">Focus</label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-10 px-4 py-2 text-base border border-blue-500 ring-1 ring-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-blue-500 ring-1 ring-blue-500 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
 
-      <!-- Error  stroke=#fb2c36 = red-500 -->
+      <!-- Error -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-900">Error</label>
         <input
           type="text"
           placeholder="Placeholder"
-          class="w-full h-10 px-4 py-2 text-base border border-red-500 rounded-md placeholder-gray-400 text-gray-900 outline-none"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-red-500 rounded-md placeholder-gray-400 text-gray-900 outline-none"
         />
         <p class="text-xs text-red-500">Error message</p>
       </div>
 
-      <!-- Disabled  bg=gray-50 text=gray-400 -->
+      <!-- Disabled -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-400">Disabled</label>
         <input
           type="text"
-          placeholder="Placeholder"
+          value="10000"
           disabled
-          class="w-full h-10 px-4 py-2 text-base border border-gray-200 rounded-md bg-gray-50 placeholder-gray-400 text-gray-400 cursor-not-allowed outline-none"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-gray-200 rounded-md bg-gray-50 text-gray-400 cursor-not-allowed outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -143,8 +147,8 @@
         <label class="block text-sm font-normal text-gray-900">Filled</label>
         <input
           type="text"
-          value="user@example.com"
-          class="w-full h-10 px-4 py-2 text-base border border-gray-200 rounded-md text-gray-900 outline-none"
+          value="10000"
+          class="w-full h-10 px-4 py-2 text-base text-right border border-gray-200 rounded-md text-gray-900 outline-none"
         />
         <p class="text-xs text-gray-500">Helper text</p>
       </div>
@@ -152,5 +156,6 @@
     </div>
   </section>
 
+  </div>
 </body>
 </html>
