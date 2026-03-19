@@ -382,12 +382,6 @@
           "type": "boolean",
           "default": "false",
           "description": "左アイコンの表示"
-        },
-        {
-          "name": "Right Icon",
-          "type": "boolean",
-          "default": "false",
-          "description": "右アイコンの表示"
         }
       ],
       "tokens": [
@@ -445,24 +439,21 @@
                 "border": "border-gray-200 (#E5E7EB)",
                 "background": "bg-white (#FFFFFF)",
                 "text": "text-gray-900 (#101828)",
-                "placeholder": "text-gray-400 (#99A1AF)",
-                "rightIcon": "hidden"
+                "placeholder": "text-gray-400 (#99A1AF)"
               }
             },
             {
               "variant": "focus",
               "tokens": {
                 "border": "border-blue-500 (#2B7FFF)",
-                "borderWidth": "border-2",
-                "rightIcon": "hidden"
+                "borderWidth": "border-2"
               }
             },
             {
               "variant": "error",
               "tokens": {
                 "border": "border-red-500 (#FB2C36)",
-                "errorText": "text-red-500 (#FB2C36)",
-                "rightIcon": "hidden"
+                "errorText": "text-red-500 (#FB2C36)"
               }
             },
             {
@@ -470,16 +461,14 @@
               "tokens": {
                 "background": "bg-gray-50 (#F9FAFB)",
                 "text": "text-gray-400 (#99A1AF)",
-                "border": "border-gray-200 (#E5E7EB)",
-                "rightIcon": "hidden"
+                "border": "border-gray-200 (#E5E7EB)"
               }
             },
             {
               "variant": "filled",
               "tokens": {
                 "border": "border-gray-200 (#E5E7EB)",
-                "text": "text-gray-900 (#101828)",
-                "rightIcon": "circle-x (gray-500 #6A7282) visible"
+                "text": "text-gray-900 (#101828)"
               }
             }
           ]
@@ -490,6 +479,74 @@
             {
               "variant": "all",
               "tokens": {
+                "borderRadius": "rounded-md (6px)",
+                "borderWidth": "border (1px)",
+                "helperFont": "text-xs (12px)",
+                "gap": "gap-2 (8px)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "number-input",
+      "name": "Number Input",
+      "description": "数値入力フィールド。右揃え表示。単価・数量・金額などに使用。",
+      "category": "forms",
+      "preview": "previews/number-input.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2160-45186",
+      "props": [
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": ["xs", "sm", "md", "lg"],
+          "description": "入力フィールドのサイズ。xs: 24px / sm: 32px / md: 40px / lg: 48px"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": ["default", "focus", "error", "disabled", "filled"],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Label",
+          "type": "boolean",
+          "default": "true",
+          "description": "ラベルの表示"
+        },
+        {
+          "name": "Helper Text",
+          "type": "boolean",
+          "default": "false",
+          "description": "ヘルパーテキストの表示"
+        },
+        {
+          "name": "Required",
+          "type": "boolean",
+          "default": "false",
+          "description": "必須マーク（*）の表示"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Size",
+          "items": [
+            { "variant": "xs", "tokens": { "height": "h-6 (24px)", "padding": "px-2 py-1 (8px 4px)", "fontSize": "text-xs (12px)" } },
+            { "variant": "sm", "tokens": { "height": "h-8 (32px)", "padding": "px-3 py-1.5 (12px 6px)", "fontSize": "text-sm (14px)" } },
+            { "variant": "md", "tokens": { "height": "h-10 (40px)", "padding": "px-4 py-2 (16px 8px)", "fontSize": "text-base (16px)" } },
+            { "variant": "lg", "tokens": { "height": "h-12 (48px)", "padding": "px-5 py-2.5 (20px 10px)", "fontSize": "text-lg (18px)" } }
+          ]
+        },
+        {
+          "category": "Common",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "textAlign": "text-right",
                 "borderRadius": "rounded-md (6px)",
                 "borderWidth": "border (1px)",
                 "helperFont": "text-xs (12px)",
@@ -834,8 +891,7 @@
               "tokens": {
                 "border": "border-gray-200 (#E5E7EB)",
                 "background": "bg-white (#FFFFFF)",
-                "placeholder": "text-gray-400 (#99A1AF)",
-                "rightIcon": "hidden"
+                "placeholder": "text-gray-400 (#99A1AF)"
               }
             },
             {
@@ -851,24 +907,21 @@
               "variant": "filled",
               "tokens": {
                 "border": "border-gray-200 (#E5E7EB)",
-                "text": "text-gray-900 (#101828)",
-                "rightIcon": "circle-x (gray-500 #6A7282) visible"
+                "text": "text-gray-900 (#101828)"
               }
             },
             {
               "variant": "error",
               "tokens": {
                 "border": "border-red-500 (#FB2C36)",
-                "errorText": "text-red-500 (#FB2C36)",
-                "rightIcon": "hidden"
+                "errorText": "text-red-500 (#FB2C36)"
               }
             },
             {
               "variant": "disabled",
               "tokens": {
                 "background": "bg-gray-50 (#F9FAFB)",
-                "text": "text-gray-400 (#99A1AF)",
-                "rightIcon": "hidden"
+                "text": "text-gray-400 (#99A1AF)"
               }
             }
           ]
