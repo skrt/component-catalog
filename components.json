@@ -2632,11 +2632,11 @@
       ]
     },
     {
-      "id": "title",
-      "name": "Title",
-      "description": "タイトルコンポーネント。ページ・セクション・サブの3タイプ。補足テキスト付き。",
+      "id": "heading",
+      "name": "Heading",
+      "description": "見出しコンポーネント。ページ・セクション・サブの3タイプ。補足テキスト付き。",
       "category": "layout",
-      "preview": "previews/title.html",
+      "preview": "previews/heading.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1714-5204",
       "props": [
         {
