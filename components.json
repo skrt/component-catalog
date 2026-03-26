@@ -3392,11 +3392,11 @@
       ]
     },
     {
-      "id": "price-list",
-      "name": "PriceList",
+      "id": "price-table",
+      "name": "Price Table",
       "description": "単価表コンポーネント。数量×単価の価格テーブルをラベル付きで表示。行数は1〜6行で可変。",
       "category": "data-display",
-      "preview": "previews/price-list.html",
+      "preview": "previews/price-table.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1918-29693",
       "props": [
         {
