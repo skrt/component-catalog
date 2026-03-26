@@ -2064,9 +2064,10 @@
             "text",
             "badge",
             "link",
-            "slot"
+            "slot",
+            "select"
           ],
-          "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / slot: WMSで変動する要素に使います"
+          "description": "text: テキスト表示 / badge: バッジ表示 / link: リンク表示 / slot: WMSで変動する要素に使います / select: ステータス変更用セレクト（xs, ボーダー色=ステータス色）"
         },
         {
           "name": "Title",
@@ -2762,6 +2763,30 @@
       ]
     },
     {
+      "id": "footer",
+      "name": "Footer",
+      "description": "画面下部固定のアクションバー。下書き保存・確認画面遷移など主要アクションボタンを配置。",
+      "category": "layout",
+      "preview": "previews/footer.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2252-25945",
+      "props": [],
+      "tokens": [
+        {
+          "category": "Layout",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "border": "border-t border-gray-200",
+                "padding": "px-10 py-3 (40px 12px)",
+                "background": "bg-white"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "calc",
       "name": "Calc",
       "description": "金額計算コンポーネント。小計・消費税（税率別内訳）・合計金額の表示に使用。",
@@ -3255,37 +3280,15 @@
       ]
     },
     {
-      "id": "approval-flow",
-      "name": "Approval Flow",
-      "description": "承認フローコンポーネント。承認ルート設定（Routing）と承認状況追跡（Approval Tracker）の2つのサブコンポーネントで構成。",
+      "id": "approval-tracker",
+      "name": "Approval Tracker",
+      "description": "承認状況追跡コンポーネント。承認待ち・承認済み・差し戻しの3状態をカード形式で表示。コネクタ線でステップを接続。",
       "category": "data-display",
-      "preview": "previews/approval-flow.html",
+      "preview": "previews/approval-tracker.html",
       "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1743-6136",
       "props": [
         {
-          "name": "Sub Component",
-          "type": "enum",
-          "default": "Routing",
-          "values": [
-            "Routing",
-            "Approval Tracker"
-          ],
-          "description": "サブコンポーネントの種類"
-        },
-        {
-          "name": "State (Routing)",
-          "type": "enum",
-          "default": "Unconfigured",
-          "values": [
-            "Unconfigured",
-            "Configured",
-            "Error",
-            "Add"
-          ],
-          "description": "Routing: Unconfigured=未設定 / Configured=承認者設定済み / Error=バリデーションエラー / Add=承認者追加ボタン"
-        },
-        {
-          "name": "State (Approval Tracker)",
+          "name": "State",
           "type": "enum",
           "default": "Unconfirmed",
           "values": [
@@ -3293,7 +3296,7 @@
             "Done",
             "Reject"
           ],
-          "description": "Approval Tracker: Unconfirmed=承認待ち / Done=承認済み / Reject=差し戻し"
+          "description": "Unconfirmed=承認待ち / Done=承認済み / Reject=差し戻し"
         },
         {
           "name": "propValue (右側の線を表示)",
@@ -3330,19 +3333,13 @@
             {
               "variant": "Done",
               "tokens": {
-                "border": "border-green-600 (#00a63e)"
+                "border": "border-green-600 (#009689)"
               }
             },
             {
               "variant": "Reject",
               "tokens": {
                 "border": "border-red-600 (#e7000b)"
-              }
-            },
-            {
-              "variant": "Error (Routing)",
-              "tokens": {
-                "border": "border-red-500 (#fb2c36)"
               }
             }
           ]
@@ -3361,7 +3358,7 @@
             {
               "variant": "Done",
               "tokens": {
-                "color": "border-green-600 (#00a63e)"
+                "color": "border-green-600 (#009689)"
               }
             }
           ]
@@ -3379,7 +3376,7 @@
             {
               "variant": "Done (承認済み)",
               "tokens": {
-                "color": "text-green-600 (#00a63e)",
+                "color": "text-green-600 (#009689)",
                 "icon": "circle-check"
               }
             },
@@ -3388,43 +3385,6 @@
               "tokens": {
                 "color": "text-red-600 (#e7000b)",
                 "icon": "undo-2"
-              }
-            }
-          ]
-        },
-        {
-          "category": "Routing Buttons",
-          "items": [
-            {
-              "variant": "Change (変更)",
-              "tokens": {
-                "bg": "bg-blue-500 (#2b7fff)",
-                "text": "white",
-                "fontSize": "text-xs (12px)",
-                "fontWeight": "font-medium (500)",
-                "borderRadius": "rounded-md (6px)",
-                "padding": "px-2 py-1 (8px 4px)"
-              }
-            },
-            {
-              "variant": "Add (追加)",
-              "tokens": {
-                "bg": "bg-blue-100 (#dbeafe)",
-                "text": "text-blue-700 (#1447e6)",
-                "fontSize": "text-xs (12px)",
-                "fontWeight": "font-medium (500)",
-                "borderRadius": "rounded-md (6px)",
-                "icon": "circle-plus"
-              }
-            },
-            {
-              "variant": "Close (×)",
-              "tokens": {
-                "size": "w-6 h-6 (24px)",
-                "bg": "white",
-                "border": "border-gray-200 (#e5e7eb)",
-                "borderRadius": "rounded-md (6px)",
-                "iconSize": "w-3 h-3 (12px)"
               }
             }
           ]
