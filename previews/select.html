@@ -24,7 +24,7 @@
           @click="open = !open"
           @click.away="open = false"
           class="flex items-center h-8 px-3 py-1.5 gap-1.5 rounded-md bg-white cursor-pointer transition-colors"
-          :class="open ? 'border border-blue-500 ring-1 ring-blue-500' : 'border border-gray-200'"
+          :class="open ? 'border border-indigo-500 ring-1 ring-indigo-500' : 'border border-gray-200'"
         >
           <span class="flex-1 text-sm truncate" :class="selected ? 'text-gray-900' : 'text-gray-400'" x-text="selected || 'Select...'"></span>
           <svg class="shrink-0 w-3.5 h-3.5 text-gray-400 transition-transform" :class="open && 'rotate-180'"><use href="icons.svg#icon-chevron-down"/></svg>
@@ -34,7 +34,7 @@
             <div
               @click="selected = option; open = false"
               class="px-3 py-2 text-sm text-gray-900 cursor-pointer hover:bg-gray-50"
-              :class="selected === option && 'bg-blue-50 text-blue-700'"
+              :class="selected === option && 'bg-indigo-50 text-indigo-700'"
               x-text="option"
             ></div>
           </template>
@@ -110,7 +110,7 @@
       <!-- Focus -->
       <div class="w-56 space-y-2">
         <label class="block text-sm font-normal text-gray-900">Focus</label>
-        <div class="flex items-center h-8 px-3 py-1.5 gap-1.5 border border-blue-500 ring-1 ring-blue-500 rounded-md bg-white">
+        <div class="flex items-center h-8 px-3 py-1.5 gap-1.5 border border-indigo-500 ring-1 ring-indigo-500 rounded-md bg-white">
           <span class="flex-1 text-sm text-gray-400 truncate">Select...</span>
           <svg class="shrink-0 w-3.5 h-3.5 text-gray-400"><use href="icons.svg#icon-chevron-down"/></svg>
         </div>
