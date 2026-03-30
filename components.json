@@ -2863,15 +2863,22 @@
     {
       "id": "attachment",
       "name": "Attachment",
-      "description": "添付ファイルコンポーネント。ファイル名・サイズの表示と削除ボタン付き。",
+      "description": "添付ファイルコンポーネント。ファイル名・サイズの表示と削除ボタン付き。sm/xsの2サイズ。",
       "category": "data-display",
       "preview": "previews/attachment.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1719-15146",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2540-114711",
       "props": [
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "sm",
+          "values": ["sm", "xs"],
+          "description": "sm: h-8(32px), text-sm / xs: h-6(24px), text-xs"
+        },
         {
           "name": "File Name",
           "type": "string",
-          "default": "sample-XXXXX.png（2,222KB）",
+          "default": "sample-XXXXX.png (2,222KB)",
           "description": "ファイル名とサイズ"
         }
       ],
@@ -2880,12 +2887,19 @@
           "category": "Layout",
           "items": [
             {
-              "variant": "all",
+              "variant": "sm",
               "tokens": {
-                "layout": "flex HORIZONTAL",
-                "gap": "gap-2 (8px)",
-                "fileButton": "Button (sm, tertiary)",
-                "deleteButton": "IconButton (sm, tertiary, trash icon)"
+                "layout": "flex HORIZONTAL, gap-2 (8px)",
+                "fileButton": "h-8, px-3 py-1.5, text-sm, gap-1.5, rounded-md",
+                "deleteButton": "w-8 h-8, trash icon w-3.5 h-3.5"
+              }
+            },
+            {
+              "variant": "xs",
+              "tokens": {
+                "layout": "flex HORIZONTAL, gap-2 (8px)",
+                "fileButton": "h-6, px-2 py-1, text-xs, gap-1, rounded-md",
+                "deleteButton": "w-6 h-6, trash icon w-3 h-3"
               }
             }
           ]
