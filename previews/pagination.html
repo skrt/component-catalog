@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            badge: {
+              gray: '#4A5565',
+              red: '#E7000B',
+              orange: '#F54A00',
+              amber: '#E17100',
+              blue: '#4f39f6',
+              teal: '#009689',
+              violet: '#7c3aed',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
   <script>if (window !== window.top) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }</script>
 </head>
@@ -68,19 +87,19 @@
         <div class="flex items-center px-4 py-2.5 text-sm">
           <span class="w-[140px] text-gray-900">PO-2024-001</span>
           <span class="w-[120px] text-gray-900">パウチ追加分</span>
-          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-gray-400 text-gray-500">下書き</span></span>
+          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-badge-gray text-badge-gray">下書き</span></span>
           <span class="flex-1 text-gray-500">2024/01/15</span>
         </div>
         <div class="flex items-center px-4 py-2.5 text-sm">
           <span class="w-[140px] text-gray-900">PO-2024-002</span>
           <span class="w-[120px] text-gray-900">新配送箱の件</span>
-          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-indigo-500 text-indigo-500">会話中</span></span>
+          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-badge-blue text-badge-blue">会話中</span></span>
           <span class="flex-1 text-gray-500">2024/01/16</span>
         </div>
         <div class="flex items-center px-4 py-2.5 text-sm">
           <span class="w-[140px] text-gray-900">PO-2024-003</span>
           <span class="w-[120px] text-gray-900">6月納品分</span>
-          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-teal-500 text-teal-500">納品済み</span></span>
+          <span class="w-[100px]"><span class="inline-flex items-center h-5 px-2 rounded-full text-xs font-semibold bg-white border border-badge-teal text-badge-teal">納品済み</span></span>
           <span class="flex-1 text-gray-500">2024/01/17</span>
         </div>
       </div>
