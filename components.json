@@ -491,7 +491,7 @@
     },
     {
       "id": "number-input",
-      "name": "Number Input",
+      "name": "NumberInput",
       "description": "数値入力フィールド。右揃え表示。単価・数量・金額などに使用。",
       "category": "forms",
       "preview": "previews/number-input.html",
@@ -2950,7 +2950,7 @@
     },
     {
       "id": "order-preview",
-      "name": "Order Preview",
+      "name": "OrderPreview",
       "description": "発注書プレビューコンポーネント。発注情報、アイテム一覧、金額計算を含む印刷用レイアウト。",
       "category": "data-display",
       "preview": "previews/order-preview.html",
@@ -3337,7 +3337,7 @@
     },
     {
       "id": "approval-tracker",
-      "name": "Approval Tracker",
+      "name": "ApprovalTracker",
       "description": "承認状況追跡コンポーネント。承認待ち・承認済み・差し戻しの3状態をカード形式で表示。コネクタ線でステップを接続。",
       "category": "data-display",
       "preview": "previews/approval-tracker.html",
@@ -3449,7 +3449,7 @@
     },
     {
       "id": "price-table",
-      "name": "Price Table",
+      "name": "PriceTable",
       "description": "単価表コンポーネント。数量×単価の価格テーブルをラベル付きで表示。行数は1〜6行で可変。",
       "category": "data-display",
       "preview": "previews/price-table.html",
