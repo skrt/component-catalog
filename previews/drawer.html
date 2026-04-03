@@ -442,7 +442,7 @@
               </button>
               <button
                 :disabled="!msgText.trim()"
-                :class="msgText.trim() ? 'bg-[#101828] hover:bg-[#1f2937] active:bg-[#111827] cursor-pointer' : 'bg-[#E5E7EB] cursor-not-allowed'"
+                :class="msgText.trim() ? 'bg-[#615fff] hover:bg-[#4f39f6] active:bg-[#432dd7] cursor-pointer' : 'bg-[#E5E7EB] cursor-not-allowed'"
                 class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white rounded-md transition-colors">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
                 送信
@@ -456,13 +456,13 @@
               <p class="text-xl font-bold text-[#101828] leading-7">会話履歴</p>
               <div class="flex items-center gap-1">
                 <span class="text-sm text-[#4A5565]">会話中</span>
-                <div @click="toggleChat()" class="switch-track switch-sm cursor-pointer" :class="chatActive ? 'switch-on' : 'switch-off'"
+                <div @click="toggleChat()" class="switch-track switch-sm cursor-pointer" :class="chatActive ? 'switch-on' : 'switch-off'">
                   <div class="switch-thumb"></div>
                 </div>
               </div>
             </div>
-            <div class="flex-1 flex gap-2 min-h-0 overflow-y-auto hide-scrollbar">
-              <div class="flex-1 flex flex-col gap-2">
+            <div class="flex-1 min-h-0 overflow-y-auto hide-scrollbar">
+              <div class="flex flex-col gap-2">
                 <div class="flex flex-col gap-2 py-2">
                   <div class="flex items-center gap-2">
                     <p class="text-base font-bold text-[#101828] leading-6">test@shiza1.com</p>
