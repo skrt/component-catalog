@@ -1910,7 +1910,13 @@
           "name": "Attachment",
           "type": "boolean",
           "default": "false",
-          "description": "添付データ行の表示切替"
+          "description": "添付データ行の表示切替（Upper Area内のファイル名+削除ボタン）"
+        },
+        {
+          "name": "ErrorText",
+          "type": "boolean",
+          "default": "false",
+          "description": "添付データ上限エラーの表示切替"
         }
       ],
       "tokens": [
@@ -1923,8 +1929,7 @@
                 "width": "w-[512px]",
                 "height": "h-full (viewport)",
                 "background": "bg-white (#FFFFFF)",
-                "borderLeft": "border-gray-200 (#E5E7EB) (1px)",
-                "shadow": "-4px 0 16px rgba(0,0,0,0.08)"
+                "borderLeft": "border-gray-200 (#E5E7EB) (1px)"
               }
             }
           ]
@@ -1939,7 +1944,8 @@
                 "gap": "gap-3 (12px)",
                 "titleFont": "text-xl font-bold (20px 700)",
                 "titleColor": "text-gray-900 (#101828)",
-                "closeButton": "w-8 h-8, border #E5E7EB, rounded-md"
+                "closeButton": "w-8 h-8, border #E5E7EB, rounded-md",
+                "errorText": "text-xs text-red-500 (#FB2C36)"
               }
             }
           ]
@@ -1950,39 +1956,59 @@
             {
               "variant": "all",
               "tokens": {
-                "padding": "p-6 (24px)",
+                "padding": "pt-6 px-6",
                 "gap": "gap-4 (16px)",
-                "overflow": "overflow-y-auto",
-                "historyTitleFont": "text-xl font-bold (20px 700)"
+                "overflow": "overflow-y-auto (messages area)",
+                "historyTitleFont": "text-xl font-bold (20px 700)",
+                "switchOff": "bg-gray-300 (#D1D5DC)",
+                "switchOn": "bg-indigo-500 (#615FFF)"
               }
             }
           ]
         },
         {
-          "category": "Message",
+          "category": "Message / Receive",
           "items": [
             {
               "variant": "all",
               "tokens": {
-                "gap": "gap-2 (8px)",
+                "wrapper": "py-2, gap-2",
                 "senderFont": "text-base font-bold (16px 700)",
                 "senderColor": "text-gray-900 (#101828)",
                 "dateFont": "text-xs (12px)",
                 "dateColor": "text-gray-400 (#99A1AF)",
-                "bodyFont": "text-sm (14px)",
-                "incomingBodyColor": "text-gray-900 (#101828)",
-                "outgoingBodyColor": "text-gray-600 (#4A5565)"
+                "bodyFont": "text-sm (14px) leading-5",
+                "bodyColor": "text-gray-900 (#101828)"
               }
             }
           ]
         },
         {
-          "category": "Overlay",
+          "category": "Message / Send",
           "items": [
             {
               "variant": "all",
               "tokens": {
-                "background": "black/50 (#000000 opacity 50%)"
+                "wrapper": "pl-10 (40px indent)",
+                "card": "bg-gray-50 (#F9FAFB) rounded-lg p-4 gap-2",
+                "senderFont": "text-base font-bold (16px 700)",
+                "senderColor": "text-gray-600 (#4A5565)",
+                "dateFont": "text-xs (12px)",
+                "dateColor": "text-gray-400 (#99A1AF)",
+                "bodyFont": "text-sm (14px) leading-5",
+                "bodyColor": "text-gray-600 (#4A5565)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Attachment (in message)",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "layout": "flex-wrap gap-2",
+                "chip": "px-3 py-1.5, text-sm, border #E5E7EB, rounded-md, bg-white"
               }
             }
           ]
