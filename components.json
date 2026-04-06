@@ -66,9 +66,10 @@
             "default",
             "hover",
             "active",
-            "disabled"
+            "disabled",
+            "loading"
           ],
-          "description": "インタラクション状態"
+          "description": "インタラクション状態。loading: Disabled見た目 + スピナー + 「処理中...」ラベル（primaryのみ）"
         },
         {
           "name": "Left Icon",
@@ -726,6 +727,79 @@
               "tokens": {
                 "borderRadius": "rounded-md (6px)",
                 "borderWidth": "border (1px)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-menu",
+      "name": "SelectMenu",
+      "description": "Selectのドロップダウンメニューコンポーネント。Selectと組み合わせて使用。",
+      "category": "forms",
+      "preview": "previews/select-menu.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=2723-24033",
+      "props": [
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "Default",
+          "values": [
+            "Default",
+            "Empty"
+          ],
+          "description": "Default: 選択肢リスト表示 / Empty: 該当する選択肢がありません"
+        }
+      ],
+      "tokens": [
+        {
+          "category": "Container",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "width": "w-[320px]",
+                "maxHeight": "max-h-[240px] overflow-y-auto",
+                "background": "bg-white",
+                "border": "border border-gray-200",
+                "borderRadius": "rounded-md (6px)",
+                "shadow": "shadow-[0px_4px_16px_-2px_rgba(0,0,0,0.08)]"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Option Row",
+          "items": [
+            {
+              "variant": "selected",
+              "tokens": {
+                "checkIcon": "w-4 h-4 text-gray-900 (check mark)",
+                "iconArea": "pl-3 py-2.5 w-9",
+                "text": "text-sm font-normal text-gray-900",
+                "textPadding": "p-3"
+              }
+            },
+            {
+              "variant": "unselected",
+              "tokens": {
+                "iconArea": "w-9 h-11 (empty placeholder)",
+                "text": "text-sm font-normal text-gray-900",
+                "textPadding": "p-3"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Empty",
+          "items": [
+            {
+              "variant": "empty",
+              "tokens": {
+                "padding": "px-3 py-2",
+                "text": "text-sm font-normal text-gray-400",
+                "content": "該当する選択肢がありません"
               }
             }
           ]
