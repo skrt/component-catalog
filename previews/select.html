@@ -35,7 +35,7 @@
             <div
               @click="selected = option; open = false"
               class="h-11 flex items-center p-3 cursor-pointer hover:bg-gray-50"
-              :class="selected === option && 'bg-indigo-100'"
+              :class="selected === option && 'bg-indigo-50'"
             >
               <span class="text-sm font-normal text-gray-900 whitespace-nowrap" x-text="option"></span>
             </div>
@@ -192,7 +192,7 @@
   <!-- SELECT MENU — Selected -->
   <section>
     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">SelectMenu — Selected</h3>
-    <div class="w-[320px] h-11 flex items-center p-3 bg-indigo-100">
+    <div class="w-[320px] h-11 flex items-center p-3 bg-indigo-50">
       <span class="text-sm font-normal text-gray-900 whitespace-nowrap">丸山印刷株式会社</span>
     </div>
   </section>
