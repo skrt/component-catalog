@@ -739,6 +739,7 @@
               "tokens": {
                 "width": "w-[320px]",
                 "maxHeight": "max-h-[240px] overflow-y-auto",
+                "paddingY": "py-1 (4px top/bottom)",
                 "background": "bg-white",
                 "border": "border border-gray-200",
                 "borderRadius": "rounded-md (6px)",
@@ -748,8 +749,7 @@
             {
               "variant": "option row",
               "tokens": {
-                "height": "h-11 (44px)",
-                "padding": "p-3 (12px)",
+                "padding": "px-3 py-2 (12px horizontal, 8px vertical)",
                 "text": "text-sm font-normal text-gray-900"
               }
             },
