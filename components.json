@@ -730,6 +730,50 @@
               }
             }
           ]
+        },
+        {
+          "category": "SelectMenu",
+          "items": [
+            {
+              "variant": "container",
+              "tokens": {
+                "width": "w-[320px]",
+                "maxHeight": "max-h-[240px] overflow-y-auto",
+                "background": "bg-white",
+                "border": "border border-gray-200",
+                "borderRadius": "rounded-md (6px)",
+                "shadow": "shadow-[0px_4px_16px_-2px_rgba(0,0,0,0.08)]"
+              }
+            },
+            {
+              "variant": "option row",
+              "tokens": {
+                "height": "h-11 (44px)",
+                "padding": "p-3 (12px)",
+                "text": "text-sm font-normal text-gray-900"
+              }
+            },
+            {
+              "variant": "hover",
+              "tokens": {
+                "background": "bg-gray-50"
+              }
+            },
+            {
+              "variant": "selected",
+              "tokens": {
+                "background": "bg-indigo-100"
+              }
+            },
+            {
+              "variant": "empty",
+              "tokens": {
+                "padding": "px-3 py-2",
+                "text": "text-sm font-normal text-gray-400",
+                "content": "該当する選択肢がありません"
+              }
+            }
+          ]
         }
       ]
     },
