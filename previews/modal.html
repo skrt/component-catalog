@@ -259,19 +259,10 @@
         <!-- FixArea -->
         <div class="shrink-0">
           <div class="pt-6 pb-3 px-6">
-            <p class="text-base font-bold text-[#101828] leading-6">発注アイテムを選択</p>
+            <p class="text-base font-bold text-[#101828] leading-6">アイテムをまとめて選択</p>
           </div>
           <div class="flex flex-col gap-2 px-6 pb-3">
-            <div class="flex items-start gap-3">
-              <div class="flex-1 flex flex-col gap-2">
-                <label class="text-sm font-semibold text-[#101828] leading-5">ID</label>
-                <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
-              </div>
-              <div class="flex-1 flex flex-col gap-2">
-                <label class="text-sm font-semibold text-[#101828] leading-5">アイテム名</label>
-                <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
-              </div>
-            </div>
+            <input type="text" placeholder="アイテム名 / IDで検索" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
             <p class="text-sm text-[#99A1AF] leading-5">検索結果：5件</p>
           </div>
           <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
@@ -451,18 +442,9 @@
           x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
           class="w-[672px] max-h-full flex flex-col bg-white border border-[#E5E7EB] rounded-xl overflow-hidden" style="box-shadow: 0 8px 32px -8px rgba(0,0,0,0.16);" @click.stop>
           <div class="shrink-0">
-            <div class="pt-6 pb-3 px-6"><p class="text-base font-bold text-[#101828] leading-6">発注アイテムを選択</p></div>
+            <div class="pt-6 pb-3 px-6"><p class="text-base font-bold text-[#101828] leading-6">アイテムをまとめて選択</p></div>
             <div class="flex flex-col gap-2 px-6 pb-3">
-              <div class="flex items-start gap-3">
-                <div class="flex-1 flex flex-col gap-2">
-                  <label class="text-sm font-semibold text-[#101828] leading-5">ID</label>
-                  <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
-                </div>
-                <div class="flex-1 flex flex-col gap-2">
-                  <label class="text-sm font-semibold text-[#101828] leading-5">アイテム名</label>
-                  <input type="text" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
-                </div>
-              </div>
+              <input type="text" placeholder="アイテム名 / IDで検索" class="w-full h-10 px-4 py-2 text-base border border-[#E5E7EB] rounded-md placeholder-[#99A1AF] text-[#101828] outline-none bg-white focus:border-[#615fff] focus:ring-1 focus:ring-[#615fff]" />
               <p class="text-sm text-[#99A1AF] leading-5">検索結果：5件</p>
             </div>
             <div class="flex items-center px-4 border-b border-[#E5E7EB] h-10">
