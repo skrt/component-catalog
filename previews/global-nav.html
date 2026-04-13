@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>#back-link { display: inline-flex; } .in-iframe #back-link { display: none; }</style>
+<script>if (window !== window.top) { document.documentElement.classList.add("in-iframe"); document.addEventListener("DOMContentLoaded", function() { var el = document.getElementById("back-link"); if (el) el.remove(); }); }</script>
+</head>
+<body class="bg-white p-6 space-y-10">
+  <a href="../" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4" id="back-link">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    一覧に戻る
+  </a>
+
+  <!-- GLOBAL NAV -->
+  <!-- Active: text=indigo-500(#615fff), border-b-2=indigo-500, font-medium -->
+  <!-- Hover: text=indigo-600(#4f39f6), no underline, font-medium -->
+  <!-- Inactive: text=gray-600(#4A5565), no underline, font-normal -->
+  <!-- Padding: p-3 (12px all sides) -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">GlobalNav</h3>
+    <div class="border-b border-slate-200">
+      <nav class="flex">
+        <!-- Active -->
+        <button class="text-sm font-medium p-3 border-b-2 border-indigo-500 text-indigo-500">
+          発注
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          納品
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          原価計算
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          アイテム
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          仕入先
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          納品先
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          メンバー
+        </button>
+        <!-- Inactive -->
+        <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600 hover:text-indigo-600 hover:font-medium transition-colors">
+          設定
+        </button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- STATES -->
+  <section>
+    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">States</h3>
+    <div class="flex items-end gap-6">
+      <!-- Active -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">active</span>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-medium p-3 border-b-2 border-indigo-500 text-indigo-500">Tab</button>
+        </div>
+      </div>
+      <!-- Inactive -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">inactive</span>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-normal p-3 border-b-2 border-transparent text-gray-600">Tab</button>
+        </div>
+      </div>
+      <!-- Hover -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">hover</span>
+        <div class="border-b border-slate-200">
+          <button class="text-sm font-medium p-3 border-b-2 border-transparent text-indigo-600">Tab</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

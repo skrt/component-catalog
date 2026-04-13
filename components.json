@@ -1152,15 +1152,25 @@
       ]
     },
     {
-      "id": "radio-button",
-      "name": "RadioButton",
-      "description": "ラジオボタン。排他選択に使用。",
+      "id": "radio-group",
+      "name": "RadioGroup",
+      "description": "ラジオ選択グループ。Radio形式（丸+ラベル）とButton形式（Pillタブ）の2種を統合。",
       "category": "forms",
-      "preview": "previews/radio-button.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1632-921",
+      "preview": "previews/radio-group.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1641-5155",
       "props": [
         {
-          "name": "Size",
+          "name": "Form",
+          "type": "enum",
+          "default": "radio",
+          "values": [
+            "radio",
+            "button"
+          ],
+          "description": "radio: 丸+ラベル / button: Pillタブ"
+        },
+        {
+          "name": "Size (Radio)",
           "type": "enum",
           "default": "sm",
           "values": [
@@ -1168,10 +1178,10 @@
             "md",
             "lg"
           ],
-          "description": "sm: radio 12px,text 14px / md: radio 16px,text 16px / lg: radio 20px,text 18px"
+          "description": "Radio形式のサイズ。sm: 12px / md: 16px / lg: 20px"
         },
         {
-          "name": "State",
+          "name": "State (Radio)",
           "type": "enum",
           "default": "default",
           "values": [
@@ -1180,12 +1190,29 @@
             "disabled",
             "selected-disabled"
           ],
-          "description": "選択・無効状態"
+          "description": "Radio形式の状態"
+        },
+        {
+          "name": "State (Button)",
+          "type": "enum",
+          "default": "active",
+          "values": [
+            "active",
+            "inactive",
+            "hover"
+          ],
+          "description": "Button形式の状態"
+        },
+        {
+          "name": "Count (Button)",
+          "type": "boolean",
+          "default": "false",
+          "description": "Button形式のカウンター表示"
         }
       ],
       "tokens": [
         {
-          "category": "Size",
+          "category": "Radio / Size",
           "items": [
             {
               "variant": "sm",
@@ -1214,7 +1241,7 @@
           ]
         },
         {
-          "category": "State",
+          "category": "Radio / State",
           "items": [
             {
               "variant": "default",
@@ -1227,7 +1254,7 @@
             {
               "variant": "selected",
               "tokens": {
-                "border": "border-indigo-500 (#615FFF)",
+                "border": "border-indigo-500 (#615FFF), border-[4px]",
                 "background": "bg-white (#FFFFFF)",
                 "text": "text-gray-900 (#101828)"
               }
@@ -1243,9 +1270,77 @@
             {
               "variant": "selected-disabled",
               "tokens": {
-                "border": "border-gray-400 (#99A1AF)",
+                "border": "border-gray-400 (#99A1AF), border-[4px]",
                 "background": "bg-white (#FFFFFF)",
                 "text": "text-gray-400 (#99A1AF)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Radio / Container",
+          "items": [
+            {
+              "variant": "vertical",
+              "tokens": {
+                "layout": "flex flex-col",
+                "gap": "gap-2 (8px)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Button / State",
+          "items": [
+            {
+              "variant": "active",
+              "tokens": {
+                "background": "bg-indigo-100 (#E0E7FF)",
+                "text": "text-indigo-700 (#432DD7)",
+                "fontWeight": "font-semibold (600)",
+                "borderRadius": "rounded-md (6px)",
+                "counter-bg": "bg-indigo-100",
+                "counter-text": "text-indigo-700",
+                "counter-radius": "rounded-sm (4px)"
+              }
+            },
+            {
+              "variant": "inactive",
+              "tokens": {
+                "background": "bg-white (#FFFFFF)",
+                "text": "text-gray-600 (#4A5565)",
+                "fontWeight": "font-normal (400)",
+                "borderRadius": "rounded-md (6px)",
+                "counter-bg": "bg-red-50 (#FEF2F2)",
+                "counter-text": "text-red-500 (#FB2C36)",
+                "counter-radius": "rounded-full (9999px)"
+              }
+            },
+            {
+              "variant": "hover",
+              "tokens": {
+                "background": "bg-gray-100 (#F3F4F6)",
+                "text": "text-gray-600 (#4A5565)",
+                "fontWeight": "font-normal (400)",
+                "borderRadius": "rounded-md (6px)",
+                "counter-bg": "bg-red-50 (#FEF2F2)",
+                "counter-text": "text-red-500 (#FB2C36)",
+                "counter-radius": "rounded-full (9999px)"
+              }
+            }
+          ]
+        },
+        {
+          "category": "Button / Common",
+          "items": [
+            {
+              "variant": "all",
+              "tokens": {
+                "fontSize": "text-sm (14px)",
+                "padding-with-count": "px-2 py-1 (8px 4px)",
+                "padding-without-count": "px-2 py-1.5 (8px 6px)",
+                "counter-padding": "px-2 py-0.5 (8px 2px)",
+                "container-gap": "gap-1 (4px)"
               }
             }
           ]
@@ -2570,33 +2665,28 @@
       ]
     },
     {
-      "id": "tabs",
-      "name": "Tabs",
-      "description": "タブ切替。コンテンツの切替表示に使用。Underline / Pill の2スタイル。",
+      "id": "global-nav",
+      "name": "GlobalNav",
+      "description": "グローバルナビゲーション。ページ切替（発注・納品・アイテム等）に使用。旧 Tabs / Underline。",
       "category": "layout",
-      "preview": "previews/tabs.html",
-      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=1643-7342",
+      "preview": "previews/global-nav.html",
+      "figmaUrl": "https://www.figma.com/design/tnxuN8LS2uMJEw2lYnvx69/shizai-pro?node-id=3022-23424",
       "props": [
         {
-          "name": "Style",
+          "name": "State",
           "type": "enum",
-          "default": "underline",
+          "default": "active",
           "values": [
-            "underline",
-            "pill"
+            "active",
+            "inactive",
+            "hover"
           ],
-          "description": "underline: 下線スタイル / pill: ピルスタイル"
-        },
-        {
-          "name": "Active",
-          "type": "boolean",
-          "default": "true",
-          "description": "アクティブ状態"
+          "description": "アイテムの状態"
         }
       ],
       "tokens": [
         {
-          "category": "Underline",
+          "category": "State",
           "items": [
             {
               "variant": "active",
@@ -2610,7 +2700,7 @@
               "variant": "hover",
               "tokens": {
                 "text": "text-indigo-600 (#4F39F6)",
-                "border-bottom": "border-b-2 border-indigo-600",
+                "border-bottom": "border-b-2 border-transparent",
                 "fontWeight": "font-medium (500)"
               }
             },
@@ -2625,51 +2715,14 @@
           ]
         },
         {
-          "category": "Pill",
-          "items": [
-            {
-              "variant": "active",
-              "tokens": {
-                "background": "bg-indigo-100 (#E0E7FF)",
-                "text": "text-indigo-700 (#432DD7)",
-                "borderRadius": "rounded-md (6px)",
-                "fontWeight": "font-medium (500)",
-                "counter-bg": "indigo-100",
-                "counter-radius": "rounded-sm (4px)"
-              }
-            },
-            {
-              "variant": "hover",
-              "tokens": {
-                "background": "bg-gray-100 (#F3F4F6)",
-                "text": "text-gray-600 (#4A5565)",
-                "fontWeight": "font-normal (400)",
-                "counter-bg": "gray-100",
-                "counter-radius": "rounded-full (9999px)"
-              }
-            },
-            {
-              "variant": "inactive",
-              "tokens": {
-                "background": "bg-white (#FFFFFF)",
-                "text": "text-gray-600 (#4A5565)",
-                "fontWeight": "font-normal (400)",
-                "counter-bg": "gray-100",
-                "counter-radius": "rounded-full (9999px)"
-              }
-            }
-          ]
-        },
-        {
           "category": "Common",
           "items": [
             {
               "variant": "all",
               "tokens": {
                 "fontSize": "text-sm (14px)",
-                "underline-padding": "px-3 py-2 (12px 8px)",
-                "pill-padding": "px-2 py-1 (8px 4px)",
-                "gap": "gap-1 (4px)"
+                "padding": "p-3 (12px)",
+                "container-border": "border-b border-slate-200"
               }
             }
           ]
