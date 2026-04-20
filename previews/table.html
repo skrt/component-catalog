@@ -250,25 +250,46 @@
           <svg class="w-4 h-4 text-gray-400"><use href="icons.svg#icon-grip-vertical"/></svg>
         </div>
       </div>
-      <!-- Type=text -->
+      <!-- Type=text, State=default -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">text</span>
         <div class="px-3 py-3 border border-dashed border-gray-200 rounded">
           <span class="text-sm font-normal text-gray-900">Cell Data</span>
         </div>
       </div>
-      <!-- Type=number -->
+      <!-- Type=text, State=empty -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">text / empty</span>
+        <div class="px-3 py-3 border border-dashed border-gray-200 rounded">
+          <span class="text-sm font-normal text-gray-400">-</span>
+        </div>
+      </div>
+      <!-- Type=number, State=default -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">number</span>
         <div class="px-3 py-3 border border-dashed border-gray-200 rounded text-right">
           <span class="text-sm font-normal text-gray-900">99,999</span>
         </div>
       </div>
-      <!-- Type=link -->
+      <!-- Type=number, State=empty -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">number / empty</span>
+        <div class="px-3 py-3 border border-dashed border-gray-200 rounded text-right">
+          <span class="text-sm font-normal text-gray-400">-</span>
+        </div>
+      </div>
+      <!-- Type=link, State=default -->
       <div class="flex flex-col items-start gap-1">
         <span class="text-[10px] text-gray-400 uppercase">link</span>
         <div class="px-3 py-3 border border-dashed border-gray-200 rounded">
           <a href="#" class="text-sm font-normal text-indigo-500 hover:underline">Cell Data</a>
+        </div>
+      </div>
+      <!-- Type=link, State=empty -->
+      <div class="flex flex-col items-start gap-1">
+        <span class="text-[10px] text-gray-400 uppercase">link / empty</span>
+        <div class="px-3 py-3 border border-dashed border-gray-200 rounded">
+          <span class="text-sm font-normal text-gray-400">-</span>
         </div>
       </div>
       <!-- Type=badge -->
