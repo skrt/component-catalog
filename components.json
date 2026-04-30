@@ -211,8 +211,8 @@
           "name": "Color",
           "type": "enum",
           "default": "secondary",
-          "values": ["primary", "secondary", "alert", "tertiary"],
-          "description": "Buttonコンポーネントと同一カラー"
+          "values": ["primary", "secondary", "tertiary"],
+          "description": "Buttonコンポーネントと同一カラー（alertは対象外）"
         },
         {
           "name": "State",
