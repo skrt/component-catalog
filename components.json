@@ -194,6 +194,43 @@
       ]
     },
     {
+      "id": "menu-button",
+      "name": "MenuButton",
+      "description": "メニュー付きボタン。クリックでドロップダウンメニューを表示。ラベル右側にchevron-downアイコンが固定で付く。",
+      "category": "actions",
+      "preview": "previews/menu-button.html",
+      "props": [
+        {
+          "name": "Size",
+          "type": "enum",
+          "default": "md",
+          "values": ["xs", "sm", "md", "lg"],
+          "description": "ボタンのサイズ。Buttonコンポーネントと同一トークン"
+        },
+        {
+          "name": "Color",
+          "type": "enum",
+          "default": "secondary",
+          "values": ["primary", "secondary", "alert", "tertiary"],
+          "description": "Buttonコンポーネントと同一カラー"
+        },
+        {
+          "name": "State",
+          "type": "enum",
+          "default": "default",
+          "values": ["default", "hover", "active", "disabled"],
+          "description": "インタラクション状態"
+        },
+        {
+          "name": "Left Icon",
+          "type": "boolean",
+          "default": "true",
+          "description": "左アイコンの表示（Right Iconのchevron-downは常時表示）"
+        }
+      ],
+      "notes": "Buttonとの違い: (1) 右側にchevron-downが固定で付く (2) クリックでドロップダウンメニューを表示。メニュー部分はring-1 ring-inset ring-gray-200 rounded-md shadow-lg、各項目はpx-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+    },
+    {
       "id": "icon-button",
       "name": "IconButton",
       "description": "アイコンボタンコンポーネント。テキストなしのアイコンのみボタン。",
